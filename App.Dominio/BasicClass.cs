@@ -9,5 +9,6 @@ namespace App.Dominio
     public class BasicClass
     {
         public int Id { get; set; } //todos tem esse padrão (public tipo nome {get;set;})
+        // teste para comitar
     }
 }
