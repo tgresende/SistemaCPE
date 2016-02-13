@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="BasicClass.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ConsultorProjetos.cs" />
     <Compile Include="Projetos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

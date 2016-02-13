@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App.Comunicacao;
+using App.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,14 @@ namespace App.wfa
         public Form1()
         {
             InitializeComponent();
+
+            bindingSource1.Clear();
+
+            foreach (var projeto in Servicos.projetosServico.SelecionarTodos())
+            {
+                bindingSource1.Add(projeto);
+            }
+
             // Move your controls
             Mover.Init(this.button1);
             Mover.Init(this.button2);
@@ -30,11 +40,6 @@ namespace App.wfa
         {
             Form frmcadProjetos = new CadProjetos();
             frmcadProjetos.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
