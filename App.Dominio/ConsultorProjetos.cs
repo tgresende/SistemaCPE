@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace App.Dominio
 {
-    class ConsultorProjetos
+    public class ConsultorProjetos : BasicClass
     {
-        public string NomeProjeto { get; set; }
-        public DateTime DataInicio { get; set; }
-        public DateTime? DataFim { get; set; } // DateTime? = aceita nulo
-        public int ResponsavelId { get; set; }
+        public int ConsultorId { get; set; }
+        public int ProjetoId { get; set; }
+        public double ValorHora { get; set; }
+        public double HorasSemanais { get; set; }
+        public double QuantidadeSemanas { get; set; }          
     }
 }

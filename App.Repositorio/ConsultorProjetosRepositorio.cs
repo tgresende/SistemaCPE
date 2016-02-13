@@ -7,16 +7,16 @@ using System.Text;
 
 namespace App.Repositorio
 {
-    public class ProjetosRepositorio : IPadraoRepositorio<Projetos>
+    public class ConsultorProjetosRepositorio : IPadraoRepositorio<ConsultorProjetos>
     {
-        private IRepositorio<Projetos> _Repositorio;
+        private IRepositorio<ConsultorProjetos> _Repositorio;
 
-        public ProjetosRepositorio(AppContext context = null)
+        public ConsultorProjetosRepositorio(AppContext context = null)
         {
-            _Repositorio = new Repositorio<Projetos>(context == null ? new AppContext() : context);
+            _Repositorio = new Repositorio<ConsultorProjetos>(context == null ? new AppContext() : context);
         }
 
-        public string Incluir(Projetos entity)
+        public string Incluir(ConsultorProjetos entity)
         {
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
@@ -26,7 +26,7 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public string Alterar(Projetos entity)
+        public string Alterar(ConsultorProjetos entity)
         {
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
@@ -36,7 +36,7 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public string Excluir(Projetos entity)
+        public string Excluir(ConsultorProjetos entity)
         {
             string mensagem = this.ValidarExclusao(entity);
             if (mensagem == "")
@@ -46,35 +46,27 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public Projetos Selecionar(int id)
+        public ConsultorProjetos Selecionar(int id)
         {
             return _Repositorio.GetById(id);
         }
 
-        public IQueryable<Projetos> SelecionarTodos()
+        public IQueryable<ConsultorProjetos> SelecionarTodos()
         {
             return _Repositorio.GetAll();
         }
 
-        public IQueryable<Projetos> Filtrar(string condicao)
+        public IQueryable<ConsultorProjetos> Filtrar(string condicao)
         {
             return _Repositorio.Filter(condicao);
         }
 
-        public string ValidarDados(Projetos entity)
+        public string ValidarDados(ConsultorProjetos entity)
         {
-            //verificacao de dados
-            if (string.IsNullOrWhiteSpace(entity.NomeProjeto))
-                return "Nome do projeto não informado!";
-            else if(DateTime.MinValue==entity.DataInicio)
-                return "Data de início não informada!";
-            else
-                return "";
-
-           
+            return "";
         }
 
-        public string ValidarExclusao(Projetos entity)
+        public string ValidarExclusao(ConsultorProjetos entity)
         {
             return "";
         }
