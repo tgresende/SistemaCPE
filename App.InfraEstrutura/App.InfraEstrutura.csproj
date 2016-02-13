@@ -56,6 +56,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Configuracao\AppContext.cs" />
     <Compile Include="Configuracao\AppTransaction.cs" />
+    <Compile Include="Configuracao\MySqlConfiguration.cs" />
+    <Compile Include="Configuracao\MySqlHistoryContext.cs" />
     <Compile Include="Mapeamento\ProjetosMapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

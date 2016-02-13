@@ -1,7 +1,5 @@
 ﻿using App.Dominio;
-using App.InfraEstrutura;
-using App.Infrastructura;
-using App.Infrastructure;
+using App.InfraEstrutura.Configuracao;
 using App.Repositorio;
 using System;
 using System.Collections.Generic;
