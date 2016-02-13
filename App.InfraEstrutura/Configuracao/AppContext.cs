@@ -1,17 +1,15 @@
 ﻿using App.Dominio;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data.Entity;
+using System.Data.Entity.Migrations.History;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
-namespace App.Infrastructura
+namespace App.InfraEstrutura.Configuracao
 {
     public class AppContext : DbContext
     {
@@ -47,16 +45,6 @@ namespace App.Infrastructura
                     modelBuilder.Configurations.Add(configurationInstance);
                 }
             }
-
-            modelBuilder.Entity<System.Data.Entity.Migrations.History.HistoryRow>().HasEntitySetName;
-            modelBuilder.Entity<System.Data.Entity.Migrations.History.HistoryRow>().Property(h => h.MigrationId).HasMaxLength(100).IsRequired();
-            modelBuilder.Entity<System.Data.Entity.Migrations.History.HistoryRow>().Property(h => h.ContextKey).HasMaxLength(200).IsRequired();
-            //modelBuilder.Entity<System.Data.Entity.Migrations.History.HistoryRow>().HasKey(h => new { h.MigrationId, h.ContextKey });
-            //modelBuilder.Entity<System.Data.Entity.Migrations.History.HistoryRow>().Property(h => h.Model).IsRequired();
-            //modelBuilder.Entity<System.Data.Entity.Migrations.History.HistoryRow>().Property(h => h.ProductVersion).HasMaxLength(32).IsRequired();
-
-
-
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();

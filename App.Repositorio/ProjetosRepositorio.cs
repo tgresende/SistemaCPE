@@ -1,6 +1,5 @@
 ﻿using App.Dominio;
-using App.InfraEstrutura;
-using App.Infrastructura;
+using App.InfraEstrutura.Configuracao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
