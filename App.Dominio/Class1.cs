@@ -8,5 +8,6 @@ namespace App.Dominio
 {
     public class Class1
     {
+        //comentrio inutil
     }
 }
