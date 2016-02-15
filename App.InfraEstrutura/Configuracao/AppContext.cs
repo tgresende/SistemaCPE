@@ -22,14 +22,14 @@ namespace App.InfraEstrutura.Configuracao
             if (Database.Connection is MySqlConnection)
             {
                 Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
-              //  Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
+                //Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
             }
             else
                 Database.SetInitializer<AppContext>(null);
 
 
             Configuration.ProxyCreationEnabled = false;
-            Configuration.LazyLoadingEnabled = true;
+            //Configuration.LazyLoadingEnabled = true;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -52,6 +52,7 @@ namespace App.InfraEstrutura.Configuracao
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Projetos> Projetos { get; set; }
+        public DbSet<GastosProjetos> GastosProjetos { get; set; }
        
         
 

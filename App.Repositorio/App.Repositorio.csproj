@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultorProjetosRepositorio.cs" />
+    <Compile Include="GastosProjetosRepositorio.cs" />
     <Compile Include="IPadraoRepositorio.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="ProjetosRepositorio.cs" />
@@ -57,6 +57,10 @@
     <ProjectReference Include="..\App.Dominio\App.Dominio.csproj">
       <Project>{4329496c-b736-4463-bfdf-450b4deb5e81}</Project>
       <Name>App.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.DTO\App.DTO.csproj">
+      <Project>{6fe0d366-f965-4d68-acd7-8eb8b31a0766}</Project>
+      <Name>App.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.InfraEstrutura\App.InfraEstrutura.csproj">
       <Project>{2895982a-6d42-45e1-ac85-5c550f50e496}</Project>

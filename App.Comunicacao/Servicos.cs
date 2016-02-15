@@ -11,6 +11,6 @@ namespace App.Comunicacao
     public static class Servicos
     {
         public static ProjetosController projetosServico = new ProjetosController();
-        public static ConsultorProjetosController consultorprojetosServico = new ConsultorProjetosController();
+        public static GastosProjetosController gastosprojetosServico = new GastosProjetosController();
     }
 }

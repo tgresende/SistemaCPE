@@ -1,4 +1,5 @@
 ﻿using App.Dominio;
+using App.DTO;
 using App.InfraEstrutura.Configuracao;
 using System;
 using System.Collections.Generic;
@@ -7,16 +8,21 @@ using System.Text;
 
 namespace App.Repositorio
 {
-    public class ConsultorProjetosRepositorio : IPadraoRepositorio<ConsultorProjetos>
+    public class GastosProjetosRepositorio : IPadraoRepositorio<GastosProjetos>
     {
-        private IRepositorio<ConsultorProjetos> _Repositorio;
+        private IRepositorio<GastosProjetos> _Repositorio;
 
-        public ConsultorProjetosRepositorio(AppContext context = null)
+        public GastosProjetosRepositorio(AppContext context = null)
         {
-            _Repositorio = new Repositorio<ConsultorProjetos>(context == null ? new AppContext() : context);
+            _Repositorio = new Repositorio<GastosProjetos>(context == null ? new AppContext() : context);
+        }
+        public ICollection<GastosProjetosProjetos>(string filtro)
+        {
+            from q in _Repositorio.
         }
 
-        public string Incluir(ConsultorProjetos entity)
+
+        public string Incluir(GastosProjetos entity)
         {
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
@@ -26,7 +32,7 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public string Alterar(ConsultorProjetos entity)
+        public string Alterar(GastosProjetos entity)
         {
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
@@ -36,7 +42,7 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public string Excluir(ConsultorProjetos entity)
+        public string Excluir(GastosProjetos entity)
         {
             string mensagem = this.ValidarExclusao(entity);
             if (mensagem == "")
@@ -46,27 +52,27 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public ConsultorProjetos Selecionar(int id)
+        public GastosProjetos Selecionar(int id)
         {
             return _Repositorio.GetById(id);
         }
 
-        public IQueryable<ConsultorProjetos> SelecionarTodos()
+        public IQueryable<GastosProjetos> SelecionarTodos()
         {
             return _Repositorio.GetAll();
         }
 
-        public IQueryable<ConsultorProjetos> Filtrar(string condicao)
+        public IQueryable<GastosProjetos> Filtrar(string condicao)
         {
             return _Repositorio.Filter(condicao);
         }
 
-        public string ValidarDados(ConsultorProjetos entity)
+        public string ValidarDados(GastosProjetos entity)
         {
             return "";
         }
 
-        public string ValidarExclusao(ConsultorProjetos entity)
+        public string ValidarExclusao(GastosProjetos entity)
         {
             return "";
         }

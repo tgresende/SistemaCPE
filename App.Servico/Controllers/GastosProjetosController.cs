@@ -10,35 +10,35 @@ using System.Web.Http;
 
 namespace App.Service.Controllers
 {
-    public class ConsultorProjetosController : ApiController
+    public class GastosProjetosController : ApiController
     {
         private string _mensagem = "";
 
         [HttpGet]
-        public IEnumerable<ConsultorProjetos> Filtrar(string condicao)
+        public IEnumerable<GastosProjetos> Filtrar(string condicao)
         {
-            return new ConsultorProjetosRepositorio().Filtrar(condicao).ToList();
+            return new GastosProjetosRepositorio().Filtrar(condicao).ToList();
         }
 
         [HttpGet]
-        public IEnumerable<ConsultorProjetos> SelecionarTodos()
+        public IEnumerable<GastosProjetos> SelecionarTodos()
         {
-            return new ConsultorProjetosRepositorio().SelecionarTodos().ToList();
+            return new GastosProjetosRepositorio().SelecionarTodos().ToList();
         }
 
         [HttpGet]
-        public ConsultorProjetos Selecionar(int id)
+        public GastosProjetos Selecionar(int id)
         {
-            return new ConsultorProjetosRepositorio().Selecionar(id);
+            return new GastosProjetosRepositorio().Selecionar(id);
         }
 
         [HttpPost]
-        public string Excluir(ConsultorProjetos entity)
+        public string Excluir(GastosProjetos entity)
         {
             AppContext contexto = new AppContext();
             using (DbContextTransaction transacao = AppTransaction.CreateDbContextTransaction(contexto))
             {
-                _mensagem = new ConsultorProjetosRepositorio(contexto).Excluir(entity);
+                _mensagem = new GastosProjetosRepositorio(contexto).Excluir(entity);
 
                 if (_mensagem == "")
                     transacao.Commit();
@@ -49,15 +49,15 @@ namespace App.Service.Controllers
         }
 
         [HttpPost]
-        public string Salvar(ConsultorProjetos entity)
+        public string Salvar(GastosProjetos entity)
         {
             AppContext contexto = new AppContext();
             using (DbContextTransaction transacao = AppTransaction.CreateDbContextTransaction(contexto))
             {
                 if (entity.Id == 0)
-                    _mensagem = new ConsultorProjetosRepositorio(contexto).Incluir(entity);
+                    _mensagem = new GastosProjetosRepositorio(contexto).Incluir(entity);
                 else
-                    _mensagem = new ConsultorProjetosRepositorio(contexto).Alterar(entity);
+                    _mensagem = new GastosProjetosRepositorio(contexto).Alterar(entity);
 
                 if (_mensagem == "")
                     transacao.Commit();

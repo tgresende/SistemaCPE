@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.wfa", "App.wfa\App.wfa.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Comunicacao", "App.Comunicacao\App.Comunicacao.csproj", "{AC867AD8-C709-40CE-9142-149A463F3BDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.DTO", "App.DTO\App.DTO.csproj", "{6FE0D366-F965-4D68-ACD7-8EB8B31A0766}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{AC867AD8-C709-40CE-9142-149A463F3BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC867AD8-C709-40CE-9142-149A463F3BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC867AD8-C709-40CE-9142-149A463F3BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE0D366-F965-4D68-ACD7-8EB8B31A0766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE0D366-F965-4D68-ACD7-8EB8B31A0766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE0D366-F965-4D68-ACD7-8EB8B31A0766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE0D366-F965-4D68-ACD7-8EB8B31A0766}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
