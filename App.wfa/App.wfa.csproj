@@ -96,6 +96,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\App.Dominio.GastosProjetos.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Projetos.datasource" />
+    <None Include="Properties\DataSources\App.DTO.GastosProjetosGastos.datasource" />
+    <None Include="Properties\DataSources\App.DTO.GastosProjetosProjetos.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">

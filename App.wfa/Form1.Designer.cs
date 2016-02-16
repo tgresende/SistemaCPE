@@ -42,6 +42,12 @@
             this.TabProjetos = new System.Windows.Forms.TabControl();
             this.pcVisaoGeral = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nomeProjetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataFimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.responsavelIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsProjetos = new System.Windows.Forms.BindingSource(this.components);
             this.pcInfoProjeto = new System.Windows.Forms.TabPage();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,48 +62,40 @@
             this.dateFimProjeto = new System.Windows.Forms.DateTimePicker();
             this.pcPrazos = new System.Windows.Forms.TabPage();
             this.pcCustos = new System.Windows.Forms.TabPage();
+            this.bsGastos = new System.Windows.Forms.BindingSource(this.components);
             this.pcPlanoProjeto = new System.Windows.Forms.TabPage();
             this.pcRiscos = new System.Windows.Forms.TabPage();
             this.pcStakeholders = new System.Windows.Forms.TabPage();
-            this.nomeProjetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataFimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.responsavelIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsProjetos = new System.Windows.Forms.BindingSource(this.components);
-            this.bsGastos = new System.Windows.Forms.BindingSource(this.components);
-            this.panelCusto = new System.Windows.Forms.Panel();
-            this.pcListaCustos = new System.Windows.Forms.TabControl();
-            this.tabListaCustos = new System.Windows.Forms.TabPage();
+            this.lblNomeProjeto = new System.Windows.Forms.Label();
+            this.panelCustos = new System.Windows.Forms.Panel();
+            this.panelInfoCustos = new System.Windows.Forms.Panel();
+            this.btnExcluiCusto = new System.Windows.Forms.Button();
+            this.btnNovoCusto = new System.Windows.Forms.Button();
+            this.btnCancelaCusto = new System.Windows.Forms.Button();
+            this.btnSalvaCusto = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gastoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Origem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projetoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projetosIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadePrevistaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorUnitarioPrevistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeRealDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorUnitarioRealDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabDetalhesCustos = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.TabProjetos.SuspendLayout();
             this.pcVisaoGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProjetos)).BeginInit();
             this.pcInfoProjeto.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.pcCustos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProjetos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsGastos)).BeginInit();
-            this.panelCusto.SuspendLayout();
-            this.pcListaCustos.SuspendLayout();
-            this.tabListaCustos.SuspendLayout();
+            this.panelCustos.SuspendLayout();
+            this.panelInfoCustos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabDetalhesCustos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNovo
@@ -105,7 +103,7 @@
             this.btnNovo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
-            this.btnNovo.Location = new System.Drawing.Point(177, 467);
+            this.btnNovo.Location = new System.Drawing.Point(177, 487);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(75, 69);
             this.btnNovo.TabIndex = 8;
@@ -117,7 +115,7 @@
             this.btnSalva.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSalva.FlatAppearance.BorderSize = 0;
             this.btnSalva.Image = ((System.Drawing.Image)(resources.GetObject("btnSalva.Image")));
-            this.btnSalva.Location = new System.Drawing.Point(258, 467);
+            this.btnSalva.Location = new System.Drawing.Point(258, 487);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(75, 69);
             this.btnSalva.TabIndex = 9;
@@ -129,7 +127,7 @@
             this.btnCancela.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancela.FlatAppearance.BorderSize = 0;
             this.btnCancela.Image = ((System.Drawing.Image)(resources.GetObject("btnCancela.Image")));
-            this.btnCancela.Location = new System.Drawing.Point(339, 467);
+            this.btnCancela.Location = new System.Drawing.Point(339, 487);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(75, 69);
             this.btnCancela.TabIndex = 10;
@@ -211,7 +209,7 @@
             this.TabProjetos.Controls.Add(this.pcPlanoProjeto);
             this.TabProjetos.Controls.Add(this.pcRiscos);
             this.TabProjetos.Controls.Add(this.pcStakeholders);
-            this.TabProjetos.Location = new System.Drawing.Point(12, 12);
+            this.TabProjetos.Location = new System.Drawing.Point(12, 42);
             this.TabProjetos.Name = "TabProjetos";
             this.TabProjetos.SelectedIndex = 0;
             this.TabProjetos.Size = new System.Drawing.Size(641, 449);
@@ -244,6 +242,47 @@
             this.dataGridView1.Size = new System.Drawing.Size(606, 417);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // nomeProjetoDataGridViewTextBoxColumn
+            // 
+            this.nomeProjetoDataGridViewTextBoxColumn.DataPropertyName = "NomeProjeto";
+            this.nomeProjetoDataGridViewTextBoxColumn.HeaderText = "Nome do Projeto";
+            this.nomeProjetoDataGridViewTextBoxColumn.Name = "nomeProjetoDataGridViewTextBoxColumn";
+            this.nomeProjetoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeProjetoDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // dataInicioDataGridViewTextBoxColumn
+            // 
+            this.dataInicioDataGridViewTextBoxColumn.DataPropertyName = "DataInicio";
+            this.dataInicioDataGridViewTextBoxColumn.HeaderText = "Data de Inicio";
+            this.dataInicioDataGridViewTextBoxColumn.Name = "dataInicioDataGridViewTextBoxColumn";
+            this.dataInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataFimDataGridViewTextBoxColumn
+            // 
+            this.dataFimDataGridViewTextBoxColumn.DataPropertyName = "DataFim";
+            this.dataFimDataGridViewTextBoxColumn.HeaderText = "Data Fim";
+            this.dataFimDataGridViewTextBoxColumn.Name = "dataFimDataGridViewTextBoxColumn";
+            this.dataFimDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // responsavelIdDataGridViewTextBoxColumn
+            // 
+            this.responsavelIdDataGridViewTextBoxColumn.DataPropertyName = "ResponsavelId";
+            this.responsavelIdDataGridViewTextBoxColumn.HeaderText = "Id do Responsável";
+            this.responsavelIdDataGridViewTextBoxColumn.Name = "responsavelIdDataGridViewTextBoxColumn";
+            this.responsavelIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.responsavelIdDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Identificador";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsProjetos
+            // 
+            this.bsProjetos.DataSource = typeof(App.Dominio.Projetos);
             // 
             // pcInfoProjeto
             // 
@@ -342,6 +381,7 @@
             this.txtNomeProjeto.Name = "txtNomeProjeto";
             this.txtNomeProjeto.Size = new System.Drawing.Size(100, 20);
             this.txtNomeProjeto.TabIndex = 11;
+            this.txtNomeProjeto.TextChanged += new System.EventHandler(this.txtNomeProjeto_TextChanged);
             // 
             // dateInicioProjeto
             // 
@@ -371,7 +411,7 @@
             // 
             // pcCustos
             // 
-            this.pcCustos.Controls.Add(this.panelCusto);
+            this.pcCustos.Controls.Add(this.panelCustos);
             this.pcCustos.Location = new System.Drawing.Point(4, 22);
             this.pcCustos.Name = "pcCustos";
             this.pcCustos.Padding = new System.Windows.Forms.Padding(3);
@@ -379,6 +419,10 @@
             this.pcCustos.TabIndex = 3;
             this.pcCustos.Text = "Plano de Custos";
             this.pcCustos.UseVisualStyleBackColor = true;
+            // 
+            // bsGastos
+            // 
+            this.bsGastos.DataSource = typeof(App.DTO.GastosProjetosGastos);
             // 
             // pcPlanoProjeto
             // 
@@ -410,233 +454,177 @@
             this.pcStakeholders.Text = "Stakeholders";
             this.pcStakeholders.UseVisualStyleBackColor = true;
             // 
-            // nomeProjetoDataGridViewTextBoxColumn
+            // lblNomeProjeto
             // 
-            this.nomeProjetoDataGridViewTextBoxColumn.DataPropertyName = "NomeProjeto";
-            this.nomeProjetoDataGridViewTextBoxColumn.HeaderText = "Nome do Projeto";
-            this.nomeProjetoDataGridViewTextBoxColumn.Name = "nomeProjetoDataGridViewTextBoxColumn";
-            this.nomeProjetoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeProjetoDataGridViewTextBoxColumn.Width = 110;
+            this.lblNomeProjeto.AutoSize = true;
+            this.lblNomeProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeProjeto.Location = new System.Drawing.Point(209, 9);
+            this.lblNomeProjeto.Name = "lblNomeProjeto";
+            this.lblNomeProjeto.Size = new System.Drawing.Size(176, 26);
+            this.lblNomeProjeto.TabIndex = 24;
+            this.lblNomeProjeto.Text = "Nome do Projeto";
             // 
-            // dataInicioDataGridViewTextBoxColumn
+            // panelCustos
             // 
-            this.dataInicioDataGridViewTextBoxColumn.DataPropertyName = "DataInicio";
-            this.dataInicioDataGridViewTextBoxColumn.HeaderText = "Data de Inicio";
-            this.dataInicioDataGridViewTextBoxColumn.Name = "dataInicioDataGridViewTextBoxColumn";
-            this.dataInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.panelCustos.Controls.Add(this.panelInfoCustos);
+            this.panelCustos.Controls.Add(this.btnExcluiCusto);
+            this.panelCustos.Controls.Add(this.btnNovoCusto);
+            this.panelCustos.Controls.Add(this.btnCancelaCusto);
+            this.panelCustos.Controls.Add(this.btnSalvaCusto);
+            this.panelCustos.Controls.Add(this.dataGridView2);
+            this.panelCustos.Location = new System.Drawing.Point(7, 12);
+            this.panelCustos.Name = "panelCustos";
+            this.panelCustos.Size = new System.Drawing.Size(618, 399);
+            this.panelCustos.TabIndex = 1;
             // 
-            // dataFimDataGridViewTextBoxColumn
+            // panelInfoCustos
             // 
-            this.dataFimDataGridViewTextBoxColumn.DataPropertyName = "DataFim";
-            this.dataFimDataGridViewTextBoxColumn.HeaderText = "Data Fim";
-            this.dataFimDataGridViewTextBoxColumn.Name = "dataFimDataGridViewTextBoxColumn";
-            this.dataFimDataGridViewTextBoxColumn.ReadOnly = true;
+            this.panelInfoCustos.Controls.Add(this.label8);
+            this.panelInfoCustos.Controls.Add(this.label7);
+            this.panelInfoCustos.Controls.Add(this.label3);
+            this.panelInfoCustos.Location = new System.Drawing.Point(331, 10);
+            this.panelInfoCustos.Name = "panelInfoCustos";
+            this.panelInfoCustos.Size = new System.Drawing.Size(286, 379);
+            this.panelInfoCustos.TabIndex = 29;
             // 
-            // responsavelIdDataGridViewTextBoxColumn
+            // btnExcluiCusto
             // 
-            this.responsavelIdDataGridViewTextBoxColumn.DataPropertyName = "ResponsavelId";
-            this.responsavelIdDataGridViewTextBoxColumn.HeaderText = "Id do Responsável";
-            this.responsavelIdDataGridViewTextBoxColumn.Name = "responsavelIdDataGridViewTextBoxColumn";
-            this.responsavelIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.responsavelIdDataGridViewTextBoxColumn.Width = 130;
+            this.btnExcluiCusto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluiCusto.FlatAppearance.BorderSize = 0;
+            this.btnExcluiCusto.Location = new System.Drawing.Point(228, 12);
+            this.btnExcluiCusto.Name = "btnExcluiCusto";
+            this.btnExcluiCusto.Size = new System.Drawing.Size(55, 39);
+            this.btnExcluiCusto.TabIndex = 28;
+            this.btnExcluiCusto.Text = "Excluir";
+            this.btnExcluiCusto.UseVisualStyleBackColor = false;
             // 
-            // idDataGridViewTextBoxColumn
+            // btnNovoCusto
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Identificador";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnNovoCusto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNovoCusto.FlatAppearance.BorderSize = 0;
+            this.btnNovoCusto.Location = new System.Drawing.Point(51, 13);
+            this.btnNovoCusto.Name = "btnNovoCusto";
+            this.btnNovoCusto.Size = new System.Drawing.Size(55, 39);
+            this.btnNovoCusto.TabIndex = 27;
+            this.btnNovoCusto.Text = "Novo";
+            this.btnNovoCusto.UseVisualStyleBackColor = false;
+            this.btnNovoCusto.Click += new System.EventHandler(this.button9_Click_1);
             // 
-            // bsProjetos
+            // btnCancelaCusto
             // 
-            this.bsProjetos.DataSource = typeof(App.Dominio.Projetos);
+            this.btnCancelaCusto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelaCusto.FlatAppearance.BorderSize = 0;
+            this.btnCancelaCusto.Location = new System.Drawing.Point(169, 13);
+            this.btnCancelaCusto.Name = "btnCancelaCusto";
+            this.btnCancelaCusto.Size = new System.Drawing.Size(55, 39);
+            this.btnCancelaCusto.TabIndex = 26;
+            this.btnCancelaCusto.Text = "Cancela";
+            this.btnCancelaCusto.UseVisualStyleBackColor = false;
             // 
-            // bsGastos
+            // btnSalvaCusto
             // 
-            this.bsGastos.DataSource = typeof(App.Dominio.GastosProjetos);
-            // 
-            // panelCusto
-            // 
-            this.panelCusto.Controls.Add(this.pcListaCustos);
-            this.panelCusto.Location = new System.Drawing.Point(6, 3);
-            this.panelCusto.Name = "panelCusto";
-            this.panelCusto.Size = new System.Drawing.Size(624, 414);
-            this.panelCusto.TabIndex = 2;
-            // 
-            // pcListaCustos
-            // 
-            this.pcListaCustos.Controls.Add(this.tabListaCustos);
-            this.pcListaCustos.Controls.Add(this.tabDetalhesCustos);
-            this.pcListaCustos.Location = new System.Drawing.Point(3, 0);
-            this.pcListaCustos.Name = "pcListaCustos";
-            this.pcListaCustos.SelectedIndex = 0;
-            this.pcListaCustos.Size = new System.Drawing.Size(618, 414);
-            this.pcListaCustos.TabIndex = 2;
-            // 
-            // tabListaCustos
-            // 
-            this.tabListaCustos.Controls.Add(this.button10);
-            this.tabListaCustos.Controls.Add(this.button9);
-            this.tabListaCustos.Controls.Add(this.button8);
-            this.tabListaCustos.Controls.Add(this.button7);
-            this.tabListaCustos.Controls.Add(this.dataGridView2);
-            this.tabListaCustos.Location = new System.Drawing.Point(4, 22);
-            this.tabListaCustos.Name = "tabListaCustos";
-            this.tabListaCustos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListaCustos.Size = new System.Drawing.Size(610, 388);
-            this.tabListaCustos.TabIndex = 0;
-            this.tabListaCustos.Text = "Custos";
-            this.tabListaCustos.UseVisualStyleBackColor = true;
+            this.btnSalvaCusto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvaCusto.FlatAppearance.BorderSize = 0;
+            this.btnSalvaCusto.Location = new System.Drawing.Point(110, 13);
+            this.btnSalvaCusto.Name = "btnSalvaCusto";
+            this.btnSalvaCusto.Size = new System.Drawing.Size(55, 39);
+            this.btnSalvaCusto.TabIndex = 25;
+            this.btnSalvaCusto.Text = "Salvar";
+            this.btnSalvaCusto.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.descricaoDataGridViewTextBoxColumn,
             this.gastoIdDataGridViewTextBoxColumn,
-            this.Origem,
-            this.projetoIdDataGridViewTextBoxColumn,
+            this.projetosIdDataGridViewTextBoxColumn,
             this.observacaoDataGridViewTextBoxColumn,
             this.quantidadePrevistaDataGridViewTextBoxColumn,
             this.valorUnitarioPrevistoDataGridViewTextBoxColumn,
             this.quantidadeRealDataGridViewTextBoxColumn,
-            this.valorUnitarioRealDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn1});
+            this.valorUnitarioRealDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.bsGastos;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 50);
+            this.dataGridView2.Location = new System.Drawing.Point(2, 57);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(601, 332);
-            this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.Size = new System.Drawing.Size(323, 332);
+            this.dataGridView2.TabIndex = 24;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             // 
             // gastoIdDataGridViewTextBoxColumn
             // 
             this.gastoIdDataGridViewTextBoxColumn.DataPropertyName = "GastoId";
             this.gastoIdDataGridViewTextBoxColumn.HeaderText = "GastoId";
             this.gastoIdDataGridViewTextBoxColumn.Name = "gastoIdDataGridViewTextBoxColumn";
-            this.gastoIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gastoIdDataGridViewTextBoxColumn.Visible = false;
             // 
-            // Origem
+            // projetosIdDataGridViewTextBoxColumn
             // 
-            this.Origem.HeaderText = "Origem";
-            this.Origem.Name = "Origem";
-            this.Origem.ReadOnly = true;
-            // 
-            // projetoIdDataGridViewTextBoxColumn
-            // 
-            this.projetoIdDataGridViewTextBoxColumn.DataPropertyName = "ProjetoId";
-            this.projetoIdDataGridViewTextBoxColumn.HeaderText = "ProjetoId";
-            this.projetoIdDataGridViewTextBoxColumn.Name = "projetoIdDataGridViewTextBoxColumn";
-            this.projetoIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.projetoIdDataGridViewTextBoxColumn.Visible = false;
+            this.projetosIdDataGridViewTextBoxColumn.DataPropertyName = "ProjetosId";
+            this.projetosIdDataGridViewTextBoxColumn.HeaderText = "ProjetosId";
+            this.projetosIdDataGridViewTextBoxColumn.Name = "projetosIdDataGridViewTextBoxColumn";
             // 
             // observacaoDataGridViewTextBoxColumn
             // 
             this.observacaoDataGridViewTextBoxColumn.DataPropertyName = "Observacao";
             this.observacaoDataGridViewTextBoxColumn.HeaderText = "Observacao";
             this.observacaoDataGridViewTextBoxColumn.Name = "observacaoDataGridViewTextBoxColumn";
-            this.observacaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.observacaoDataGridViewTextBoxColumn.Visible = false;
             // 
             // quantidadePrevistaDataGridViewTextBoxColumn
             // 
             this.quantidadePrevistaDataGridViewTextBoxColumn.DataPropertyName = "QuantidadePrevista";
-            this.quantidadePrevistaDataGridViewTextBoxColumn.HeaderText = "Qtd Prevista";
+            this.quantidadePrevistaDataGridViewTextBoxColumn.HeaderText = "QuantidadePrevista";
             this.quantidadePrevistaDataGridViewTextBoxColumn.Name = "quantidadePrevistaDataGridViewTextBoxColumn";
-            this.quantidadePrevistaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // valorUnitarioPrevistoDataGridViewTextBoxColumn
             // 
             this.valorUnitarioPrevistoDataGridViewTextBoxColumn.DataPropertyName = "ValorUnitarioPrevisto";
-            this.valorUnitarioPrevistoDataGridViewTextBoxColumn.HeaderText = "Vlr Unit. Previsto";
+            this.valorUnitarioPrevistoDataGridViewTextBoxColumn.HeaderText = "ValorUnitarioPrevisto";
             this.valorUnitarioPrevistoDataGridViewTextBoxColumn.Name = "valorUnitarioPrevistoDataGridViewTextBoxColumn";
-            this.valorUnitarioPrevistoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorUnitarioPrevistoDataGridViewTextBoxColumn.Width = 120;
             // 
             // quantidadeRealDataGridViewTextBoxColumn
             // 
             this.quantidadeRealDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeReal";
-            this.quantidadeRealDataGridViewTextBoxColumn.HeaderText = "Qtd Real";
+            this.quantidadeRealDataGridViewTextBoxColumn.HeaderText = "QuantidadeReal";
             this.quantidadeRealDataGridViewTextBoxColumn.Name = "quantidadeRealDataGridViewTextBoxColumn";
-            this.quantidadeRealDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantidadeRealDataGridViewTextBoxColumn.Width = 80;
             // 
             // valorUnitarioRealDataGridViewTextBoxColumn
             // 
             this.valorUnitarioRealDataGridViewTextBoxColumn.DataPropertyName = "ValorUnitarioReal";
-            this.valorUnitarioRealDataGridViewTextBoxColumn.HeaderText = "Vlr Unit. Real";
+            this.valorUnitarioRealDataGridViewTextBoxColumn.HeaderText = "ValorUnitarioReal";
             this.valorUnitarioRealDataGridViewTextBoxColumn.Name = "valorUnitarioRealDataGridViewTextBoxColumn";
-            this.valorUnitarioRealDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // idDataGridViewTextBoxColumn1
+            // label3
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Id";
             // 
-            // tabDetalhesCustos
+            // label7
             // 
-            this.tabDetalhesCustos.Controls.Add(this.panel1);
-            this.tabDetalhesCustos.Location = new System.Drawing.Point(4, 22);
-            this.tabDetalhesCustos.Name = "tabDetalhesCustos";
-            this.tabDetalhesCustos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetalhesCustos.Size = new System.Drawing.Size(610, 388);
-            this.tabDetalhesCustos.TabIndex = 1;
-            this.tabDetalhesCustos.Text = "Detalhes individuais";
-            this.tabDetalhesCustos.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "label7";
             // 
-            // button7
+            // label8
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.Location = new System.Drawing.Point(177, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(55, 39);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Salvar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.Location = new System.Drawing.Point(236, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(55, 39);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Cancela";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.Location = new System.Drawing.Point(118, 6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(55, 39);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Novo";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.Location = new System.Drawing.Point(295, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(55, 39);
-            this.button10.TabIndex = 20;
-            this.button10.Text = "Excluir";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(6, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(598, 366);
-            this.panel1.TabIndex = 22;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "label8";
             // 
             // Form1
             // 
@@ -644,6 +632,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(750, 565);
+            this.Controls.Add(this.lblNomeProjeto);
             this.Controls.Add(this.TabProjetos);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button6);
@@ -658,22 +647,23 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escritório de Projetos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.TabProjetos.ResumeLayout(false);
             this.pcVisaoGeral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProjetos)).EndInit();
             this.pcInfoProjeto.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.pcCustos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsProjetos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsGastos)).EndInit();
-            this.panelCusto.ResumeLayout(false);
-            this.pcListaCustos.ResumeLayout(false);
-            this.tabListaCustos.ResumeLayout(false);
+            this.panelCustos.ResumeLayout(false);
+            this.panelInfoCustos.ResumeLayout(false);
+            this.panelInfoCustos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabDetalhesCustos.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -715,25 +705,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn responsavelIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsGastos;
-        private System.Windows.Forms.Panel panelCusto;
-        private System.Windows.Forms.TabControl pcListaCustos;
-        private System.Windows.Forms.TabPage tabListaCustos;
+        private System.Windows.Forms.Label lblNomeProjeto;
+        private System.Windows.Forms.Panel panelCustos;
+        private System.Windows.Forms.Panel panelInfoCustos;
+        private System.Windows.Forms.Button btnExcluiCusto;
+        private System.Windows.Forms.Button btnNovoCusto;
+        private System.Windows.Forms.Button btnCancelaCusto;
+        private System.Windows.Forms.Button btnSalvaCusto;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gastoIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Origem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn projetoIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projetosIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadePrevistaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorUnitarioPrevistoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeRealDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorUnitarioRealDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.TabPage tabDetalhesCustos;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
 
 
 

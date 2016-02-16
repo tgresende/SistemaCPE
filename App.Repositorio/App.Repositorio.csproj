@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GastosProjetosRepositorio.cs" />
+    <Compile Include="GastosRepositorio.cs" />
     <Compile Include="IPadraoRepositorio.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="ProjetosRepositorio.cs" />

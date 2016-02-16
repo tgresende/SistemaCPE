@@ -18,65 +18,88 @@ namespace App.wfa
         int id;  // controlador para inserção ou edição de registros
 
 
-        void ModoNavegacao()
+        void ModoNavegacao(bool estado, string tipo)
         {
-            TabProjetos.SelectTab(pcVisaoGeral);
-            //painéis
-            panelInfo.Enabled = false;
-
-
-
-            //botões
-            btnCancela.Enabled = false;
-            btnSalva.Enabled = false;
-            btnNovo.Enabled = true;
-
-            
-            //preenche o grid
-            bsProjetos.Clear();
-            foreach (var projeto in Servicos.projetosServico.SelecionarTodos())
+            // estado = true se estiver em navegação
+            // estado = false se estiver em edição
+            // tipo = "inserir" ou "editar" de acordo com a situação
+            if (estado)
             {
-                bsProjetos.Add(projeto);
+                TabProjetos.SelectTab(pcVisaoGeral);
+
+                //preenche o grid
+                bsProjetos.Clear();
+                foreach (var projeto in Servicos.projetosServico.SelecionarTodos())
+                {
+                    bsProjetos.Add(projeto);
+                }
+            }
+            else
+            {
+                if (tipo == "inserir")
+                    bsProjetos.Clear();
+                TabProjetos.SelectTab(pcInfoProjeto);
             }
 
-            Servicos.projetosServico.Salvar(new Projetos() { DataInicio = DateTime.Now, DataFim = null, NomeProjeto = "Projeto Teste", ResponsavelId = 1 });
-            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
-            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
-            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
-            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
-            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
+            //componentes liberados em modo navegação recebe "estado";
+            //componentes bloqueados em modo navegação recebe "!estado";
 
-            List<GastosProjetosProjetos> lista = Servicos.gastosprojetosServico.SelecionarGastosProjetos("0==0").ToList();
+            //painéis
+            panelInfo.Enabled = !estado;
+            panelCustos.Enabled = !estado;
+
+            //botões
+            btnCancela.Enabled = !estado;
+            btnSalva.Enabled = !estado;
+            btnNovo.Enabled = estado;
+
+
+
+            //List<GastosProjetosProjetos> lista = Servicos.gastosprojetosServico.SelecionarGastosProjetos("0==0").ToList();
         }
 
-        void ModoEdicao(string tipo)
+
+
+        void ModoNavegacaoCustos(bool estado, string tipo)
         {
-            if (tipo == "inserir")
-                bsProjetos.Clear();
-
-            
-
+            // estado = true se estiver em navegação
+            // estado = false se estiver em edição
+            // tipo = "inserir" ou "editar" de acordo com a situação
 
 
-            TabProjetos.SelectTab(pcInfoProjeto);
-            //painéis
-            panelInfo.Enabled = true;
-
+            if (estado)
+            {   
+                //preenche o grid
+                bsGastos.Clear();
+                foreach (var gasto in Servicos.gastosServico.SelecionarGastos(""))
+                {
+                    bsProjetos.Add(gasto);
+                }
+            }
+            else
+            {
+                if (tipo == "inserir")
+                    bsProjetos.Clear();
+                TabProjetos.SelectTab(pcInfoProjeto);
+            }
 
 
             //botões
-            btnCancela.Enabled = true;
-            btnSalva.Enabled = true;
-            btnNovo.Enabled = false;
+            btnNovoCusto.Enabled = estado;
+            btnSalvaCusto.Enabled = !estado;
+            btnExcluiCusto.Enabled = estado;
+            btnCancelaCusto.Enabled = !estado;
 
+            //paineis
+            panelInfoCustos.Enabled = estado;
         }
+
+       
 
         public Form1()
         {
             InitializeComponent();
-
-            
-            ModoNavegacao();
+            ModoNavegacao(true, "");
 
 
 
@@ -108,8 +131,8 @@ namespace App.wfa
             //   MessageBox.Show(l.Location.X.ToString());
 
 
-            
-         
+
+
 
             // Move your controls
             Mover.Init(this.button1);
@@ -138,21 +161,21 @@ namespace App.wfa
 
         }
 
-       
+
         private void button8_Click(object sender, EventArgs e)
         {
             string retorno;
-            if (id==0)
+            if (id == 0)
             {
                 //salvar e validar dados      
                 retorno = Servicos.projetosServico.Salvar(new Projetos()
                 {
                     Id = 0,
-                    NomeProjeto = txtNomeProjeto.Text, 
-                    ResponsavelId= Int16.Parse(txtResponsavelId.Text),
+                    NomeProjeto = txtNomeProjeto.Text,
+                    ResponsavelId = Int16.Parse(txtResponsavelId.Text),
                     DataInicio = dateInicioProjeto.Value,
                     DataFim = dateInicioProjeto.Value
-           
+
                 });
             }
             else
@@ -161,7 +184,7 @@ namespace App.wfa
             if (!string.IsNullOrWhiteSpace(retorno))
                 MessageBox.Show(retorno);
             else
-                ModoNavegacao();
+                ModoNavegacao(true, "");
 
 
 
@@ -169,7 +192,7 @@ namespace App.wfa
 
         private void button9_Click(object sender, EventArgs e)
         {
-            ModoNavegacao();
+            ModoNavegacao(true, "");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -179,7 +202,7 @@ namespace App.wfa
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            ModoEdicao("inserir");
+            ModoNavegacao(false, "inserir");
             txtNomeProjeto.Focus();
 
             //recebe zero para confirmar que é um registro novo
@@ -188,9 +211,19 @@ namespace App.wfa
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ModoEdicao("editar");
+            ModoNavegacao(false, "editar");
             //recebe um para confirmar que é uma edição de registro
             id = 1;
+        }
+
+        private void txtNomeProjeto_TextChanged(object sender, EventArgs e)
+        {
+            lblNomeProjeto.Text = txtNomeProjeto.Text;
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            ModoNavegacaoCustos(true, "");   
         }
 
     }

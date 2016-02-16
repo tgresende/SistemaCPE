@@ -19,6 +19,7 @@ namespace App.Dominio
         {
            this.GastosProjetos = new HashSet<GastosProjetos>();
         }
+        
     }
 
    

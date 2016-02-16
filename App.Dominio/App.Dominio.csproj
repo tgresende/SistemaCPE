@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicClass.cs" />
+    <Compile Include="Gastos.cs" />
     <Compile Include="GastosProjetos.cs" />
     <Compile Include="Projetos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

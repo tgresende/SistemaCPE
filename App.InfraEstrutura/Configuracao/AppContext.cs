@@ -21,8 +21,8 @@ namespace App.InfraEstrutura.Configuracao
 
             if (Database.Connection is MySqlConnection)
             {
-                Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
-                //Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
+                //Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
+                Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
             }
             else
                 Database.SetInitializer<AppContext>(null);
@@ -53,6 +53,7 @@ namespace App.InfraEstrutura.Configuracao
         }
         public DbSet<Projetos> Projetos { get; set; }
         public DbSet<GastosProjetos> GastosProjetos { get; set; }
+        public DbSet<Gastos> Gastos { get; set; }
        
         
 

@@ -24,7 +24,7 @@ namespace App.InfraEstrutura.Mapeamento
             Property(c => c.QuantidadeReal);
             Property(c => c.ValorUnitarioReal);
 
-            HasRequired(p => p.Projetos).WithMany(b => b.GastosProjetos).HasForeignKey(p => p.ProjetosId);
+            //HasRequired(p => p.Projetos).WithMany(b => b.GastosProjetos).HasForeignKey(p => p.ProjetosId);
         }
     }
 }
