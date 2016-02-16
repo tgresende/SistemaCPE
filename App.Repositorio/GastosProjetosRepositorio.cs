@@ -4,6 +4,7 @@ using App.InfraEstrutura.Configuracao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Text;
 
 namespace App.Repositorio
@@ -12,13 +13,28 @@ namespace App.Repositorio
     {
         private IRepositorio<GastosProjetos> _Repositorio;
 
+        private AppContext _db = new AppContext();
+
         public GastosProjetosRepositorio(AppContext context = null)
         {
             _Repositorio = new Repositorio<GastosProjetos>(context == null ? new AppContext() : context);
         }
-        public ICollection<GastosProjetosProjetos>(string filtro)
+
+        public IQueryable<GastosProjetosProjetos> SelecionarGastosProjetos(string filtro)
         {
-            from q in _Repositorio.
+            return (from p in _db.Projetos
+             join g in _db.GastosProjetos on p.Id equals g.ProjetosId
+             select new GastosProjetosProjetos {
+                 NomeProjeto =  p.NomeProjeto,
+                 GastoId = g.GastoId,
+                 Observacao = g.Observacao,
+                 ProjetosId = p.Id,
+                 QuantidadePrevista = g.QuantidadePrevista,
+                 QuantidadeReal = g.QuantidadeReal,
+                 ResponsavelId = p.ResponsavelId,
+                 ValorUnitarioPrevisto = g.ValorUnitarioPrevisto,
+                 ValorUnitarioReal = g.ValorUnitarioReal
+                 }).Where(filtro);
         }
 
 

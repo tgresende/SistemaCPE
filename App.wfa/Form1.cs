@@ -1,5 +1,6 @@
 ﻿using App.Comunicacao;
 using App.Dominio;
+using App.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,12 +31,22 @@ namespace App.wfa
             btnSalva.Enabled = false;
             btnNovo.Enabled = true;
 
+            
             //preenche o grid
             bsProjetos.Clear();
             foreach (var projeto in Servicos.projetosServico.SelecionarTodos())
             {
                 bsProjetos.Add(projeto);
             }
+
+            Servicos.projetosServico.Salvar(new Projetos() { DataInicio = DateTime.Now, DataFim = null, NomeProjeto = "Projeto Teste", ResponsavelId = 1 });
+            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
+            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
+            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
+            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
+            Servicos.gastosprojetosServico.Salvar(new GastosProjetos() { Observacao = "ObsTeste", ProjetosId = 1, QuantidadePrevista = 10, QuantidadeReal = 11, ValorUnitarioPrevisto = 20, ValorUnitarioReal = 30 });
+
+            List<GastosProjetosProjetos> lista = Servicos.gastosprojetosServico.SelecionarGastosProjetos("0==0").ToList();
         }
 
         void ModoEdicao(string tipo)

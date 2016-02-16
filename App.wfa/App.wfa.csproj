@@ -120,6 +120,10 @@
       <Project>{4329496c-b736-4463-bfdf-450b4deb5e81}</Project>
       <Name>App.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.DTO\App.DTO.csproj">
+      <Project>{6fe0d366-f965-4d68-acd7-8eb8b31a0766}</Project>
+      <Name>App.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.Servico\App.Servico.csproj">
       <Project>{1aa5103b-ccd0-49d1-a9ef-0741283ae958}</Project>
       <Name>App.Servico</Name>

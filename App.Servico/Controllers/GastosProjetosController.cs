@@ -1,4 +1,5 @@
 ﻿using App.Dominio;
+using App.DTO;
 using App.InfraEstrutura.Configuracao;
 using App.Repositorio;
 using System;
@@ -25,6 +26,13 @@ namespace App.Service.Controllers
         {
             return new GastosProjetosRepositorio().SelecionarTodos().ToList();
         }
+
+        [HttpGet]
+        public IEnumerable<GastosProjetosProjetos> SelecionarGastosProjetos(string filtro)
+        {
+            return new GastosProjetosRepositorio().SelecionarGastosProjetos(filtro).ToList();
+        }
+
 
         [HttpGet]
         public GastosProjetos Selecionar(int id)
