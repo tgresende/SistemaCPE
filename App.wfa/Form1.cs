@@ -15,7 +15,7 @@ namespace App.wfa
 {
     public partial class Form1 : Form
     {
-        int id;  // controlador para inserção ou edição de registros
+        int id, idCusto;  // controlador para inserção ou edição de registros
 
 
         void ModoNavegacao(bool estado, string tipo)
@@ -43,6 +43,7 @@ namespace App.wfa
 
             //componentes liberados em modo navegação recebe "estado";
             //componentes bloqueados em modo navegação recebe "!estado";
+            //modo navegação = modo que nao se pode alterar dados
 
             //painéis
             panelInfo.Enabled = !estado;
@@ -54,8 +55,8 @@ namespace App.wfa
             btnNovo.Enabled = estado;
 
 
-
-            //List<GastosProjetosProjetos> lista = Servicos.gastosprojetosServico.SelecionarGastosProjetos("0==0").ToList();
+            // outro metodo de fazer select
+            //List<GastosProjetosGastos> lista = Servicos.gastosServico.SelecionarGastos("0==0").ToList();
         }
 
 
@@ -65,22 +66,19 @@ namespace App.wfa
             // estado = true se estiver em navegação
             // estado = false se estiver em edição
             // tipo = "inserir" ou "editar" de acordo com a situação
-
-
             if (estado)
             {   
                 //preenche o grid
                 bsGastos.Clear();
-                foreach (var gasto in Servicos.gastosServico.SelecionarGastos(""))
+                foreach (var gasto in Servicos.gastosServico.SelecionarGastos("0==0"))
                 {
-                    bsProjetos.Add(gasto);
+                    bsGastos.Add(gasto);
                 }
             }
             else
             {
                 if (tipo == "inserir")
-                    bsProjetos.Clear();
-                TabProjetos.SelectTab(pcInfoProjeto);
+                    bsProjetos.Clear();                
             }
 
 
@@ -91,7 +89,7 @@ namespace App.wfa
             btnCancelaCusto.Enabled = !estado;
 
             //paineis
-            panelInfoCustos.Enabled = estado;
+            panelInfoCustos.Enabled = !estado;
         }
 
        
@@ -100,10 +98,6 @@ namespace App.wfa
         {
             InitializeComponent();
             ModoNavegacao(true, "");
-
-
-
-
 
             //criar varios itens
             /* int i,j=800;
@@ -185,9 +179,6 @@ namespace App.wfa
                 MessageBox.Show(retorno);
             else
                 ModoNavegacao(true, "");
-
-
-
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -223,7 +214,55 @@ namespace App.wfa
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-            ModoNavegacaoCustos(true, "");   
+            ModoNavegacaoCustos(false, "inserir");
+            txtDescricaoCusto.Focus();
+
+            //recebe zero para confirmar que é um registro novo
+            idCusto = 0;
+        }
+
+        private void btnSalvaCusto_Click(object sender, EventArgs e)
+        {
+            string retorno;
+            if (idCusto == 0)
+            {
+                //salvar e validar dados      
+                retorno = Servicos.gastosprojetosServico.Salvar(new GastosProjetos()
+                {
+                    Id = 0,
+                    GastoId = Int16.Parse(txtidGastoOrigem.Text),
+                    Observacao= txtObservacaoCusto.Text,
+                    ProjetosId = Int16.Parse(txtIdprojetoCusto.Text),
+                    QuantidadePrevista = Int16.Parse(txtQtdPrevCusto.Text),
+                    QuantidadeReal = Int16.Parse(txtQtdRealCusto.Text),
+                    ValorUnitarioPrevisto = Int16.Parse(txtVlrPrevCusto.Text),
+                    ValorUnitarioReal = Int16.Parse(txtVlrRealCusto.Text),       
+                });
+            }
+            else
+                retorno = Servicos.gastosprojetosServico.Salvar((GastosProjetos)bsGastos.Current);
+
+            if (!string.IsNullOrWhiteSpace(retorno))
+                MessageBox.Show(retorno);
+            else
+                ModoNavegacaoCustos(true, "");
+        }
+
+        private void pcCustos_Enter(object sender, EventArgs e)
+        {
+            //preenche o grid
+            bsGastos.Clear();
+            foreach (var gasto in Servicos.gastosServico.SelecionarGastos("0==0"))
+            {
+                bsGastos.Add(gasto);
+            }
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            ModoNavegacaoCustos(false, "editar");
+            //recebe um para confirmar que é uma edição de registro
+            idCusto = 1;        
         }
 
     }

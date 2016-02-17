@@ -16,5 +16,6 @@ namespace App.DTO
         public double? QuantidadeReal { get; set; }
         public double? ValorUnitarioReal { get; set; }
         public string Descricao { get; set; }
+        public int Id { get; set; }
     }
 }
