@@ -85,7 +85,14 @@ namespace App.Repositorio
 
         public string ValidarDados(GastosProjetos entity)
         {
-            return "";
+            string texto ="";
+            if (entity.QuantidadePrevista == 0)
+                texto = "Informe a Quantidade Prevista!";
+            else if (entity.ValorUnitarioPrevisto == 0)
+                texto = "Informe o Valor Unitário Previsto!";
+            else if (entity.GastoId == 0)
+                texto = "Informe o Gasto Fonte!";
+            return texto;
         }
 
         public string ValidarExclusao(GastosProjetos entity)

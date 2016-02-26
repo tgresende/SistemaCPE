@@ -13,5 +13,7 @@ namespace App.Comunicacao
         public static ProjetosController projetosServico = new ProjetosController();
         public static GastosProjetosController gastosprojetosServico = new GastosProjetosController();
         public static GastosController gastosServico = new GastosController();
+        public static RiscosProjetosController riscosprojetosServico = new RiscosProjetosController();
+        public static RiscosController riscosServico = new RiscosController();
     }
 }

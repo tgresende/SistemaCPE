@@ -32,6 +32,7 @@ namespace App.Repositorio
                     QuantidadeReal = p.QuantidadeReal,
                     ValorUnitarioPrevisto = p.ValorUnitarioPrevisto,
                     ValorUnitarioReal = p.ValorUnitarioReal,
+                    Id = p.Id,
                     Descricao = g.Descricao
                     }).Where(filtro);
         }

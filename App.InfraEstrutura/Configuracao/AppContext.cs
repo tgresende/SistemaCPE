@@ -54,6 +54,8 @@ namespace App.InfraEstrutura.Configuracao
         public DbSet<Projetos> Projetos { get; set; }
         public DbSet<GastosProjetos> GastosProjetos { get; set; }
         public DbSet<Gastos> Gastos { get; set; }
+        public DbSet<RiscosProjetos> RiscosProjetos { get; set; }
+        public DbSet<Riscos> Riscos { get; set; }
        
         
 

@@ -69,7 +69,7 @@ namespace App.Repositorio
                 return "Nome do projeto não informado!";
             else if (DateTime.MinValue == entity.DataInicio)
                 return "Data de início não informada!";
-            if (string.IsNullOrWhiteSpace(entity.ResponsavelId.ToString()))
+            if (entity.ResponsavelId==0)
                 return "Responsável não informado!";
             else if (!int.TryParse(entity.ResponsavelId.ToString(), out i))
                 return "O responsável deve ser um número!";
