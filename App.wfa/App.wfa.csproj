@@ -87,6 +87,24 @@
     <Compile Include="CadastroRisco.Designer.cs">
       <DependentUpon>CadastroRisco.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadContas.Designer.cs">
+      <DependentUpon>CadContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadPessoas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadPessoas.Designer.cs">
+      <DependentUpon>CadPessoas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMovimentoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMovimentoCaixa.Designer.cs">
+      <DependentUpon>fMovimentoCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +126,15 @@
     <EmbeddedResource Include="CadastroRisco.resx">
       <DependentUpon>CadastroRisco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadContas.resx">
+      <DependentUpon>CadContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadPessoas.resx">
+      <DependentUpon>CadPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMovimentoCaixa.resx">
+      <DependentUpon>fMovimentoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,12 +152,18 @@
       <DependentUpon>VisualizaRelCustos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\App.Dominio.BasicClass.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Contas.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Gastos.datasource" />
     <None Include="Properties\DataSources\App.Dominio.GastosProjetos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.MovimentoCaixa.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Pessoas.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Projetos.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Riscos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.RiscosProjetos.datasource" />
     <None Include="Properties\DataSources\App.DTO.GastosProjetosGastos.datasource" />
     <None Include="Properties\DataSources\App.DTO.GastosProjetosProjetos.datasource" />
+    <None Include="Properties\DataSources\App.DTO.MovimentoCaixaContasPessoas.datasource" />
     <None Include="Properties\DataSources\App.DTO.RiscosProjetosRiscos.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Settings.datasource" />

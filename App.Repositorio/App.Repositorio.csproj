@@ -46,10 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContasRepositorio.cs" />
     <Compile Include="GastosProjetosRepositorio.cs" />
     <Compile Include="GastosRepositorio.cs" />
     <Compile Include="IPadraoRepositorio.cs" />
     <Compile Include="IRepositorio.cs" />
+    <Compile Include="MovimentoCaixaRepositorio.cs" />
+    <Compile Include="PessoasRepositorio.cs" />
     <Compile Include="ProjetosRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />
@@ -77,6 +80,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\App.Dominio.Pessoas.datasource" />
+    <None Include="Properties\DataSources\App.DTO.MovimentoCaixaContasPessoas.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

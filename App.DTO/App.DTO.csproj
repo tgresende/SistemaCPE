@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="GastosProjetosGastos.cs" />
     <Compile Include="GastosProjetosProjetos.cs" />
+    <Compile Include="MovimentoCaixaContasPessoas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RiscosProjetosProjetos.cs" />
     <Compile Include="RiscosProjetosRiscos.cs" />
