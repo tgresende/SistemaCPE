@@ -35,10 +35,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsGastosProjetos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dsGastosProjetos
-            // 
-            this.dsGastosProjetos.DataSource = typeof(App.DTO.GastosProjetosGastos);
-            // 
             // rvCustos
             // 
             reportDataSource1.Name = "DataSet1";

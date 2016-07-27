@@ -58,14 +58,9 @@
   <ItemGroup>
     <Compile Include="BasicClass.cs" />
     <Compile Include="Contas.cs" />
-    <Compile Include="Gastos.cs" />
-    <Compile Include="GastosProjetos.cs" />
     <Compile Include="MovimentoCaixa.cs" />
     <Compile Include="Pessoas.cs" />
-    <Compile Include="Projetos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Riscos.cs" />
-    <Compile Include="RiscosProjetos.cs" />
     <Compile Include="SaldoCaixa.cs" />
   </ItemGroup>
   <ItemGroup>

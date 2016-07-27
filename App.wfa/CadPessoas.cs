@@ -14,7 +14,7 @@ namespace App.wfa
 {
     public partial class CadPessoas : Form
     {
-        public string id;
+        public string id, Nome;
         public bool PesquisaViaConta;
 
         private void PreencheGrid(string filtro)
@@ -53,6 +53,7 @@ namespace App.wfa
                 Nome     = txtNome.Text,
                 Telefone = txtTelefone.Text,
                 Rua      = txtRua.Text,
+                Complemento = txtComplemento.Text,
                 Numero   = txtNumero.Text,
                 Bairro   = txtBairro.Text,
                 Cep      = txtCep.Text,
@@ -90,6 +91,7 @@ namespace App.wfa
 
             LimpaGrid();
             PreencheGrid("");
+            txtCPFCNPJ.Mask = "";
 
             btnNovo.Focus();
         }
@@ -102,15 +104,23 @@ namespace App.wfa
         {
             string retorno;
 
-            retorno = Servicos.PessoasServico.Excluir(new Pessoas()
+            if (bsPessoas.Count == 0)
+                return;
+            
+            
+            DialogResult Question = MessageBox.Show("Deseja realmente excluir este registro?", "Teste", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Question == DialogResult.Yes)
             {
-                Id = Int32.Parse(gridPessoas.CurrentRow.Cells[0].Value.ToString()),
-            });
+                retorno = Servicos.PessoasServico.Excluir(new Pessoas()
+                {
+                    Id = Int32.Parse(((Pessoas)bsPessoas.Current).Id.ToString()),
+                });
 
-            if (!string.IsNullOrWhiteSpace(retorno))
-                MessageBox.Show(retorno);
-            else
-                btnCancelar_Click(null, null);
+                if (!string.IsNullOrWhiteSpace(retorno))
+                    MessageBox.Show(retorno);
+                else
+                    btnCancelar_Click(null, null);
+            }
         }
 
         private void btnPesquisaCusto_Click(object sender, EventArgs e)
@@ -141,9 +151,59 @@ namespace App.wfa
         {
             if (PesquisaViaConta)
             {
-                id = gridPessoas.CurrentRow.Cells[0].Value.ToString();
+                id = ((Pessoas)bsPessoas.Current).Id.ToString();
+                Nome = ((Pessoas)bsPessoas.Current).Nome;
                 this.Close();
             }
+            else // editando
+            {
+               txtId.Text = ((Pessoas)bsPessoas.Current).Id.ToString(); 
+               txtCPFCNPJ.Text = ((Pessoas)bsPessoas.Current).CPFCNPJ;
+               txtNome.Text =  ((Pessoas)bsPessoas.Current).Nome; 
+               txtTelefone.Text = ((Pessoas)bsPessoas.Current).Telefone; 
+               txtRua.Text = ((Pessoas)bsPessoas.Current).Rua;
+               txtNumero.Text = ((Pessoas)bsPessoas.Current).Numero; 
+               txtBairro.Text = ((Pessoas)bsPessoas.Current).Bairro; 
+               txtCep.Text = ((Pessoas)bsPessoas.Current).Cep;      
+               txtCidade.Text = ((Pessoas)bsPessoas.Current).Cidade;  
+               txtEstado.Text = ((Pessoas)bsPessoas.Current).Estado;
+               txtComplemento.Text = ((Pessoas)bsPessoas.Current).Complemento;
+
+
+               btnCancelar.Enabled = true;
+               btnExcluir.Enabled = false;
+               btnNovo.Enabled = false;
+               btnSalvar.Enabled = true;
+              
+               if  (txtCPFCNPJ.TextLength > 11)
+                   txtCPFCNPJ.Mask = "00.000.000/0000-00";
+               else
+                    txtCPFCNPJ.Mask = "000.000.000-00";
+               
+
+
+               gbInfo.Enabled = true;
+               pcPessoas.SelectedTab = tabInfo;
+               txtNome.Focus();
+            }
+        }
+
+        private void txtCPFCNPJ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtCpfCnp_Leave(object sender, EventArgs e)
+        {
+            if ((txtCPFCNPJ.Text).Length <= 11)
+                txtCPFCNPJ.Mask = "000.000.000-00";
+            else
+                txtCPFCNPJ.Mask = "00.000.000/0000-00";
+        }
+
+        private void txtCPFCNPJ_Enter(object sender, EventArgs e)
+        {
+            txtCPFCNPJ.Mask = "";
         }
 
         

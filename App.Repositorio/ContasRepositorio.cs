@@ -55,6 +55,12 @@ namespace App.Repositorio
             return _Repositorio.GetById(id);
         }
 
+        public IQueryable<Contas> SelecionarConta(string filtro)
+        {
+            return (from p in _db.Contas
+                    select p).Where(filtro);
+        }
+
         public IQueryable<Contas> SelecionarTodos()
         {
             return _Repositorio.GetAll();
@@ -67,7 +73,6 @@ namespace App.Repositorio
 
         public string ValidarDados(Contas entity)
         {
-            int i;
             //verificacao de dados
             if (string.IsNullOrWhiteSpace(entity.Descricao))
                 return "Favor informar a descrição da conta.";
@@ -81,6 +86,8 @@ namespace App.Repositorio
                 return "Favor informar se a conta é à pagar ou receber.";
             else if (entity.PessoaId == 0)
                 return "Favor informar a pessoa referenciada a essa conta.";
+            if (string.IsNullOrWhiteSpace(entity.Quitado))
+                return "Favor informar se a conta foi quitada.";
             else
                 return "";
         }

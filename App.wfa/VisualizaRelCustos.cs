@@ -24,7 +24,8 @@ namespace App.wfa
 
         private void VisualizaRelCustos_Load(object sender, EventArgs e)
         {
-            foreach (var gasto in Servicos.gastosServico.SelecionarGastos("0==0"))
+         /*   foreach (var gasto in Servicos.gastosServico.SelecionarGastos("0==0"))
+            
             {
                 dsGastosProjetos.Add(gasto);
             }
@@ -36,6 +37,7 @@ namespace App.wfa
             this.rvCustos.LocalReport.SetParameters(p);
 
             this.rvCustos.RefreshReport();
+          * */
         }
     }
 }

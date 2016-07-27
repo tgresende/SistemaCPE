@@ -33,23 +33,7 @@
             this.pcPessoas = new System.Windows.Forms.TabControl();
             this.tabInfo = new System.Windows.Forms.TabPage();
             this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtCep = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtRua = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.txtCPFCNPJ = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -60,6 +44,11 @@
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.btnPesquisaCusto = new System.Windows.Forms.Button();
             this.gridPessoas = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFCNPJDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,17 +61,30 @@
             this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPessoas = new System.Windows.Forms.BindingSource(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.txtCPFCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.pcPessoas.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.gbInfo.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPessoas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPessoas)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcPessoas
@@ -110,166 +112,27 @@
             // 
             // gbInfo
             // 
-            this.gbInfo.Controls.Add(this.txtEstado);
-            this.gbInfo.Controls.Add(this.txtCidade);
-            this.gbInfo.Controls.Add(this.label65);
-            this.gbInfo.Controls.Add(this.label64);
-            this.gbInfo.Controls.Add(this.txtBairro);
-            this.gbInfo.Controls.Add(this.txtCep);
-            this.gbInfo.Controls.Add(this.label63);
-            this.gbInfo.Controls.Add(this.label62);
-            this.gbInfo.Controls.Add(this.txtComplemento);
-            this.gbInfo.Controls.Add(this.txtNumero);
-            this.gbInfo.Controls.Add(this.txtRua);
             this.gbInfo.Controls.Add(this.txtTelefone);
+            this.gbInfo.Controls.Add(this.groupBox1);
             this.gbInfo.Controls.Add(this.txtCPFCNPJ);
             this.gbInfo.Controls.Add(this.txtNome);
-            this.gbInfo.Controls.Add(this.label61);
-            this.gbInfo.Controls.Add(this.label60);
-            this.gbInfo.Controls.Add(this.label59);
             this.gbInfo.Controls.Add(this.label58);
             this.gbInfo.Controls.Add(this.label57);
             this.gbInfo.Controls.Add(this.label56);
             this.gbInfo.Controls.Add(this.label55);
             this.gbInfo.Controls.Add(this.txtId);
-            this.gbInfo.Location = new System.Drawing.Point(6, 7);
+            this.gbInfo.Location = new System.Drawing.Point(6, -5);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(622, 287);
+            this.gbInfo.Size = new System.Drawing.Size(622, 303);
             this.gbInfo.TabIndex = 5;
             this.gbInfo.TabStop = false;
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(351, 212);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 23);
-            this.txtEstado.TabIndex = 9;
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(351, 183);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(100, 23);
-            this.txtCidade.TabIndex = 8;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(292, 212);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(52, 17);
-            this.label65.TabIndex = 41;
-            this.label65.Text = "Estado";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(292, 186);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(52, 17);
-            this.label64.TabIndex = 40;
-            this.label64.Text = "Cidade";
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Location = new System.Drawing.Point(351, 149);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(100, 23);
-            this.txtBairro.TabIndex = 7;
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(351, 120);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(100, 23);
-            this.txtCep.TabIndex = 6;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(292, 155);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(46, 17);
-            this.label63.TabIndex = 37;
-            this.label63.Text = "Bairro";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(291, 123);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(33, 17);
-            this.label62.TabIndex = 36;
-            this.label62.Text = "Cep";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(391, 88);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(100, 23);
-            this.txtComplemento.TabIndex = 5;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(351, 59);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 23);
-            this.txtNumero.TabIndex = 4;
-            // 
-            // txtRua
-            // 
-            this.txtRua.Location = new System.Drawing.Point(351, 24);
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(173, 23);
-            this.txtRua.TabIndex = 3;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(69, 126);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
-            this.txtTelefone.TabIndex = 2;
-            // 
-            // txtCPFCNPJ
-            // 
-            this.txtCPFCNPJ.Location = new System.Drawing.Point(88, 89);
-            this.txtCPFCNPJ.Name = "txtCPFCNPJ";
-            this.txtCPFCNPJ.Size = new System.Drawing.Size(100, 23);
-            this.txtCPFCNPJ.TabIndex = 1;
-            // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(69, 51);
+            this.txtNome.Location = new System.Drawing.Point(88, 51);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 23);
+            this.txtNome.Size = new System.Drawing.Size(130, 23);
             this.txtNome.TabIndex = 0;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(291, 89);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(94, 17);
-            this.label61.TabIndex = 29;
-            this.label61.Text = "Complemento";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(291, 59);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(58, 17);
-            this.label60.TabIndex = 28;
-            this.label60.Text = "Número";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(291, 27);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(34, 17);
-            this.label59.TabIndex = 27;
-            this.label59.Text = "Rua";
             // 
             // label58
             // 
@@ -283,7 +146,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(9, 21);
+            this.label57.Location = new System.Drawing.Point(9, 19);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(19, 17);
             this.label57.TabIndex = 25;
@@ -310,9 +173,9 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(69, 15);
+            this.txtId.Location = new System.Drawing.Point(88, 15);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 23);
+            this.txtId.Size = new System.Drawing.Size(43, 23);
             this.txtId.TabIndex = 22;
             // 
             // tabPesquisa
@@ -384,76 +247,6 @@
             this.gridPessoas.TabIndex = 0;
             this.gridPessoas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPessoas_CellDoubleClick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // cPFCNPJDataGridViewTextBoxColumn
-            // 
-            this.cPFCNPJDataGridViewTextBoxColumn.DataPropertyName = "CPFCNPJ";
-            this.cPFCNPJDataGridViewTextBoxColumn.HeaderText = "CPF/CNPJ";
-            this.cPFCNPJDataGridViewTextBoxColumn.Name = "cPFCNPJDataGridViewTextBoxColumn";
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            // 
-            // ruaDataGridViewTextBoxColumn
-            // 
-            this.ruaDataGridViewTextBoxColumn.DataPropertyName = "Rua";
-            this.ruaDataGridViewTextBoxColumn.HeaderText = "Rua";
-            this.ruaDataGridViewTextBoxColumn.Name = "ruaDataGridViewTextBoxColumn";
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Número";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            // 
-            // complementoDataGridViewTextBoxColumn
-            // 
-            this.complementoDataGridViewTextBoxColumn.DataPropertyName = "Complemento";
-            this.complementoDataGridViewTextBoxColumn.HeaderText = "Complemento";
-            this.complementoDataGridViewTextBoxColumn.Name = "complementoDataGridViewTextBoxColumn";
-            // 
-            // cepDataGridViewTextBoxColumn
-            // 
-            this.cepDataGridViewTextBoxColumn.DataPropertyName = "Cep";
-            this.cepDataGridViewTextBoxColumn.HeaderText = "Cep";
-            this.cepDataGridViewTextBoxColumn.Name = "cepDataGridViewTextBoxColumn";
-            // 
-            // bairroDataGridViewTextBoxColumn
-            // 
-            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "Bairro";
-            this.bairroDataGridViewTextBoxColumn.HeaderText = "Bairro";
-            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
-            // 
-            // cidadeDataGridViewTextBoxColumn
-            // 
-            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
-            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
-            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            // 
-            // bsPessoas
-            // 
-            this.bsPessoas.DataSource = typeof(App.Dominio.Pessoas);
-            // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -507,6 +300,241 @@
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cPFCNPJDataGridViewTextBoxColumn
+            // 
+            this.cPFCNPJDataGridViewTextBoxColumn.DataPropertyName = "CPFCNPJ";
+            this.cPFCNPJDataGridViewTextBoxColumn.HeaderText = "CPF/CNPJ";
+            this.cPFCNPJDataGridViewTextBoxColumn.Name = "cPFCNPJDataGridViewTextBoxColumn";
+            this.cPFCNPJDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ruaDataGridViewTextBoxColumn
+            // 
+            this.ruaDataGridViewTextBoxColumn.DataPropertyName = "Rua";
+            this.ruaDataGridViewTextBoxColumn.HeaderText = "Rua";
+            this.ruaDataGridViewTextBoxColumn.Name = "ruaDataGridViewTextBoxColumn";
+            this.ruaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Número";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // complementoDataGridViewTextBoxColumn
+            // 
+            this.complementoDataGridViewTextBoxColumn.DataPropertyName = "Complemento";
+            this.complementoDataGridViewTextBoxColumn.HeaderText = "Complemento";
+            this.complementoDataGridViewTextBoxColumn.Name = "complementoDataGridViewTextBoxColumn";
+            this.complementoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cepDataGridViewTextBoxColumn
+            // 
+            this.cepDataGridViewTextBoxColumn.DataPropertyName = "Cep";
+            this.cepDataGridViewTextBoxColumn.HeaderText = "Cep";
+            this.cepDataGridViewTextBoxColumn.Name = "cepDataGridViewTextBoxColumn";
+            this.cepDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bairroDataGridViewTextBoxColumn
+            // 
+            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "Bairro";
+            this.bairroDataGridViewTextBoxColumn.HeaderText = "Bairro";
+            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
+            this.bairroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cidadeDataGridViewTextBoxColumn
+            // 
+            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsPessoas
+            // 
+            this.bsPessoas.DataSource = typeof(App.Dominio.Pessoas);
+            // 
+            // txtCPFCNPJ
+            // 
+            this.txtCPFCNPJ.Location = new System.Drawing.Point(88, 88);
+            this.txtCPFCNPJ.Name = "txtCPFCNPJ";
+            this.txtCPFCNPJ.Size = new System.Drawing.Size(130, 23);
+            this.txtCPFCNPJ.TabIndex = 1;
+            this.txtCPFCNPJ.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCPFCNPJ.Enter += new System.EventHandler(this.txtCPFCNPJ_Enter);
+            this.txtCPFCNPJ.Leave += new System.EventHandler(this.txtCpfCnp_Leave);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtEstado);
+            this.groupBox1.Controls.Add(this.txtCidade);
+            this.groupBox1.Controls.Add(this.label65);
+            this.groupBox1.Controls.Add(this.label64);
+            this.groupBox1.Controls.Add(this.txtBairro);
+            this.groupBox1.Controls.Add(this.txtCep);
+            this.groupBox1.Controls.Add(this.label63);
+            this.groupBox1.Controls.Add(this.label62);
+            this.groupBox1.Controls.Add(this.txtComplemento);
+            this.groupBox1.Controls.Add(this.txtNumero);
+            this.groupBox1.Controls.Add(this.txtRua);
+            this.groupBox1.Controls.Add(this.label61);
+            this.groupBox1.Controls.Add(this.label60);
+            this.groupBox1.Controls.Add(this.label59);
+            this.groupBox1.Location = new System.Drawing.Point(319, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(297, 252);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Endereço";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(104, 209);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(100, 23);
+            this.txtEstado.TabIndex = 6;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(104, 180);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(100, 23);
+            this.txtCidade.TabIndex = 5;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(5, 212);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(52, 17);
+            this.label65.TabIndex = 55;
+            this.label65.Text = "Estado";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(5, 183);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(52, 17);
+            this.label64.TabIndex = 54;
+            this.label64.Text = "Cidade";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(104, 149);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(100, 23);
+            this.txtBairro.TabIndex = 4;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(104, 117);
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(100, 23);
+            this.txtCep.TabIndex = 3;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(5, 152);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(46, 17);
+            this.label63.TabIndex = 53;
+            this.label63.Text = "Bairro";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(4, 120);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(33, 17);
+            this.label62.TabIndex = 52;
+            this.label62.Text = "Cep";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(104, 83);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(100, 23);
+            this.txtComplemento.TabIndex = 2;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(104, 53);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(100, 23);
+            this.txtNumero.TabIndex = 1;
+            // 
+            // txtRua
+            // 
+            this.txtRua.Location = new System.Drawing.Point(104, 21);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(173, 23);
+            this.txtRua.TabIndex = 0;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(4, 86);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(94, 17);
+            this.label61.TabIndex = 51;
+            this.label61.Text = "Complemento";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(4, 56);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(58, 17);
+            this.label60.TabIndex = 50;
+            this.label60.Text = "Número";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(4, 24);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(34, 17);
+            this.label59.TabIndex = 49;
+            this.label59.Text = "Rua";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(88, 126);
+            this.txtTelefone.Mask = "(999) 00000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(130, 23);
+            this.txtTelefone.TabIndex = 2;
+            this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // CadPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -532,38 +560,21 @@
             this.tabPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPessoas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPessoas)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl pcPessoas;
-        private System.Windows.Forms.TabPage tabInfo;
-        private System.Windows.Forms.TabPage tabPesquisa;
         private System.Windows.Forms.DataGridView gridPessoas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Button btnPesquisaCusto;
         private System.Windows.Forms.BindingSource bsPessoas;
         private System.Windows.Forms.GroupBox gbInfo;
-        private System.Windows.Forms.TextBox txtEstado;
-        private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.TextBox txtCep;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox txtComplemento;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.TextBox txtRua;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtCPFCNPJ;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
@@ -585,6 +596,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnExcluir;
+        public System.Windows.Forms.TabControl pcPessoas;
+        public System.Windows.Forms.TabPage tabInfo;
+        public System.Windows.Forms.TabPage tabPesquisa;
+        private System.Windows.Forms.MaskedTextBox txtCPFCNPJ;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
 
     }
 }

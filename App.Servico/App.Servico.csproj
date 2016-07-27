@@ -135,14 +135,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ContasController.cs" />
-    <Compile Include="Controllers\GastosController.cs" />
-    <Compile Include="Controllers\GastosProjetosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovimentoCaixaController.cs" />
     <Compile Include="Controllers\PessoasController.cs" />
-    <Compile Include="Controllers\ProjetosController.cs" />
-    <Compile Include="Controllers\RiscosController.cs" />
-    <Compile Include="Controllers\RiscosProjetosController.cs" />
     <Compile Include="Controllers\SaldoCaixaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

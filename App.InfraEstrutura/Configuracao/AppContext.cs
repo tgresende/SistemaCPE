@@ -21,7 +21,7 @@ namespace App.InfraEstrutura.Configuracao
 
             if (Database.Connection is MySqlConnection)
             {
-              //  Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
+               // Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
                 Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
             }
             else
@@ -51,11 +51,6 @@ namespace App.InfraEstrutura.Configuracao
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
         }
-        public DbSet<Projetos> Projetos { get; set; }
-        public DbSet<GastosProjetos> GastosProjetos { get; set; }
-        public DbSet<Gastos> Gastos { get; set; }
-        public DbSet<RiscosProjetos> RiscosProjetos { get; set; }
-        public DbSet<Riscos> Riscos { get; set; }
         public DbSet<Pessoas> Pessoas { get; set; }
         public DbSet<Contas> Contas { get; set; }
         public DbSet<MovimentoCaixa> MovimentoCaixa { get; set; }

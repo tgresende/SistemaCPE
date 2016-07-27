@@ -16,6 +16,7 @@ namespace App.Dominio
         public string PagarReceber { get; set; } // P OU R
         public int PessoaId { get; set; }
         public string Descricao { get; set; }
+        public string Quitado { get; set; } // S OU N
     }
 
 

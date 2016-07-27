@@ -75,18 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastroCusto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CadastroCusto.Designer.cs">
-      <DependentUpon>CadastroCusto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CadastroRisco.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CadastroRisco.Designer.cs">
-      <DependentUpon>CadastroRisco.cs</DependentUpon>
-    </Compile>
     <Compile Include="CadContas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,12 +108,6 @@
     <Compile Include="VisualizaRelCustos.Designer.cs">
       <DependentUpon>VisualizaRelCustos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CadastroCusto.resx">
-      <DependentUpon>CadastroCusto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CadastroRisco.resx">
-      <DependentUpon>CadastroRisco.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CadContas.resx">
       <DependentUpon>CadContas.cs</DependentUpon>
     </EmbeddedResource>

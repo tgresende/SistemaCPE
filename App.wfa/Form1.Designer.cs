@@ -32,20 +32,22 @@
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnCadContas = new System.Windows.Forms.Button();
             this.btnCadPessoas = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnMovimentoCaixa
             // 
             this.btnMovimentoCaixa.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMovimentoCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMovimentoCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMovimentoCaixa.FlatAppearance.BorderSize = 0;
             this.btnMovimentoCaixa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMovimentoCaixa.Location = new System.Drawing.Point(17, 51);
+            this.btnMovimentoCaixa.Location = new System.Drawing.Point(13, 51);
             this.btnMovimentoCaixa.Margin = new System.Windows.Forms.Padding(4);
             this.btnMovimentoCaixa.Name = "btnMovimentoCaixa";
-            this.btnMovimentoCaixa.Size = new System.Drawing.Size(115, 70);
+            this.btnMovimentoCaixa.Size = new System.Drawing.Size(112, 70);
             this.btnMovimentoCaixa.TabIndex = 25;
             this.btnMovimentoCaixa.Text = "Movimento de Caixa";
+            this.btnMovimentoCaixa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMovimentoCaixa.UseVisualStyleBackColor = false;
             this.btnMovimentoCaixa.Click += new System.EventHandler(this.btnMovimentoCaixa_Click);
             // 
@@ -53,10 +55,10 @@
             // 
             this.btnRelatorio.BackColor = System.Drawing.SystemColors.Control;
             this.btnRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRelatorio.Location = new System.Drawing.Point(364, 51);
+            this.btnRelatorio.Location = new System.Drawing.Point(366, 51);
             this.btnRelatorio.Margin = new System.Windows.Forms.Padding(4);
             this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(115, 70);
+            this.btnRelatorio.Size = new System.Drawing.Size(114, 70);
             this.btnRelatorio.TabIndex = 26;
             this.btnRelatorio.Text = "Relatório";
             this.btnRelatorio.UseVisualStyleBackColor = false;
@@ -88,13 +90,22 @@
             this.btnCadPessoas.UseVisualStyleBackColor = false;
             this.btnCadPessoas.Click += new System.EventHandler(this.btnCadPessoas_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Chocolate;
+            this.panel1.Location = new System.Drawing.Point(-72, -56);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1611, 100);
+            this.panel1.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1193, 707);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCadPessoas);
             this.Controls.Add(this.btnCadContas);
             this.Controls.Add(this.btnRelatorio);
@@ -118,6 +129,7 @@
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Button btnCadContas;
         private System.Windows.Forms.Button btnCadPessoas;
+        private System.Windows.Forms.Panel panel1;
 
 
 

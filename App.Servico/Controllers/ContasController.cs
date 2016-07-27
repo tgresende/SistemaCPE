@@ -32,6 +32,13 @@ namespace App.Service.Controllers
             return new ContasRepositorio().Selecionar(id);
         }
 
+        [HttpGet]
+        public IEnumerable<Contas> SelecionarConta(string filtro)
+        {
+            return new ContasRepositorio().SelecionarConta(filtro).ToList();
+        }
+
+
         [HttpPost]
         public string Excluir(Contas entity)
         {

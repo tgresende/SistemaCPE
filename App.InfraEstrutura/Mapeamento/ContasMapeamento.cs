@@ -23,6 +23,11 @@ namespace App.InfraEstrutura.Mapeamento
             Property(c => c.DataVencimento).IsRequired();
             Property(c => c.PessoaId).IsRequired();
             Property(c => c.Descricao).HasMaxLength(100).IsRequired();
+            Property(c => c.Quitado).HasMaxLength(1).IsRequired();
+
+
+            //chave estrangeira
+            //HasRequired(p => p.Projetos).WithMany(b => b.GastosProjetos).HasForeignKey(p => p.ProjetosId);
 
         }
     }
