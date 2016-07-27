@@ -99,14 +99,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mover.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisualizaRelCustos.cs">
+    <Compile Include="VisualizaRelContas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VisualizaRelCustos.Designer.cs">
-      <DependentUpon>VisualizaRelCustos.cs</DependentUpon>
+    <Compile Include="VisualizaRelContas.Designer.cs">
+      <DependentUpon>VisualizaRelContas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CadContas.resx">
       <DependentUpon>CadContas.cs</DependentUpon>
@@ -129,24 +128,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RelCustos.rdlc" />
-    <EmbeddedResource Include="VisualizaRelCustos.resx">
-      <DependentUpon>VisualizaRelCustos.cs</DependentUpon>
+    <EmbeddedResource Include="RelContas1.rdlc" />
+    <EmbeddedResource Include="VisualizaRelContas.resx">
+      <DependentUpon>VisualizaRelContas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\App.Dominio.BasicClass.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.Contas.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.Gastos.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.GastosProjetos.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.MovimentoCaixa.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.Pessoas.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.Projetos.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.Riscos.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.RiscosProjetos.datasource" />
-    <None Include="Properties\DataSources\App.DTO.GastosProjetosGastos.datasource" />
-    <None Include="Properties\DataSources\App.DTO.GastosProjetosProjetos.datasource" />
-    <None Include="Properties\DataSources\App.DTO.MovimentoCaixaContasPessoas.datasource" />
-    <None Include="Properties\DataSources\App.DTO.RiscosProjetosRiscos.datasource" />
+    <None Include="Properties\DataSources\App.DTO.ContasPessoas.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">

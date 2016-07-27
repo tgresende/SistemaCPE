@@ -1,4 +1,5 @@
 ﻿using App.Dominio;
+using App.DTO;
 using App.InfraEstrutura.Configuracao;
 using App.Repositorio;
 using System;
@@ -31,6 +32,13 @@ namespace App.Service.Controllers
         {
             return new ContasRepositorio().Selecionar(id);
         }
+
+        [HttpGet]
+        public IEnumerable<ContasPessoas> SelecionarContasRel(string filtro)
+        {
+            return new ContasRepositorio().SelecionarContasRel(filtro).ToList();
+        }
+
 
         [HttpGet]
         public IEnumerable<Contas> SelecionarConta(string filtro)

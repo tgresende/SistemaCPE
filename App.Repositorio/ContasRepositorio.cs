@@ -61,6 +61,23 @@ namespace App.Repositorio
                     select p).Where(filtro);
         }
 
+
+        public IQueryable<ContasPessoas> SelecionarContasRel(string filtro)
+        {
+            return (from p in _db.Contas
+                    join g in _db.Pessoas on p.PessoaId equals g.Id
+                    select new ContasPessoas
+                    {
+                        Id = p.Id,
+                        Valor = p.Valor,
+                        DataVencimento = p.DataVencimento,
+                        ContaId = p.Id,
+                        Nome = g.Nome,
+                        PagarReceber = p.PagarReceber,
+                        DescricaoConta = p.Descricao
+                    }).Where(filtro);
+        }
+
         public IQueryable<Contas> SelecionarTodos()
         {
             return _Repositorio.GetAll();

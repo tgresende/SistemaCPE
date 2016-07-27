@@ -72,7 +72,9 @@ namespace App.wfa
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-
+            VisualizaRelContas fVisualizaRelCustos = new VisualizaRelContas();
+            fVisualizaRelCustos.titulo = "Contas a Pagar e Receber";
+            fVisualizaRelCustos.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)

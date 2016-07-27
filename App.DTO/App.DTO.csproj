@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContasPessoas.cs" />
     <Compile Include="MovimentoCaixaContasPessoas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

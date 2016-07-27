@@ -13,10 +13,10 @@ using Microsoft.Reporting.WinForms;
 
 namespace App.wfa
 {
-    public partial class VisualizaRelCustos : Form
+    public partial class VisualizaRelContas : Form
     {
         public string titulo;
-        public VisualizaRelCustos()
+        public VisualizaRelContas()
         {
             InitializeComponent();
            
@@ -24,20 +24,20 @@ namespace App.wfa
 
         private void VisualizaRelCustos_Load(object sender, EventArgs e)
         {
-         /*   foreach (var gasto in Servicos.gastosServico.SelecionarGastos("0==0"))
-            
+            foreach (var conta in Servicos.ContasServico.SelecionarContasRel("0==0"))            
             {
-                dsGastosProjetos.Add(gasto);
+                bsContas.Add(conta);
             }
 
 
 
 
             ReportParameter p = new ReportParameter("pNomeProjeto", titulo);
-            this.rvCustos.LocalReport.SetParameters(p);
+            this.rvContas.LocalReport.SetParameters(p);
 
-            this.rvCustos.RefreshReport();
-          * */
+            this.rvContas.RefreshReport();
+
+            this.rvContas.RefreshReport();
         }
     }
 }

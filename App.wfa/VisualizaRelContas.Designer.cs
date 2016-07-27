@@ -1,6 +1,6 @@
 ﻿namespace App.wfa
 {
-    partial class VisualizaRelCustos
+    partial class VisualizaRelContas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,43 +30,46 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dsGastosProjetos = new System.Windows.Forms.BindingSource(this.components);
-            this.rvCustos = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGastosProjetos)).BeginInit();
+            this.rvContas = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.bsContas = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsContas)).BeginInit();
             this.SuspendLayout();
             // 
-            // rvCustos
+            // rvContas
             // 
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.dsGastosProjetos;
-            this.rvCustos.LocalReport.DataSources.Add(reportDataSource1);
-            this.rvCustos.LocalReport.ReportEmbeddedResource = "App.wfa.RelCustos.rdlc";
-            this.rvCustos.Location = new System.Drawing.Point(16, 15);
-            this.rvCustos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rvCustos.Name = "rvCustos";
-            this.rvCustos.Size = new System.Drawing.Size(636, 567);
-            this.rvCustos.TabIndex = 0;
+            reportDataSource1.Value = this.bsContas;
+            this.rvContas.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvContas.LocalReport.ReportEmbeddedResource = "App.wfa.RelContas1.rdlc";
+            this.rvContas.Location = new System.Drawing.Point(0, 0);
+            this.rvContas.Name = "rvContas";
+            this.rvContas.Size = new System.Drawing.Size(644, 573);
+            this.rvContas.TabIndex = 0;
             // 
-            // VisualizaRelCustos
+            // bsContas
+            // 
+            this.bsContas.DataSource = typeof(App.DTO.ContasPessoas);
+            // 
+            // VisualizaRelContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 585);
-            this.Controls.Add(this.rvCustos);
+            this.Controls.Add(this.rvContas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "VisualizaRelCustos";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "VisualizaRelContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Relatório de Custos";
             this.Load += new System.EventHandler(this.VisualizaRelCustos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsGastosProjetos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsContas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvCustos;
-        private System.Windows.Forms.BindingSource dsGastosProjetos;
+        private Microsoft.Reporting.WinForms.ReportViewer rvContas;
+        private System.Windows.Forms.BindingSource bsContas;
     }
 }
