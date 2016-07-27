@@ -60,12 +60,6 @@
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.btnPesquisaCusto = new System.Windows.Forms.Button();
             this.gridPessoas = new System.Windows.Forms.DataGridView();
-            this.bsPessoas = new System.Windows.Forms.BindingSource(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFCNPJDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +71,12 @@
             this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPessoas = new System.Windows.Forms.BindingSource(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.pcPessoas.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.gbInfo.SuspendLayout();
@@ -379,65 +379,10 @@
             this.gridPessoas.DataSource = this.bsPessoas;
             this.gridPessoas.Location = new System.Drawing.Point(3, 59);
             this.gridPessoas.Name = "gridPessoas";
+            this.gridPessoas.ReadOnly = true;
             this.gridPessoas.Size = new System.Drawing.Size(620, 235);
             this.gridPessoas.TabIndex = 0;
-            // 
-            // bsPessoas
-            // 
-            this.bsPessoas.DataSource = typeof(App.Dominio.Pessoas);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.Location = new System.Drawing.Point(280, 13);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(76, 48);
-            this.btnExcluir.TabIndex = 22;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(196, 13);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(76, 48);
-            this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(112, 13);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(76, 48);
-            this.btnSalvar.TabIndex = 20;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.Location = new System.Drawing.Point(28, 13);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(76, 48);
-            this.btnNovo.TabIndex = 19;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.gridPessoas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPessoas_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -505,10 +450,68 @@
             this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
             // 
+            // bsPessoas
+            // 
+            this.bsPessoas.DataSource = typeof(App.Dominio.Pessoas);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.Location = new System.Drawing.Point(280, 13);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(76, 48);
+            this.btnExcluir.TabIndex = 22;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.Location = new System.Drawing.Point(196, 13);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(76, 48);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.Location = new System.Drawing.Point(112, 13);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(76, 48);
+            this.btnSalvar.TabIndex = 20;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.Location = new System.Drawing.Point(28, 13);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(76, 48);
+            this.btnNovo.TabIndex = 19;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
             // CadPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(676, 419);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCancelar);

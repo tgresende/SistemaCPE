@@ -37,6 +37,7 @@
             // btnMovimentoCaixa
             // 
             this.btnMovimentoCaixa.BackColor = System.Drawing.SystemColors.Control;
+            this.btnMovimentoCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMovimentoCaixa.FlatAppearance.BorderSize = 0;
             this.btnMovimentoCaixa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMovimentoCaixa.Location = new System.Drawing.Point(17, 51);
@@ -92,6 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(1193, 707);
             this.Controls.Add(this.btnCadPessoas);
             this.Controls.Add(this.btnCadContas);
@@ -105,6 +107,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fábrica S.A";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

@@ -67,7 +67,22 @@ namespace App.Repositorio
 
         public string ValidarDados(Contas entity)
         {
-            return "";
+            int i;
+            //verificacao de dados
+            if (string.IsNullOrWhiteSpace(entity.Descricao))
+                return "Favor informar a descrição da conta.";
+            else if (entity.Valor == 0)
+                return "Favor informar o valor da conta.";
+            else if (entity.DataEmissao == DateTime.MinValue)
+                return "Favor informar a data de emissão.";
+            else if (entity.DataVencimento == DateTime.MinValue)
+                return "Favor informar a data de vencimento.";
+            else if (string.IsNullOrWhiteSpace(entity.PagarReceber))
+                return "Favor informar se a conta é à pagar ou receber.";
+            else if (entity.PessoaId == 0)
+                return "Favor informar a pessoa referenciada a essa conta.";
+            else
+                return "";
         }
 
         public string ValidarExclusao(Contas entity)

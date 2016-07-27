@@ -33,20 +33,7 @@ namespace App.Repositorio
         public IQueryable<Pessoas> SelecionarPessoa(string filtro)
         {
             return (from p in _db.Pessoas
-                    select new Pessoas
-                    {
-                        Id = p.Id,
-                        Bairro = p.Bairro,
-                        Cep = p.Cep,
-                        Cidade = p.Cidade,
-                        Complemento = p.Complemento,
-                        CPFCNPJ = p.CPFCNPJ,
-                        Estado = p.Estado,
-                        Nome = p.Nome,
-                        Numero = p.Numero,
-                        Rua = p.Rua,
-                        Telefone = p.Telefone                       
-                    }).Where(filtro);
+                    select p).Where(filtro);
         }
 
         public string Alterar(Pessoas entity)

@@ -75,5 +75,10 @@ namespace App.wfa
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

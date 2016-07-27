@@ -17,7 +17,7 @@ namespace App.wfa
 
         private void PreencheGrid(string filtro)
         {
-            foreach (var MovCaixa in Servicos.MovimentoCaixaServico.SelecionarMovimento("filtro"))
+            foreach (var MovCaixa in Servicos.MovimentoCaixaServico.SelecionarMovimento(filtro))
             {
                     bsMovimentoCaixa.Add(MovCaixa);
             }
@@ -26,7 +26,7 @@ namespace App.wfa
         public fMovimentoCaixa()
         {
             InitializeComponent();
-            PreencheGrid(""); // sem argumento, seleciona todos
+            PreencheGrid("1==1"); // sem argumento, seleciona todos
 
             gbInfo.Enabled = false;
             gridMovimentoCaixa.Enabled = true;

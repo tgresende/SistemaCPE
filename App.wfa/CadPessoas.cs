@@ -14,6 +14,9 @@ namespace App.wfa
 {
     public partial class CadPessoas : Form
     {
+        public string id;
+        public bool PesquisaViaConta;
+
         private void PreencheGrid(string filtro)
         {
             if (filtro=="")
@@ -113,10 +116,9 @@ namespace App.wfa
         private void btnPesquisaCusto_Click(object sender, EventArgs e)
         {
             LimpaGrid();
-            foreach (var Pessoa in Servicos.PessoasServico.SelecionarPessoa("Nome like '" + txtPesquisaNome.Text + "'"))
-                bsPessoas.Add(Pessoa);
+            foreach (var Pessoa in Servicos.PessoasServico.SelecionarPessoa("Nome.Contains(\"" + txtPesquisaNome.Text + "\")"))
+                bsPessoas.Add(Pessoa);    
             
-
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -133,6 +135,15 @@ namespace App.wfa
 
 
             LimpaGrid();
+        }
+
+        private void gridPessoas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (PesquisaViaConta)
+            {
+                id = gridPessoas.CurrentRow.Cells[0].Value.ToString();
+                this.Close();
+            }
         }
 
         
