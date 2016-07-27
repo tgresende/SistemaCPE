@@ -21,7 +21,7 @@ namespace App.InfraEstrutura.Configuracao
 
             if (Database.Connection is MySqlConnection)
             {
-             //   Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
+              //  Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
                 Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
             }
             else
@@ -59,6 +59,7 @@ namespace App.InfraEstrutura.Configuracao
         public DbSet<Pessoas> Pessoas { get; set; }
         public DbSet<Contas> Contas { get; set; }
         public DbSet<MovimentoCaixa> MovimentoCaixa { get; set; }
+        public DbSet<SaldoCaixa> SaldoCaixa { get; set; }
 
         
 

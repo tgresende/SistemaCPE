@@ -15,6 +15,7 @@ namespace App.Dominio
         public DateTime DataPagamento { get; set; }
         public string PagarReceber { get; set; } // P OU R
         public int PessoaId { get; set; }
+        public string Descricao { get; set; }
     }
 
 

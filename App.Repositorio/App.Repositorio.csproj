@@ -58,6 +58,7 @@
     <Compile Include="Repositorio.cs" />
     <Compile Include="RiscosProjetosRepositorio.cs" />
     <Compile Include="RiscosRepositorio.cs" />
+    <Compile Include="SaldoCaixaRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.Dominio\App.Dominio.csproj">

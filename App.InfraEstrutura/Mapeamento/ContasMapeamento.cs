@@ -22,6 +22,8 @@ namespace App.InfraEstrutura.Mapeamento
             Property(c => c.DataEmissao).IsRequired();
             Property(c => c.DataVencimento).IsRequired();
             Property(c => c.PessoaId).IsRequired();
+            Property(c => c.Descricao).HasMaxLength(100).IsRequired();
+
         }
     }
 }

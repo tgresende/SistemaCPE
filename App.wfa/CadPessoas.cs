@@ -14,9 +14,27 @@ namespace App.wfa
 {
     public partial class CadPessoas : Form
     {
+        private void PreencheGrid(string filtro)
+        {
+            if (filtro=="")
+            {
+                foreach (var Pessoa in Servicos.PessoasServico.SelecionarTodos())
+                {
+                    bsPessoas.Add(Pessoa);
+                }
+            }            
+        }
+
+        private void LimpaGrid()
+        {
+            bsPessoas.Clear();
+        }
+
         public CadPessoas()
         {
             InitializeComponent();
+            PreencheGrid("");
+            btnCancelar_Click(null, null);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -42,22 +60,8 @@ namespace App.wfa
             if (!string.IsNullOrWhiteSpace(retorno))
                 MessageBox.Show(retorno);
             else
-            {
-                btnSalvar.Enabled = false;
-                btnNovo.Enabled = true;
-                btnCancelar.Enabled = false;
-
-                txtId.Clear();
-                txtCPFCNPJ.Clear();
-                txtNome.Clear();
-                txtTelefone.Clear();
-                txtRua.Clear();
-                txtNumero.Clear();
-                txtBairro.Clear();
-                txtCep.Clear();
-                txtCidade.Clear();
-                txtEstado.Clear();
-            }
+                btnCancelar_Click(null, null);              
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -65,6 +69,9 @@ namespace App.wfa
             btnSalvar.Enabled = false;
             btnNovo.Enabled = true;
             btnCancelar.Enabled = false;
+            gbInfo.Enabled = false;
+            pcPessoas.SelectedTab = tabInfo;
+
 
             txtId.Clear();
             txtCPFCNPJ.Clear();
@@ -76,26 +83,17 @@ namespace App.wfa
             txtCep.Clear();
             txtCidade.Clear();
             txtEstado.Clear();
+            txtComplemento.Clear();
+
+            LimpaGrid();
+            PreencheGrid("");
+
+            btnNovo.Focus();
         }
 
-        private void btnPesquisaCusto_Click(object sender, EventArgs e)
-        {         
-            foreach (var Pessoas in Servicos.PessoasServico.SelecionarTodos())
-            {
-                bsPessoas.Add(Pessoas);
-            }
-        }
+       
 
-        private void btnNovo_Click_1(object sender, EventArgs e)
-        {
-            btnCancelar.Enabled = true;
-            btnExcluir.Enabled = false;
-            btnNovo.Enabled = false;
-            btnSalvar.Enabled = true;
-
-            txtId.Text = "0";
-            txtNome.Focus();
-        }
+      
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -103,28 +101,40 @@ namespace App.wfa
 
             retorno = Servicos.PessoasServico.Excluir(new Pessoas()
             {
-                Id = Int16.Parse(txtId.Text),
+                Id = Int32.Parse(gridPessoas.CurrentRow.Cells[0].Value.ToString()),
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
                 MessageBox.Show(retorno);
             else
-            {
-                btnSalvar.Enabled = false;
-                btnNovo.Enabled = true;
-                btnCancelar.Enabled = false;
-
-                txtId.Clear();
-                txtCPFCNPJ.Clear();
-                txtNome.Clear();
-                txtTelefone.Clear();
-                txtRua.Clear();
-                txtNumero.Clear();
-                txtBairro.Clear();
-                txtCep.Clear();
-                txtCidade.Clear();
-                txtEstado.Clear();
-            }
+                btnCancelar_Click(null, null);
         }
+
+        private void btnPesquisaCusto_Click(object sender, EventArgs e)
+        {
+            LimpaGrid();
+            foreach (var Pessoa in Servicos.PessoasServico.SelecionarPessoa("Nome like '" + txtPesquisaNome.Text + "'"))
+                bsPessoas.Add(Pessoa);
+            
+
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            btnCancelar.Enabled = true;
+            btnExcluir.Enabled = false;
+            btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
+
+            txtId.Text = "0";
+            gbInfo.Enabled = true;
+            pcPessoas.SelectedTab = tabInfo;
+            txtNome.Focus();
+
+
+            LimpaGrid();
+        }
+
+        
     }
 }

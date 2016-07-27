@@ -14,15 +14,26 @@ namespace App.wfa
 {
     public partial class fMovimentoCaixa : Form
     {
+
+        private void PreencheGrid(string filtro)
+        {
+            foreach (var MovCaixa in Servicos.MovimentoCaixaServico.SelecionarMovimento("filtro"))
+            {
+                    bsMovimentoCaixa.Add(MovCaixa);
+            }
+        }
+
         public fMovimentoCaixa()
         {
             InitializeComponent();
-            string filtro = "1=1";
-            foreach (var MovCaixa in Servicos.MovimentoCaixaServico.SelecionarMovimento(filtro))
-            {
-                bsMovimentoCaixa.Add(MovCaixa);
-            }
+            PreencheGrid(""); // sem argumento, seleciona todos
+
+            gbInfo.Enabled = false;
+            gridMovimentoCaixa.Enabled = true;
+            btnNovo.Focus();
         }
+
+       
 
         private void btnNovoCusto_Click(object sender, EventArgs e)
         {
@@ -33,6 +44,11 @@ namespace App.wfa
             btnSalvar.Enabled = true;
             btnNovo.Enabled = false;
             btnCancelar.Enabled = true;
+            gridMovimentoCaixa.Enabled = false;
+
+
+            txtValorMovimento.Text = "0";
+            txtContaId.Text = "0";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -74,6 +90,9 @@ namespace App.wfa
 
             //0 - Novo                 id - edição
             //salvar e validar dados      
+
+           
+
             retorno = Servicos.MovimentoCaixaServico.Salvar(new MovimentoCaixa()
             {
                 Id = Int16.Parse(txtIdMovImentoCaixa.Text),
@@ -100,6 +119,36 @@ namespace App.wfa
 
 
 
+        }
+
+        private void btnPesquisaCusto_Click(object sender, EventArgs e)
+        {
+            CadContas fcadcontas = new CadContas();
+            fcadcontas.ShowDialog();
+        }
+
+        private void txtValorMovimento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorMovimento_Leave(object sender, EventArgs e)
+        {
+            double i;
+            if (!double.TryParse(txtValorMovimento.Text, out i))
+                txtValorMovimento.Text = "0";
+        }
+
+        private void txtContaId_Leave(object sender, EventArgs e)
+        {
+            int i;
+            if (!int.TryParse(txtContaId.Text, out i))
+                txtContaId.Text = "0";
         }
 
       

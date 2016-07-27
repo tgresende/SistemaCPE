@@ -66,6 +66,7 @@
     <Compile Include="Mapeamento\ProjetosMapeamento.cs" />
     <Compile Include="Mapeamento\RiscosMapeamento.cs" />
     <Compile Include="Mapeamento\RiscosProjetosMapeamento.cs" />
+    <Compile Include="Mapeamento\SaldoCaixaMapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

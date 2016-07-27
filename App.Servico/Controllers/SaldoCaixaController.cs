@@ -10,41 +10,35 @@ using System.Web.Http;
 
 namespace App.Service.Controllers
 {
-    public class PessoasController : ApiController
+    public class SaldoCaixaController : ApiController
     {
         private string _mensagem = "";
 
         [HttpGet]
-        public IEnumerable<Pessoas> Filtrar(string condicao)
+        public IEnumerable<SaldoCaixa> Filtrar(string condicao)
         {
-            return new PessoasRepositorio().Filtrar(condicao).ToList();
+            return new SaldoCaixaRepositorio().Filtrar(condicao).ToList();
         }
 
         [HttpGet]
-        public IEnumerable<Pessoas> SelecionarTodos()
+        public IEnumerable<SaldoCaixa> SelecionarTodos()
         {
-            return new PessoasRepositorio().SelecionarTodos().ToList();
+            return new SaldoCaixaRepositorio().SelecionarTodos().ToList();
         }
 
         [HttpGet]
-        public Pessoas Selecionar(int id)
+        public SaldoCaixa Selecionar(int id)
         {
-            return new PessoasRepositorio().Selecionar(id);
-        }
-
-        [HttpGet]
-        public IEnumerable<Pessoas> SelecionarPessoa(string filtro)
-        {
-            return new PessoasRepositorio().SelecionarPessoa(filtro).ToList();
+            return new SaldoCaixaRepositorio().Selecionar(id);
         }
 
         [HttpPost]
-        public string Excluir(Pessoas entity)
+        public string Excluir(SaldoCaixa entity)
         {
             AppContext contexto = new AppContext();
             using (DbContextTransaction transacao = AppTransaction.CreateDbContextTransaction(contexto))
             {
-                _mensagem = new PessoasRepositorio(contexto).Excluir(entity);
+                _mensagem = new SaldoCaixaRepositorio(contexto).Excluir(entity);
 
                 if (_mensagem == "")
                     transacao.Commit();
@@ -55,15 +49,15 @@ namespace App.Service.Controllers
         }
 
         [HttpPost]
-        public string Salvar(Pessoas entity)
+        public string Salvar(SaldoCaixa entity)
         {
             AppContext contexto = new AppContext();
             using (DbContextTransaction transacao = AppTransaction.CreateDbContextTransaction(contexto))
             {
                 if (entity.Id == 0)
-                    _mensagem = new PessoasRepositorio(contexto).Incluir(entity);
+                    _mensagem = new SaldoCaixaRepositorio(contexto).Incluir(entity);
                 else
-                    _mensagem = new PessoasRepositorio(contexto).Alterar(entity);
+                    _mensagem = new SaldoCaixaRepositorio(contexto).Alterar(entity);
 
                 if (_mensagem == "")
                     transacao.Commit();

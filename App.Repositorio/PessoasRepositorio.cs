@@ -30,6 +30,25 @@ namespace App.Repositorio
             return mensagem;
         }
 
+        public IQueryable<Pessoas> SelecionarPessoa(string filtro)
+        {
+            return (from p in _db.Pessoas
+                    select new Pessoas
+                    {
+                        Id = p.Id,
+                        Bairro = p.Bairro,
+                        Cep = p.Cep,
+                        Cidade = p.Cidade,
+                        Complemento = p.Complemento,
+                        CPFCNPJ = p.CPFCNPJ,
+                        Estado = p.Estado,
+                        Nome = p.Nome,
+                        Numero = p.Numero,
+                        Rua = p.Rua,
+                        Telefone = p.Telefone                       
+                    }).Where(filtro);
+        }
+
         public string Alterar(Pessoas entity)
         {
             string mensagem = this.ValidarDados(entity);
@@ -67,7 +86,16 @@ namespace App.Repositorio
 
         public string ValidarDados(Pessoas entity)
         {
-            return "";
+            if (string.IsNullOrWhiteSpace(entity.Nome))
+                return "Favor informar o nome da pessoa.";
+            else if (((entity.CPFCNPJ).Length != 11) & ((entity.CPFCNPJ).Length != 14))
+                return "Favor informar um CNPJ/CPF válido.";
+            if (entity.Nome == "")
+                return "Favor informar o nome da pessoa.";
+            else if (string.IsNullOrWhiteSpace(entity.Telefone))
+                return "Favor informar um telefone para contato.";
+            else
+                return "";
         }
 
         public string ValidarExclusao(Pessoas entity)

@@ -14,6 +14,8 @@ namespace App.wfa
 {
     public partial class CadContas : Form
     {
+        public string iIdConta;
+
         public CadContas()
         {
             InitializeComponent();
@@ -50,7 +52,8 @@ namespace App.wfa
                 Juros = Int16.Parse(txtJuros.Text),
                 PagarReceber = txtPagarReceber.Text,
                 PessoaId = Int16.Parse(txtPessoaId.Text),
-                Valor = Convert.ToDouble(txtValor.Text)
+                Valor = Convert.ToDouble(txtValor.Text),
+                Descricao = txtDescricao.Text
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
@@ -99,6 +102,17 @@ namespace App.wfa
                 txtPessoaId.Clear();
                 txtValor.Clear();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            iIdConta = gridContas.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadPessoas fcadpessoas = new CadPessoas();
+            fcadpessoas.ShowDialog();
         }
     }
 }

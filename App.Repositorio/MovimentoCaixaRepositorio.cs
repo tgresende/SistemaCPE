@@ -83,7 +83,14 @@ namespace App.Repositorio
 
         public string ValidarDados(MovimentoCaixa entity)
         {
-            return "";
+            if (DateTime.MinValue == entity.Data)
+                return "Favor informar a data do movimento";
+            else if (entity.Valor == 0)
+                return "Favor informar o Valor do Movimento";
+            else if (entity.ContaId.ToString() == "")
+                return "Favor informar a Conta de Referência";
+            else 
+                return "";
         }
 
         public string ValidarExclusao(MovimentoCaixa entity)

@@ -29,12 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMovimentoCaixa));
+            this.gridMovimentoCaixa = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PagarReceber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsMovimentoCaixa = new System.Windows.Forms.BindingSource(this.components);
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.gbInfo = new System.Windows.Forms.GroupBox();
+            this.btnPesquisaCusto = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,35 +52,68 @@
             this.txtValorMovimento = new System.Windows.Forms.TextBox();
             this.txtDataMovimento = new System.Windows.Forms.DateTimePicker();
             this.txtContaId = new System.Windows.Forms.TextBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsMovimentoCaixa = new System.Windows.Forms.BindingSource(this.components);
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PagarReceber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.gbInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMovimentoCaixa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMovimentoCaixa)).BeginInit();
+            this.gbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView2
+            // gridMovimentoCaixa
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridMovimentoCaixa.AutoGenerateColumns = false;
+            this.gridMovimentoCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridMovimentoCaixa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.Valor,
             this.Data,
             this.ContaId,
             this.Nome,
             this.PagarReceber});
-            this.dataGridView2.DataSource = this.bsMovimentoCaixa;
-            this.dataGridView2.Location = new System.Drawing.Point(16, 227);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(835, 240);
-            this.dataGridView2.TabIndex = 1;
+            this.gridMovimentoCaixa.DataSource = this.bsMovimentoCaixa;
+            this.gridMovimentoCaixa.Location = new System.Drawing.Point(16, 227);
+            this.gridMovimentoCaixa.Margin = new System.Windows.Forms.Padding(4);
+            this.gridMovimentoCaixa.Name = "gridMovimentoCaixa";
+            this.gridMovimentoCaixa.Size = new System.Drawing.Size(665, 240);
+            this.gridMovimentoCaixa.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            // 
+            // ContaId
+            // 
+            this.ContaId.DataPropertyName = "ContaId";
+            this.ContaId.HeaderText = "ContaId";
+            this.ContaId.Name = "ContaId";
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // PagarReceber
+            // 
+            this.PagarReceber.DataPropertyName = "PagarReceber";
+            this.PagarReceber.HeaderText = "PagarReceber";
+            this.PagarReceber.Name = "PagarReceber";
+            // 
+            // bsMovimentoCaixa
+            // 
+            this.bsMovimentoCaixa.DataSource = typeof(App.DTO.MovimentoCaixaContasPessoas);
             // 
             // btnNovo
             // 
@@ -81,7 +123,7 @@
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(76, 48);
-            this.btnNovo.TabIndex = 10;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovoCusto_Click);
@@ -94,7 +136,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(76, 48);
-            this.btnSalvar.TabIndex = 11;
+            this.btnSalvar.TabIndex = 1;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -107,7 +149,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 48);
-            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -120,13 +162,14 @@
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(76, 48);
-            this.btnExcluir.TabIndex = 13;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // gbInfo
             // 
+            this.gbInfo.Controls.Add(this.btnPesquisaCusto);
             this.gbInfo.Controls.Add(this.label4);
             this.gbInfo.Controls.Add(this.label3);
             this.gbInfo.Controls.Add(this.label2);
@@ -137,9 +180,23 @@
             this.gbInfo.Controls.Add(this.txtContaId);
             this.gbInfo.Location = new System.Drawing.Point(19, 79);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(571, 142);
+            this.gbInfo.Size = new System.Drawing.Size(662, 142);
             this.gbInfo.TabIndex = 14;
             this.gbInfo.TabStop = false;
+            // 
+            // btnPesquisaCusto
+            // 
+            this.btnPesquisaCusto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPesquisaCusto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisaCusto.BackgroundImage")));
+            this.btnPesquisaCusto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPesquisaCusto.FlatAppearance.BorderSize = 0;
+            this.btnPesquisaCusto.Location = new System.Drawing.Point(119, 113);
+            this.btnPesquisaCusto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisaCusto.Name = "btnPesquisaCusto";
+            this.btnPesquisaCusto.Size = new System.Drawing.Size(32, 29);
+            this.btnPesquisaCusto.TabIndex = 18;
+            this.btnPesquisaCusto.UseVisualStyleBackColor = false;
+            this.btnPesquisaCusto.Click += new System.EventHandler(this.btnPesquisaCusto_Click);
             // 
             // label4
             // 
@@ -187,11 +244,13 @@
             // 
             // txtIdMovImentoCaixa
             // 
+            this.txtIdMovImentoCaixa.Enabled = false;
             this.txtIdMovImentoCaixa.Location = new System.Drawing.Point(50, 16);
             this.txtIdMovImentoCaixa.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdMovImentoCaixa.Name = "txtIdMovImentoCaixa";
             this.txtIdMovImentoCaixa.Size = new System.Drawing.Size(35, 23);
             this.txtIdMovImentoCaixa.TabIndex = 13;
+            this.txtIdMovImentoCaixa.TabStop = false;
             // 
             // txtValorMovimento
             // 
@@ -199,16 +258,19 @@
             this.txtValorMovimento.Margin = new System.Windows.Forms.Padding(4);
             this.txtValorMovimento.Name = "txtValorMovimento";
             this.txtValorMovimento.Size = new System.Drawing.Size(61, 23);
-            this.txtValorMovimento.TabIndex = 12;
+            this.txtValorMovimento.TabIndex = 1;
+            this.txtValorMovimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorMovimento_KeyPress);
+            this.txtValorMovimento.Leave += new System.EventHandler(this.txtValorMovimento_Leave);
             // 
             // txtDataMovimento
             // 
             this.txtDataMovimento.CustomFormat = "\"dd/mm/yyyy\"";
-            this.txtDataMovimento.Location = new System.Drawing.Point(132, 50);
+            this.txtDataMovimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDataMovimento.Location = new System.Drawing.Point(141, 55);
             this.txtDataMovimento.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataMovimento.Name = "txtDataMovimento";
-            this.txtDataMovimento.Size = new System.Drawing.Size(279, 23);
-            this.txtDataMovimento.TabIndex = 11;
+            this.txtDataMovimento.Size = new System.Drawing.Size(90, 23);
+            this.txtDataMovimento.TabIndex = 0;
             // 
             // txtContaId
             // 
@@ -216,74 +278,35 @@
             this.txtContaId.Margin = new System.Windows.Forms.Padding(4);
             this.txtContaId.Name = "txtContaId";
             this.txtContaId.Size = new System.Drawing.Size(39, 23);
-            this.txtContaId.TabIndex = 10;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // bsMovimentoCaixa
-            // 
-            this.bsMovimentoCaixa.DataSource = typeof(App.DTO.MovimentoCaixaContasPessoas);
-            // 
-            // Valor
-            // 
-            this.Valor.DataPropertyName = "Valor";
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            // 
-            // ContaId
-            // 
-            this.ContaId.DataPropertyName = "ContaId";
-            this.ContaId.HeaderText = "ContaId";
-            this.ContaId.Name = "ContaId";
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // PagarReceber
-            // 
-            this.PagarReceber.DataPropertyName = "PagarReceber";
-            this.PagarReceber.HeaderText = "PagarReceber";
-            this.PagarReceber.Name = "PagarReceber";
+            this.txtContaId.TabIndex = 2;
+            this.txtContaId.Leave += new System.EventHandler(this.txtContaId_Leave);
             // 
             // fMovimentoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 544);
+            this.ClientSize = new System.Drawing.Size(688, 478);
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.gridMovimentoCaixa);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fMovimentoCaixa";
             this.Text = "Movimento de Caixa";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMovimentoCaixa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMovimentoCaixa)).EndInit();
             this.gbInfo.ResumeLayout(false);
             this.gbInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMovimentoCaixa)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gridMovimentoCaixa;
         private System.Windows.Forms.BindingSource bsMovimentoCaixa;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnSalvar;
@@ -304,6 +327,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ContaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn PagarReceber;
+        private System.Windows.Forms.Button btnPesquisaCusto;
 
     }
 }
