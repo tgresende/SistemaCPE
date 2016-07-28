@@ -136,8 +136,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ContasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InsumosController.cs" />
     <Compile Include="Controllers\MovimentoCaixaController.cs" />
     <Compile Include="Controllers\PessoasController.cs" />
+    <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\ProdutosInsumosController.cs" />
     <Compile Include="Controllers\SaldoCaixaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

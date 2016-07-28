@@ -58,7 +58,7 @@ namespace App.wfa
                 Bairro   = txtBairro.Text,
                 Cep      = txtCep.Text,
                 Cidade   = txtCidade.Text,
-                Estado   = txtEstado.Text                
+                Estado   = cmbEstado.Text                
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
@@ -73,6 +73,7 @@ namespace App.wfa
             btnSalvar.Enabled = false;
             btnNovo.Enabled = true;
             btnCancelar.Enabled = false;
+            btnExcluir.Enabled = true;
             gbInfo.Enabled = false;
             pcPessoas.SelectedTab = tabInfo;
 
@@ -86,7 +87,7 @@ namespace App.wfa
             txtBairro.Clear();
             txtCep.Clear();
             txtCidade.Clear();
-            txtEstado.Clear();
+            cmbEstado.SelectedIndex=0;
             txtComplemento.Clear();
 
             LimpaGrid();
@@ -166,7 +167,7 @@ namespace App.wfa
                txtBairro.Text = ((Pessoas)bsPessoas.Current).Bairro; 
                txtCep.Text = ((Pessoas)bsPessoas.Current).Cep;      
                txtCidade.Text = ((Pessoas)bsPessoas.Current).Cidade;  
-               txtEstado.Text = ((Pessoas)bsPessoas.Current).Estado;
+               cmbEstado.SelectedIndex = cmbEstado.FindString(((Pessoas)bsPessoas.Current).Estado,0);
                txtComplemento.Text = ((Pessoas)bsPessoas.Current).Complemento;
 
 
@@ -188,10 +189,7 @@ namespace App.wfa
             }
         }
 
-        private void txtCPFCNPJ_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
+      
 
         private void txtCpfCnp_Leave(object sender, EventArgs e)
         {
@@ -205,6 +203,17 @@ namespace App.wfa
         {
             txtCPFCNPJ.Mask = "";
         }
+
+        private void CadPessoas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar.CompareTo((char)Keys.Return)) == 0)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+       
 
         
     }

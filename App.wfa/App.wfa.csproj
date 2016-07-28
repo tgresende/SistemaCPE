@@ -81,11 +81,23 @@
     <Compile Include="CadContas.Designer.cs">
       <DependentUpon>CadContas.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadInsumo.Designer.cs">
+      <DependentUpon>CadInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadPessoas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CadPessoas.Designer.cs">
       <DependentUpon>CadPessoas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadProduto.Designer.cs">
+      <DependentUpon>CadProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="fMovimentoCaixa.cs">
       <SubType>Form</SubType>
@@ -110,8 +122,14 @@
     <EmbeddedResource Include="CadContas.resx">
       <DependentUpon>CadContas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadInsumo.resx">
+      <DependentUpon>CadInsumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadPessoas.resx">
       <DependentUpon>CadPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadProduto.resx">
+      <DependentUpon>CadProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMovimentoCaixa.resx">
       <DependentUpon>fMovimentoCaixa.cs</DependentUpon>
@@ -133,7 +151,31 @@
       <DependentUpon>VisualizaRelContas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\App.Dominio.BasicClass.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Contas.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Insumos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.MovimentoCaixa.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Pessoas.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Produtos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.ProdutosInsumos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.SaldoCaixa.datasource" />
     <None Include="Properties\DataSources\App.DTO.ContasPessoas.datasource" />
+    <None Include="Properties\DataSources\App.DTO.InsumosProdutos.datasource" />
+    <None Include="Properties\DataSources\App.DTO.MovimentoCaixaContasPessoas.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.ContasController.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.InsumosController.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.MovimentoCaixaController.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.PessoasController.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.ProdutosController.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.ProdutosInsumosController.datasource" />
+    <None Include="Properties\DataSources\App.Service.Controllers.SaldoCaixaController.datasource" />
+    <None Include="Properties\DataSources\App.Servico.BundleConfig.datasource" />
+    <None Include="Properties\DataSources\App.Servico.Controllers.HomeController.datasource" />
+    <None Include="Properties\DataSources\App.Servico.Controllers.ValuesController.datasource" />
+    <None Include="Properties\DataSources\App.Servico.FilterConfig.datasource" />
+    <None Include="Properties\DataSources\App.Servico.RouteConfig.datasource" />
+    <None Include="Properties\DataSources\App.Servico.WebApiApplication.datasource" />
+    <None Include="Properties\DataSources\App.Servico.WebApiConfig.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">

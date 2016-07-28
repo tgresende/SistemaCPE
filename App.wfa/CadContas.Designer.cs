@@ -58,13 +58,6 @@
             this.txtPesquisaDescricao = new System.Windows.Forms.TextBox();
             this.btnPesquisaCusto = new System.Windows.Forms.Button();
             this.gridContas = new System.Windows.Forms.DataGridView();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bsContas = new System.Windows.Forms.BindingSource(this.components);
-            this.bsPessoa = new System.Windows.Forms.BindingSource(this.components);
             this.pagarReceberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quitado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +68,13 @@
             this.dataPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pessoaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsContas = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bsPessoa = new System.Windows.Forms.BindingSource(this.components);
             this.pcContas.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.gbInfo.SuspendLayout();
@@ -92,7 +92,7 @@
             this.pcContas.Margin = new System.Windows.Forms.Padding(4);
             this.pcContas.Name = "pcContas";
             this.pcContas.SelectedIndex = 0;
-            this.pcContas.Size = new System.Drawing.Size(655, 330);
+            this.pcContas.Size = new System.Drawing.Size(642, 324);
             this.pcContas.TabIndex = 19;
             // 
             // tabInfo
@@ -103,7 +103,7 @@
             this.tabInfo.Margin = new System.Windows.Forms.Padding(4);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.Padding = new System.Windows.Forms.Padding(4);
-            this.tabInfo.Size = new System.Drawing.Size(647, 301);
+            this.tabInfo.Size = new System.Drawing.Size(634, 295);
             this.tabInfo.TabIndex = 0;
             this.tabInfo.Text = "Informações";
             // 
@@ -246,14 +246,16 @@
             this.txtJuros.Name = "txtJuros";
             this.txtJuros.Size = new System.Drawing.Size(95, 23);
             this.txtJuros.TabIndex = 2;
+            this.txtJuros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJuros_KeyPress);
             this.txtJuros.Leave += new System.EventHandler(this.txtJuros_Leave);
             // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(130, 80);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 23);
+            this.txtValor.Size = new System.Drawing.Size(94, 23);
             this.txtValor.TabIndex = 1;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // label61
@@ -329,7 +331,7 @@
             this.tabPesquisa.Margin = new System.Windows.Forms.Padding(4);
             this.tabPesquisa.Name = "tabPesquisa";
             this.tabPesquisa.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPesquisa.Size = new System.Drawing.Size(647, 301);
+            this.tabPesquisa.Size = new System.Drawing.Size(634, 295);
             this.tabPesquisa.TabIndex = 1;
             this.tabPesquisa.Text = "Pesquisa";
             // 
@@ -340,7 +342,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Descricao";
+            this.label1.Text = "Descrição";
             // 
             // txtPesquisaDescricao
             // 
@@ -380,82 +382,12 @@
             this.pessoaIdDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn});
             this.gridContas.DataSource = this.bsContas;
-            this.gridContas.Location = new System.Drawing.Point(7, 59);
+            this.gridContas.Location = new System.Drawing.Point(7, 46);
             this.gridContas.Name = "gridContas";
             this.gridContas.ReadOnly = true;
-            this.gridContas.Size = new System.Drawing.Size(620, 235);
+            this.gridContas.Size = new System.Drawing.Size(626, 247);
             this.gridContas.TabIndex = 0;
             this.gridContas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridContas_CellDoubleClick);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.Location = new System.Drawing.Point(267, 13);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(76, 48);
-            this.btnExcluir.TabIndex = 30;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(183, 13);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(76, 48);
-            this.btnCancelar.TabIndex = 29;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(99, 13);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(76, 48);
-            this.btnSalvar.TabIndex = 28;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.Location = new System.Drawing.Point(15, 13);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(76, 48);
-            this.btnNovo.TabIndex = 27;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Chocolate;
-            this.panel1.Location = new System.Drawing.Point(-1, -6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 81);
-            this.panel1.TabIndex = 31;
-            // 
-            // bsContas
-            // 
-            this.bsContas.DataSource = typeof(App.Dominio.Contas);
-            // 
-            // bsPessoa
-            // 
-            this.bsPessoa.DataSource = typeof(App.Dominio.Pessoas);
             // 
             // pagarReceberDataGridViewTextBoxColumn
             // 
@@ -497,7 +429,7 @@
             // dataEmissaoDataGridViewTextBoxColumn
             // 
             this.dataEmissaoDataGridViewTextBoxColumn.DataPropertyName = "DataEmissao";
-            this.dataEmissaoDataGridViewTextBoxColumn.HeaderText = "Data de Emissao";
+            this.dataEmissaoDataGridViewTextBoxColumn.HeaderText = "Data de Emissão";
             this.dataEmissaoDataGridViewTextBoxColumn.Name = "dataEmissaoDataGridViewTextBoxColumn";
             this.dataEmissaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -525,16 +457,86 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id da Conta";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsContas
+            // 
+            this.bsContas.DataSource = typeof(App.Dominio.Contas);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.Location = new System.Drawing.Point(261, 14);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(76, 48);
+            this.btnExcluir.TabIndex = 30;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.Location = new System.Drawing.Point(177, 14);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(76, 48);
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.Location = new System.Drawing.Point(93, 14);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(76, 48);
+            this.btnSalvar.TabIndex = 28;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.Location = new System.Drawing.Point(9, 14);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(76, 48);
+            this.btnNovo.TabIndex = 27;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Chocolate;
+            this.panel1.Location = new System.Drawing.Point(-1, -6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(671, 81);
+            this.panel1.TabIndex = 31;
+            // 
+            // bsPessoa
+            // 
+            this.bsPessoa.DataSource = typeof(App.Dominio.Pessoas);
             // 
             // CadContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(653, 423);
+            this.ClientSize = new System.Drawing.Size(641, 419);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
@@ -543,10 +545,12 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastro de Contas";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CadContas_KeyPress);
             this.pcContas.ResumeLayout(false);
             this.tabInfo.ResumeLayout(false);
             this.gbInfo.ResumeLayout(false);

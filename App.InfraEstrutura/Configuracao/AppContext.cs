@@ -55,6 +55,9 @@ namespace App.InfraEstrutura.Configuracao
         public DbSet<Contas> Contas { get; set; }
         public DbSet<MovimentoCaixa> MovimentoCaixa { get; set; }
         public DbSet<SaldoCaixa> SaldoCaixa { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
+        public DbSet<Insumos> Insumos { get; set; }
+        public DbSet<ProdutosInsumos> ProdutosInsumos { get; set; }
 
         
 

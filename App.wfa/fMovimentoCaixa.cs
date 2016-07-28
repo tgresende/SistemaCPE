@@ -172,7 +172,10 @@ namespace App.wfa
 
         private void txtValorMovimento_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+            if (e.KeyChar == '.')
+            {
+                e.Handled = true;
+            }    
         }
 
         private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
@@ -198,7 +201,9 @@ namespace App.wfa
             
 
             bsConta.Clear();
-            bsConta.Add(Servicos.ContasServico.Selecionar(Int16.Parse(txtContaId.Text)));
+            foreach (var Conta in Servicos.ContasServico.SelecionarConta("Id = " + txtContaId.Text + " and Quitado = \"N\" "))
+                bsConta.Add(Conta);
+
             if (((Contas)bsConta.Current) != null)
             {
                 txtContaId.Text = ((Contas)bsConta.Current).Id.ToString();
@@ -231,6 +236,15 @@ namespace App.wfa
             txtValorMovimento.Focus();
 
 
+        }
+
+        private void fMovimentoCaixa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar.CompareTo((char)Keys.Return)) == 0)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
 
       

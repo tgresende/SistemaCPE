@@ -73,13 +73,25 @@ namespace App.wfa
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
             VisualizaRelContas fVisualizaRelCustos = new VisualizaRelContas();
-            fVisualizaRelCustos.titulo = "Contas a Pagar e Receber";
+            fVisualizaRelCustos.titulo = "Contas à Pagar e Receber";
             fVisualizaRelCustos.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadProduto fCadproduto = new CadProduto();
+            fCadproduto.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CadInsumo fCadInsumo = new CadInsumo();
+            fCadInsumo.ShowDialog();
         }
 
     }

@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContasRepositorio.cs" />
+    <Compile Include="InsumosRepositorio.cs" />
     <Compile Include="IPadraoRepositorio.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="MovimentoCaixaRepositorio.cs" />
     <Compile Include="PessoasRepositorio.cs" />
+    <Compile Include="ProdutosInsumosRepositorio.cs" />
+    <Compile Include="ProdutosRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />
     <Compile Include="SaldoCaixaRepositorio.cs" />

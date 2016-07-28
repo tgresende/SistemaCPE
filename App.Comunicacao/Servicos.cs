@@ -13,6 +13,10 @@ namespace App.Comunicacao
         public static MovimentoCaixaController MovimentoCaixaServico = new MovimentoCaixaController();
         public static PessoasController PessoasServico = new PessoasController();
         public static ContasController ContasServico = new ContasController();
-        public static SaldoCaixaController SaldoCaixa = new SaldoCaixaController();
+        public static SaldoCaixaController SaldoCaixaServico = new SaldoCaixaController();
+        public static ProdutosController ProdutosServico = new ProdutosController();
+        public static InsumosController InsumosServico = new InsumosController();
+        public static ProdutosInsumosController ProdutosInsumosServico = new ProdutosInsumosController();
+
     }
 }

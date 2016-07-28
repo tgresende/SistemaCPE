@@ -198,7 +198,7 @@ namespace App.wfa
                 txtDataVencimento.Value = ((Contas)bsContas.Current).DataVencimento;
                 txtJuros.Text = ((Contas)bsContas.Current).Juros.ToString();
                 
-                 if (((Contas)bsContas.Current).PagarReceber == "Pagar")
+                 if (((Contas)bsContas.Current).PagarReceber == "P")
                     cmbPagarReceber.SelectedIndex = 0;
                 else
                     cmbPagarReceber.SelectedIndex = 1;
@@ -280,6 +280,31 @@ namespace App.wfa
             this.txtDataPgto.Format = DateTimePickerFormat.Custom;
             this.txtDataPgto.CustomFormat = "dd/MM/yyyy";
                   
+        }
+
+        private void CadContas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar.CompareTo((char)Keys.Return)) == 0)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                e.Handled = true;
+            }    
+        }
+
+        private void txtJuros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                e.Handled = true;
+            }    
         }
 
        
