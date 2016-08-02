@@ -57,8 +57,8 @@ namespace App.wfa
                 Numero   = txtNumero.Text,
                 Bairro   = txtBairro.Text,
                 Cep      = txtCep.Text,
-                Cidade   = txtCidade.Text,
-                Estado   = cmbEstado.Text                
+                //Cidade   = txtCidade.Text,
+                //Estado   = cmbEstado.Text                
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
@@ -87,7 +87,6 @@ namespace App.wfa
             txtBairro.Clear();
             txtCep.Clear();
             txtCidade.Clear();
-            cmbEstado.SelectedIndex=0;
             txtComplemento.Clear();
 
             LimpaGrid();
@@ -166,8 +165,8 @@ namespace App.wfa
                txtNumero.Text = ((Pessoas)bsPessoas.Current).Numero; 
                txtBairro.Text = ((Pessoas)bsPessoas.Current).Bairro; 
                txtCep.Text = ((Pessoas)bsPessoas.Current).Cep;      
-               txtCidade.Text = ((Pessoas)bsPessoas.Current).Cidade;  
-               cmbEstado.SelectedIndex = cmbEstado.FindString(((Pessoas)bsPessoas.Current).Estado,0);
+               //txtCidade.Text = ((Pessoas)bsPessoas.Current).Cidade;  
+               //cmbEstado.SelectedIndex = cmbEstado.FindString(((Pessoas)bsPessoas.Current).Estado,0);
                txtComplemento.Text = ((Pessoas)bsPessoas.Current).Complemento;
 
 

@@ -1,6 +1,7 @@
 ﻿using App.Comunicacao;
 using App.Dominio;
 using App.DTO;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,5 +95,9 @@ namespace App.wfa
             fCadInsumo.ShowDialog();
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show("Teste", "Sistema", MessageBoxButtons.YesNoCancel);
+        }
     }
 }
