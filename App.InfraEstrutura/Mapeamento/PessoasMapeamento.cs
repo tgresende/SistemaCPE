@@ -18,14 +18,17 @@ namespace App.InfraEstrutura.Mapeamento
 
             Property(c => c.Nome).HasMaxLength(100);
             Property(c => c.CPFCNPJ).HasMaxLength(15);
+            Property(c => c.TipoDocumento);
             Property(c => c.Telefone).HasMaxLength(12);
+            Property(c => c.Telefone2).HasMaxLength(12);
             Property(c => c.Rua).HasMaxLength(100);
             Property(c => c.Numero).HasMaxLength(10);
             Property(c => c.Complemento).HasMaxLength(50);
             Property(c => c.Cep).HasMaxLength(8);
             Property(c => c.Bairro).HasMaxLength(50);
-            Property(c => c.Cidade).HasMaxLength(50);
-            Property(c => c.Estado).HasMaxLength(2);
+            Property(c => c.CidadeId).IsRequired();
+
+            HasRequired<Cidade>(c => c.Cidade).WithMany(c => c.Pessoas).HasForeignKey(c=>c.CidadeId);
         }
     }
 }

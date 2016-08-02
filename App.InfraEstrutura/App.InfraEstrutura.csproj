@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Configuracao\AppContext.cs" />
     <Compile Include="Configuracao\AppTransaction.cs" />
     <Compile Include="Configuracao\MySqlConfiguration.cs" />
     <Compile Include="Configuracao\MySqlHistoryContext.cs" />
+    <Compile Include="Mapeamento\CidadeMapeamento.cs" />
     <Compile Include="Mapeamento\ContasMapeamento.cs" />
     <Compile Include="Mapeamento\InsumosMapeamento.cs" />
     <Compile Include="Mapeamento\MovimentoCaixaMapeamento.cs" />

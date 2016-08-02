@@ -204,6 +204,11 @@ namespace App.wfa
             txtCPFCNPJ.Mask = "";
         }
 
+        private void gbInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void CadPessoas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar.CompareTo((char)Keys.Return)) == 0)
