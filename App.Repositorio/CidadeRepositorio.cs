@@ -83,7 +83,7 @@ namespace App.Repositorio
 
         public string ValidarExclusao(Cidade entity)
         {
-            from q in _db.Pessoas where q.Cidade = en
+        //    from q in _db.Pessoas where q.Cidade = en
             return "";
         }
     }
