@@ -9,22 +9,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace App.InfraEstrutura.Mapeamento
 {
-    public class InsumosMapeamento : EntityTypeConfiguration<Insumos>
+    public class RotinasMapeamento : EntityTypeConfiguration<Rotinas>
     {
-        public InsumosMapeamento()
+        public RotinasMapeamento()
         {
-            ToTable("Insumos");
+            ToTable("Rotinas");
             HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
             Property(c => c.Nome).HasMaxLength(100).IsRequired();
-            Property(c => c.Valor).IsRequired();
-            Property(c => c.Descricao).HasMaxLength(100).IsRequired();
-            Property(c => c.Unidade).HasMaxLength(100).IsRequired();
-
-
-
-            //chave estrangeira
-            //HasRequired(p => p.Projetos).WithMany(b => b.GastosProjetos).HasForeignKey(p => p.ProjetosId);
 
         }
     }

@@ -9,7 +9,8 @@ namespace App.Dominio
     public class SaldoCaixa : BasicClass
     {
         public DateTime Data { get; set; }
-        public double Saldo { get; set; }
-        public string Fechado { get; set; }
+        public double Valor { get; set; }
+        public double ValorAbertura { get; set; }
+        public bool Fechado { get; set; }
     }
 }

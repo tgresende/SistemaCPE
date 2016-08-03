@@ -13,27 +13,27 @@ using System.Windows.Forms;
 
 namespace App.wfa
 {
-    public partial class fMovimentoCaixa : Form
+    public partial class CadMovimentoCaixa : Form
     {
         private double ValorTotalCaixa;
 
         private void PreencheGrid(string filtro)
         {
             ValorTotalCaixa = 0;
-            foreach (var MovCaixa in Servicos.MovimentoCaixaServico.SelecionarMovimento(filtro))
+            foreach (var MovCaixa in Servicos.MovimentoCaixaServico.Filtrar(filtro))
             {
                 bsMovimentoCaixa.Add(MovCaixa);
 
-                if (MovCaixa.PagarReceber == "R")
-                    ValorTotalCaixa = ValorTotalCaixa + MovCaixa.Valor;
+                if (MovCaixa.CreditoDebito == Dominio.CreditoDebito.Credito)
+                    ValorTotalCaixa = ValorTotalCaixa + MovCaixa.Valor + MovCaixa.Acrescimo - MovCaixa.Desconto;
                 else
-                    ValorTotalCaixa = ValorTotalCaixa - MovCaixa.Valor;
+                    ValorTotalCaixa = ValorTotalCaixa - MovCaixa.Valor + MovCaixa.Desconto - MovCaixa.Acrescimo; // sinais invertidos pq eh saida
             }
 
             txtTotalCaixa.Text = ValorTotalCaixa.ToString();
         }
 
-        public fMovimentoCaixa()
+        public CadMovimentoCaixa()
         {
             InitializeComponent();
             PreencheGrid("1==1"); // sem argumento, seleciona todos
@@ -59,10 +59,13 @@ namespace App.wfa
             btnCancelar.Enabled = true;
             gridMovimentoCaixa.Enabled = false;
 
-            txtContaId.Focus();
             txtIdMovImentoCaixa.Text = "0";
             txtValorMovimento.Text = "0";
-            txtContaId.Text = "0";
+            txtAcrescimo.Text = "0";
+            txtDesconto.Text = "0";
+            txtValorTotal.Text = "0";
+            txtDescricao.Focus();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -78,8 +81,11 @@ namespace App.wfa
 
             txtIdMovImentoCaixa.Clear();
             txtValorMovimento.Clear();
-            txtContaId.Clear();
-            lblConta.Text = "-";
+            txtDescricao.Clear();
+            txtAcrescimo.Clear();
+            txtDesconto.Clear();
+            txtValorTotal.Clear();
+            cmbDebitoCredito.SelectedIndex = -1;
 
 
 
@@ -97,7 +103,7 @@ namespace App.wfa
             {
                 retorno = Servicos.MovimentoCaixaServico.Excluir(new MovimentoCaixa()
                 {
-                    Id = Int16.Parse(((MovimentoCaixaContasPessoas)bsMovimentoCaixa.Current).Id.ToString()),
+                    Id = Int16.Parse(((MovimentoCaixa)bsMovimentoCaixa.Current).Id.ToString()),
                 });
 
                 if (!string.IsNullOrWhiteSpace(retorno))
@@ -118,6 +124,13 @@ namespace App.wfa
             //0 - Novo                 id - edição
             //salvar e validar dados      
 
+            CreditoDebito debcred;
+            if (cmbDebitoCredito.Text == "Débito")
+                debcred = CreditoDebito.Debito;
+            else if (cmbDebitoCredito.Text == "Crédito")
+                debcred = CreditoDebito.Credito;
+            else
+                debcred = CreditoDebito.Nulo;
            
 
             retorno = Servicos.MovimentoCaixaServico.Salvar(new MovimentoCaixa()
@@ -125,7 +138,10 @@ namespace App.wfa
                 Id = Int16.Parse(txtIdMovImentoCaixa.Text),
                 Data = txtDataMovimento.Value,
                 Valor = Convert.ToDouble(txtValorMovimento.Text),
-                ContaId = Int16.Parse(txtContaId.Text)
+                Acrescimo = Convert.ToDouble(txtAcrescimo.Text),
+                Desconto = Convert.ToDouble(txtDesconto.Text),
+                Descricao = txtDescricao.Text,
+                CreditoDebito = debcred
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
@@ -133,23 +149,6 @@ namespace App.wfa
                 MessageBox.Show(retorno);
                 return;
             }
-
-           
-            retorno = Servicos.ContasServico.Salvar(new Contas()
-            {
-                Valor = ((Contas)bsConta.Current).Valor,
-                Juros = Convert.ToDouble(txtValorMovimento.Text) - ((Contas)bsConta.Current).Valor,
-
-                Id = ((Contas)bsConta.Current).Id,
-                Descricao = ((Contas)bsConta.Current).Descricao,         
-                DataEmissao = ((Contas)bsConta.Current).DataEmissao,
-                DataPagamento = DateTime.Now,
-                DataVencimento = ((Contas)bsConta.Current).DataVencimento,
-                PagarReceber = ((Contas)bsConta.Current).PagarReceber,
-                PessoaId = ((Contas)bsConta.Current).PessoaId,
-                Quitado = "S"
-            });
-            
 
 
 
@@ -166,8 +165,6 @@ namespace App.wfa
             fcadcontas.pcContas.SelectedTab = fcadcontas.tabPesquisa;
             fcadcontas.PreencheGrid("1==1");
             fcadcontas.ShowDialog();
-            txtContaId.Text = fcadcontas.id;
-            txtContaId_Leave(null, null);
         }
 
         private void txtValorMovimento_KeyPress(object sender, KeyPressEventArgs e)
@@ -188,44 +185,25 @@ namespace App.wfa
             double i;
             if (!double.TryParse(txtValorMovimento.Text, out i))
                 txtValorMovimento.Text = "0";
-        }
 
-        private void txtContaId_Leave(object sender, EventArgs e)
-        {
-            int i;
-            if (!int.TryParse(txtContaId.Text, out i))
-            {
-                txtContaId.Text = "0";
-                lblConta.Text = "-";
-            }
-            
-
-            bsConta.Clear();
-            foreach (var Conta in Servicos.ContasServico.SelecionarConta("Id = " + txtContaId.Text + " and Quitado = \"N\" "))
-                bsConta.Add(Conta);
-
-            if (((Contas)bsConta.Current) != null)
-            {
-                txtContaId.Text = ((Contas)bsConta.Current).Id.ToString();
-                lblConta.Text = ((Contas)bsConta.Current).Descricao;
-                txtValorMovimento.Text = ((Contas)bsConta.Current).Valor.ToString();
-            }
-            else
-            {
-                txtContaId.Text = "0";
-                lblConta.Text = "-";
-            }
-
-
+            txtValorTotal.Text = (Library.Rotinas.CalculaValorDescAcres(Convert.ToDouble(txtValorMovimento.Text), Convert.ToDouble(txtAcrescimo.Text), Convert.ToDouble(txtDesconto.Text))).ToString();
         }
 
         private void gridMovimentoCaixa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIdMovImentoCaixa.Text = ((MovimentoCaixaContasPessoas)bsMovimentoCaixa.Current).Id.ToString();
-            txtDataMovimento.Value = ((MovimentoCaixaContasPessoas)bsMovimentoCaixa.Current).Data;
-            txtContaId.Text = ((MovimentoCaixaContasPessoas)bsMovimentoCaixa.Current).ContaId.ToString();
-            txtValorMovimento.Text = ((MovimentoCaixaContasPessoas)bsMovimentoCaixa.Current).Valor.ToString();
-            txtContaId_Leave(null, null);
+
+            if (((MovimentoCaixa)bsMovimentoCaixa.Current).CreditoDebito == CreditoDebito.Debito)
+                cmbDebitoCredito.SelectedItem = "Débito"; //
+            else
+                cmbDebitoCredito.SelectedItem = "Crédito"; // credito
+
+            txtIdMovImentoCaixa.Text = ((MovimentoCaixa)bsMovimentoCaixa.Current).Id.ToString();
+            txtDataMovimento.Value = ((MovimentoCaixa)bsMovimentoCaixa.Current).Data;
+            txtValorMovimento.Text = ((MovimentoCaixa)bsMovimentoCaixa.Current).Valor.ToString();
+            txtAcrescimo.Text  = ((MovimentoCaixa)bsMovimentoCaixa.Current).Acrescimo.ToString();
+            txtDesconto.Text = ((MovimentoCaixa)bsMovimentoCaixa.Current).Desconto.ToString();
+            txtDescricao.Text = ((MovimentoCaixa)bsMovimentoCaixa.Current).Descricao;
+     
 
             btnCancelar.Enabled = true;
             btnExcluir.Enabled = false;
@@ -233,6 +211,8 @@ namespace App.wfa
             btnSalvar.Enabled = true;
 
             gbInfo.Enabled = true;
+            gridMovimentoCaixa.Enabled = false;
+            txtValorMovimento_Leave(null, null);
             txtValorMovimento.Focus();
 
 
@@ -247,6 +227,25 @@ namespace App.wfa
             }
         }
 
-      
+        private void txtAcrescimo_Leave(object sender, EventArgs e)
+        {
+           txtValorTotal.Text = (Library.Rotinas.CalculaValorDescAcres(Convert.ToDouble(txtValorMovimento.Text), Convert.ToDouble(txtAcrescimo.Text), Convert.ToDouble(txtDesconto.Text))).ToString();
+        }
+
+        private void txtDesconto_Leave(object sender, EventArgs e)
+        {
+            txtValorTotal.Text = (Library.Rotinas.CalculaValorDescAcres(Convert.ToDouble(txtValorMovimento.Text), Convert.ToDouble(txtAcrescimo.Text), Convert.ToDouble(txtDesconto.Text))).ToString();
+        }
+
+        private void gridMovimentoCaixa_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewRow row = gridMovimentoCaixa.Rows[e.RowIndex];
+            double valor = Convert.ToDouble(row.Cells[ColunaValor.Index].Value);
+            double desconto = Convert.ToDouble(row.Cells[ColunaDesconto.Index].Value);
+            double acrescimo = Convert.ToDouble(row.Cells[ColunaAcrescimo.Index].Value);
+
+
+            row.Cells[ColunaValorTotal.Index].Value = valor - desconto + acrescimo;
+        }
     }
 }

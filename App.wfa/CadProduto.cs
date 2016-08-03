@@ -30,7 +30,7 @@ namespace App.wfa
         {
             if (filtro != "")
             {
-                foreach (var insumo in Servicos.InsumosServico.SelecionarInsumoPorProduto(filtro))
+               /* foreach (var insumo in Servicos.InsumosServico.SelecionarInsumoPorProduto(filtro))
                 {
                     bsInsumos.Add(insumo);
                 }
@@ -38,6 +38,7 @@ namespace App.wfa
                                   .AsEnumerable()
                                   .Sum(x => Convert.ToDouble(x.Cells[5].Value.ToString()))
                                   .ToString();
+                                  */
             }
         }
         public CadProduto()
@@ -83,7 +84,7 @@ namespace App.wfa
                 Descricao = txtDescricao.Text,
                 Nome = txtNome.Text,
                 Peso = Convert.ToDouble(txtPeso.Text),
-                Unidade = cmbUnidade.Text
+      //          Unidade = cmbUnidade.Text
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
@@ -132,7 +133,7 @@ namespace App.wfa
             txtDescricao.Clear();
             txtNome.Clear();
             txtPeso.Clear();
-            cmbUnidade.SelectedIndex = 0;
+            //cmbUnidade.SelectedIndex = 0;
 
 
             bsProduto.Clear();
@@ -182,7 +183,7 @@ namespace App.wfa
             txtDescricao.Text = ((Produtos)bsProduto.Current).Descricao;
             txtNome.Text = ((Produtos)bsProduto.Current).Nome;
             txtPeso.Text = ((Produtos)bsProduto.Current).Peso.ToString();
-            cmbUnidade.SelectedIndex = cmbUnidade.FindString(((Produtos)bsProduto.Current).Unidade, 0);
+    //        cmbUnidade.SelectedIndex = cmbUnidade.FindString(((Produtos)bsProduto.Current).Unidade, 0);
 
             PreencherGridInsumo("ProdutoId = " + ((Produtos)bsProduto.Current).Id.ToString());
         
@@ -322,11 +323,11 @@ namespace App.wfa
 
         private void button5_Click(object sender, EventArgs e)
         {
-            CadInsumo fcadInsumo = new CadInsumo();
-            fcadInsumo.PesquisaViaProduto = true;
-            fcadInsumo.pcInsumos.SelectedTab = fcadInsumo.tabPesquisa;
+            CadProduto fcadInsumo = new CadProduto();
+            //fcadInsumo.PesquisaViaProduto = true;
+            //fcadInsumo.pcInsumos.SelectedTab = fcadInsumo.tabPesquisa;
             fcadInsumo.ShowDialog();
-            txtInsumo.Text = fcadInsumo.id;
+         //   txtInsumo.Text = fcadInsumo.id;
             txtInsumo_Leave(null, null);
         }
 
@@ -342,7 +343,7 @@ namespace App.wfa
             }
 
             bsPesquisaInsumo.Clear();
-            bsPesquisaInsumo.Add(Servicos.InsumosServico.Selecionar(Int16.Parse(txtInsumo.Text)));
+       /*     bsPesquisaInsumo.Add(Servicos.InsumosServico.Selecionar(Int16.Parse(txtInsumo.Text)));
             if (((Insumos)bsPesquisaInsumo.Current) != null)
             {
                 txtInsumo.Text = ((Insumos)bsPesquisaInsumo.Current).Id.ToString();
@@ -357,6 +358,7 @@ namespace App.wfa
                 txtValorInsumo.Clear();
                 txtUnidadeInsumo.Clear();
             }
+            */
         }
 
         private void gridInsumos_UserAddedRow(object sender, DataGridViewRowEventArgs e)

@@ -50,17 +50,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CidadeRepositorio.cs" />
+    <Compile Include="ClientesRepositorio.cs" />
     <Compile Include="ContasRepositorio.cs" />
-    <Compile Include="InsumosRepositorio.cs" />
+    <Compile Include="FornecedoresRepositorio.cs" />
+    <Compile Include="FuncionariosRepositorio.cs" />
     <Compile Include="IPadraoRepositorio.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="MovimentoCaixaRepositorio.cs" />
+    <Compile Include="PedidoItemRepositorio.cs" />
+    <Compile Include="PedidosRepositorio.cs" />
     <Compile Include="PessoasRepositorio.cs" />
     <Compile Include="ProdutosInsumosRepositorio.cs" />
     <Compile Include="ProdutosRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />
+    <Compile Include="RotinasRepositorio.cs" />
     <Compile Include="SaldoCaixaRepositorio.cs" />
+    <Compile Include="TipoContaRepositorio.cs" />
+    <Compile Include="UnidadesRepositorio.cs" />
+    <Compile Include="UsuarioAcessoRepositorio.cs" />
+    <Compile Include="UsuariosRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.Dominio\App.Dominio.csproj">

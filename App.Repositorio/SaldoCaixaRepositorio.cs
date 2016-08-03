@@ -67,7 +67,10 @@ namespace App.Repositorio
 
         public string ValidarDados(SaldoCaixa entity)
         {
-            return "";
+            if (entity.Data == DateTime.MinValue)
+                return "Favor informar a data.";
+            else
+                return "";
         }
 
         public string ValidarExclusao(SaldoCaixa entity)

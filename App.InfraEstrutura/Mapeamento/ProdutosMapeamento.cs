@@ -19,8 +19,12 @@ namespace App.InfraEstrutura.Mapeamento
             Property(c => c.Nome).HasMaxLength(100).IsRequired();
             Property(c => c.Peso).IsRequired();
             Property(c => c.Descricao).HasMaxLength(100).IsRequired();
-            Property(c => c.Unidade).HasMaxLength(100).IsRequired();
-
+            Property(c => c.UnidadeId).IsRequired();
+            Property(c => c.ValorVendaUnitario).IsRequired();
+            Property(c => c.Insumo).IsRequired();
+            Property(c => c.QuantidadeProduzida).IsRequired();
+            Property(c => c.CustoTotalProducao).IsRequired();
+            Property(c => c.CustoUnitarioProducao).IsRequired();
 
 
             //chave estrangeira

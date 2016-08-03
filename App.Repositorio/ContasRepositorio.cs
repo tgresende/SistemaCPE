@@ -73,7 +73,7 @@ namespace App.Repositorio
                         DataVencimento = p.DataVencimento,
                         ContaId = p.Id,
                         Nome = g.Nome,
-                        PagarReceber = p.PagarReceber,
+         //               PagarReceber = p.PagarReceber,
                         DescricaoConta = p.Descricao
                     }).Where(filtro);
         }
@@ -99,12 +99,8 @@ namespace App.Repositorio
                 return "Favor informar a data de emissão.";
             else if (entity.DataVencimento == DateTime.MinValue)
                 return "Favor informar a data de vencimento.";
-            else if (string.IsNullOrWhiteSpace(entity.PagarReceber))
-                return "Favor informar se a conta é à pagar ou receber.";
             else if (entity.PessoaId == 0)
                 return "Favor informar a pessoa referenciada a essa conta.";
-            if (string.IsNullOrWhiteSpace(entity.Quitado))
-                return "Favor informar se a conta foi quitada.";
             else
                 return "";
         }

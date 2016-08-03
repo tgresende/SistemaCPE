@@ -17,10 +17,13 @@ namespace App.InfraEstrutura.Mapeamento
             ToTable("MovimentoCaixa");
             HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(c => c.ContaId).IsRequired();
+            Property(c => c.Desconto).IsRequired();
+            Property(c => c.Acrescimo).IsRequired();
+            Property(c => c.CreditoDebito).IsRequired();
             Property(c => c.Valor).IsRequired();
             Property(c => c.Data).IsRequired();
-            
+            Property(c => c.Descricao).HasMaxLength(100).IsRequired();
+
         }
     }
 }

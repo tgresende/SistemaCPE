@@ -59,13 +59,22 @@
     <Compile Include="Configuracao\MySqlConfiguration.cs" />
     <Compile Include="Configuracao\MySqlHistoryContext.cs" />
     <Compile Include="Mapeamento\CidadeMapeamento.cs" />
+    <Compile Include="Mapeamento\ClientesMapeamento.cs" />
     <Compile Include="Mapeamento\ContasMapeamento.cs" />
-    <Compile Include="Mapeamento\InsumosMapeamento.cs" />
+    <Compile Include="Mapeamento\FornecedoresMapeamento.cs" />
+    <Compile Include="Mapeamento\FuncionariosMapeamento.cs" />
     <Compile Include="Mapeamento\MovimentoCaixaMapeamento.cs" />
+    <Compile Include="Mapeamento\PedidoItemMapeamento.cs" />
+    <Compile Include="Mapeamento\PedidosMapeamento.cs" />
     <Compile Include="Mapeamento\PessoasMapeamento.cs" />
     <Compile Include="Mapeamento\ProdutosInsumosMapeamento.cs" />
     <Compile Include="Mapeamento\ProdutosMapeamento.cs" />
+    <Compile Include="Mapeamento\RotinasMapeamento.cs" />
     <Compile Include="Mapeamento\SaldoCaixaMapeamento.cs" />
+    <Compile Include="Mapeamento\TipoContaMapeamento.cs" />
+    <Compile Include="Mapeamento\UnidadesMapeamento.cs" />
+    <Compile Include="Mapeamento\UsuarioAcessoMapeamento.cs" />
+    <Compile Include="Mapeamento\UsuariosMapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

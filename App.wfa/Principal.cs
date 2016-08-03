@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace App.wfa
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
         public int idProjetoCorrente;
         public string estadoAtual; //controle para saber se o usuario está navegando ou editando o projeto
@@ -23,7 +23,7 @@ namespace App.wfa
         List<Label> labelNome = new List<Label>(); // fica aqui para outras funçoes acessarem
 
        
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
           
@@ -55,7 +55,7 @@ namespace App.wfa
 
         private void btnMovimentoCaixa_Click(object sender, EventArgs e)
         {
-            fMovimentoCaixa frmMovimentoCaixa = new fMovimentoCaixa();
+            CadMovimentoCaixa frmMovimentoCaixa = new CadMovimentoCaixa();
             frmMovimentoCaixa.ShowDialog();
         }
 
@@ -91,10 +91,8 @@ namespace App.wfa
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CadInsumo fCadInsumo = new CadInsumo();
-            fCadInsumo.ShowDialog();
+            CadVenda fCadVenda = new CadVenda();
+            fCadVenda.ShowDialog();
         }
-
-     
     }
 }

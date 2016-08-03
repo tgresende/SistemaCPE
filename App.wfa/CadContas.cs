@@ -121,12 +121,12 @@ namespace App.wfa
                 DataEmissao = txtDataEmissao.Value,
                 DataPagamento = datapag,
                 DataVencimento = txtDataVencimento.Value,
-                Juros = Convert.ToDouble(txtJuros.Text),
-                PagarReceber =  cmbPagarReceber.Text[0].ToString(),
+                Acrescimo = Convert.ToDouble(txtJuros.Text),
+       //         PagarReceber =  cmbPagarReceber.Text[0].ToString(),
                 PessoaId = Int16.Parse(txtPessoaId.Text),
                 Valor = Convert.ToDouble(txtValor.Text),
                 Descricao = txtDescricao.Text,
-                Quitado   = quit
+      //          Quitado   = quit
             });
 
             if (!string.IsNullOrWhiteSpace(retorno))
@@ -196,13 +196,13 @@ namespace App.wfa
 
 
                 txtDataVencimento.Value = ((Contas)bsContas.Current).DataVencimento;
-                txtJuros.Text = ((Contas)bsContas.Current).Juros.ToString();
+                txtJuros.Text = ((Contas)bsContas.Current).Acrescimo.ToString();
                 
-                 if (((Contas)bsContas.Current).PagarReceber == "P")
+          /*       if (((Contas)bsContas.Current).PagarReceber == "P")
                     cmbPagarReceber.SelectedIndex = 0;
                 else
                     cmbPagarReceber.SelectedIndex = 1;
-
+                    */
                 txtPessoaId.Text = ((Contas)bsContas.Current).PessoaId.ToString();
                 txtValor.Text = ((Contas)bsContas.Current).Valor.ToString();
                 txtDescricao.Text = ((Contas)bsContas.Current).Descricao;

@@ -33,14 +33,7 @@ namespace App.Servico.Controllers
             return new MovimentoCaixaRepositorio().Selecionar(id);
         }
 
-        
-        public IEnumerable<MovimentoCaixaContasPessoas> SelecionarMovimento(string filtro)
-        {
-            return new MovimentoCaixaRepositorio().SelecionarMovimento(filtro).ToList();
-        }
-
-
-        
+                
         public string Excluir(MovimentoCaixa entity)
         {
             AppContext contexto = new AppContext();

@@ -79,8 +79,16 @@ namespace App.Repositorio
                 return "Favor informar o nome do produto.";
             else if (entity.Peso == 0)
                 return "Favor informar o peso do produto.";
-            else if (string.IsNullOrWhiteSpace(entity.Unidade))
-                return "Favor informar a unidade do produto.";
+            else if (entity.ValorVendaUnitario == 0)
+                return "Favor informar o valor unitario de venda .";
+            else if (entity.UnidadeId == 0)
+                return "Favor informar a unidade.";
+            else if (entity.QuantidadeProduzida == 0)
+                return "Favor informar a quantidade produzida.";
+            else if (entity.CustoUnitarioProducao== 0)
+                return "Favor informar o custo de produção unitario.";
+            else if (entity.CustoTotalProducao == 0)
+                return "Favor informar o custo de produção total.";
             else
                 return "";
         }

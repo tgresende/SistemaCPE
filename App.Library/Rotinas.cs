@@ -93,6 +93,11 @@ namespace App.Library
             digito = digito + resto.ToString();
             return cnpj.EndsWith(digito);
         }
+
+        public static double CalculaValorDescAcres(double Valor, double Acrescimo, double Desconto)
+        {
+            return Valor + Acrescimo - Desconto;
+        }
     }
 
 

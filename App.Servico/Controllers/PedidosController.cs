@@ -11,49 +11,35 @@ using System.Text;
 
 namespace App.Servico.Controllers
 {
-    public class InsumosController 
+    public class PedidosController
     {
         private string _mensagem = "";
 
-        
-        public IEnumerable<Insumos> Filtrar(string condicao)
-        {
-            return new InsumosRepositorio().Filtrar(condicao).ToList();
-        }
 
-        
-        public IEnumerable<Insumos> SelecionarTodos()
+        public IEnumerable<Pedidos> Filtrar(string condicao)
         {
-            return new InsumosRepositorio().SelecionarTodos().ToList();
-        }
-
-        
-        public Insumos Selecionar(int id)
-        {
-            return new InsumosRepositorio().Selecionar(id);
+            return new PedidosRepositorio().Filtrar(condicao).ToList();
         }
 
 
-        
-        public IEnumerable<InsumosProdutos> SelecionarInsumoPorProduto(string filtro)
+        public IEnumerable<Pedidos> SelecionarTodos()
         {
-            return new InsumosRepositorio().SelecionarInsumoPorProduto(filtro).ToList();
+            return new PedidosRepositorio().SelecionarTodos().ToList();
         }
 
-        
-        public IEnumerable<Insumos> SelecionarInsumo(string filtro)
+        public Pedidos Selecionar(int id)
         {
-            return new InsumosRepositorio().SelecionarInsumo(filtro).ToList();
+            return new PedidosRepositorio().Selecionar(id);
         }
 
 
-        
-        public string Excluir(Insumos entity)
+
+        public string Excluir(Pedidos entity)
         {
             AppContext contexto = new AppContext();
             using (DbContextTransaction transacao = AppTransaction.CreateDbContextTransaction(contexto))
             {
-                _mensagem = new InsumosRepositorio(contexto).Excluir(entity);
+                _mensagem = new PedidosRepositorio(contexto).Excluir(entity);
 
                 if (_mensagem == "")
                     transacao.Commit();
@@ -63,16 +49,16 @@ namespace App.Servico.Controllers
             return _mensagem;
         }
 
-        
-        public string Salvar(Insumos entity)
+
+        public string Salvar(Pedidos entity)
         {
             AppContext contexto = new AppContext();
             using (DbContextTransaction transacao = AppTransaction.CreateDbContextTransaction(contexto))
             {
                 if (entity.Id == 0)
-                    _mensagem = new InsumosRepositorio(contexto).Incluir(entity);
+                    _mensagem = new PedidosRepositorio(contexto).Incluir(entity);
                 else
-                    _mensagem = new InsumosRepositorio(contexto).Alterar(entity);
+                    _mensagem = new PedidosRepositorio(contexto).Alterar(entity);
 
                 if (_mensagem == "")
                     transacao.Commit();

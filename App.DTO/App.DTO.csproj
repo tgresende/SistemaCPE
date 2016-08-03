@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="ContasPessoas.cs" />
     <Compile Include="InsumosProdutos.cs" />
-    <Compile Include="MovimentoCaixaContasPessoas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

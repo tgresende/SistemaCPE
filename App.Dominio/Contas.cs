@@ -9,14 +9,16 @@ namespace App.Dominio
     public class Contas : BasicClass
     {
         public double Valor { get; set; }
-        public double Juros { get; set; }
+        public double Acrescimo { get; set; }
+        public double Desconto { get; set; }
+        public PagarReceber PagarReceber { get; set; }
         public DateTime DataEmissao { get; set; }
         public DateTime DataVencimento { get; set; } // DateTime? = aceita nulo
         public DateTime DataPagamento { get; set; }
-        public string PagarReceber { get; set; } // P OU R
+        public int TipoContaId { get; set; } //filho do TipoConta
         public int PessoaId { get; set; }
         public string Descricao { get; set; }
-        public string Quitado { get; set; } // S OU N
+        public bool Pago { get; set; } 
     }
 
 

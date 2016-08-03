@@ -6,23 +6,9 @@ using System.Threading.Tasks;
 
 namespace App.Dominio
 {
-    public class Insumos : BasicClass
+    public class TipoConta : BasicClass
     {
-        public string Nome { get; set; }
+        public PagarReceber PagarReceber { get; set; }
         public string Descricao { get; set; }
-        public double Valor { get; set; }
-        public string Unidade { get; set; }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

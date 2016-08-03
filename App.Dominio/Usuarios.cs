@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace App.Dominio
 {
-    public enum TipoDocumentoPessoa
+    public class Usuarios : BasicClass
     {
-        Cpf, Cnpj
+        public int PessoaId { get; set; }
+        public string Senha { get; set; }
     }
 }

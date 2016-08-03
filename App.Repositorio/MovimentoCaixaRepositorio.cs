@@ -30,22 +30,6 @@ namespace App.Repositorio
             return mensagem;
         }
 
-        public IQueryable<MovimentoCaixaContasPessoas> SelecionarMovimento(string filtro)
-        {
-            return (from p in _db.MovimentoCaixa
-                    join g in _db.Contas on p.ContaId equals g.Id
-                    join h in _db.Pessoas on g.PessoaId equals h.Id
-                    select new MovimentoCaixaContasPessoas
-                    {
-                        Id = p.Id,
-                        Valor = p.Valor,
-                        Data = p.Data,
-                        ContaId = p.ContaId,
-                        Nome = h.Nome,
-                        PagarReceber = g.PagarReceber
-                    }).Where(filtro);
-        }
-
         public string Alterar(MovimentoCaixa entity)
         {
             string mensagem = this.ValidarDados(entity);
@@ -87,9 +71,11 @@ namespace App.Repositorio
                 return "Favor informar a data do movimento";
             else if (entity.Valor == 0)
                 return "Favor informar o Valor do Movimento";
-            else if (entity.ContaId.ToString() == "")
-                return "Favor informar a Conta de Referência";
-            else 
+            else if (string.IsNullOrWhiteSpace(entity.Descricao))
+                return "Favor informar a descrição.";
+            else if (entity.CreditoDebito == CreditoDebito.Nulo)
+                return "Favor informar se a movimentação é um crédito ou débito";
+            else
                 return "";
         }
 

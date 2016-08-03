@@ -39,11 +39,9 @@
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.MaskedTextBox();
-            this.cmbUnidade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.MaskedTextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
@@ -83,13 +81,16 @@
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bsPesquisaInsumo = new System.Windows.Forms.BindingSource(this.components);
             this.lbltotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pcProdutos.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.gbInfo.SuspendLayout();
@@ -183,13 +184,15 @@
             // gbInfo
             // 
             this.gbInfo.BackColor = System.Drawing.Color.Gainsboro;
+            this.gbInfo.Controls.Add(this.label9);
+            this.gbInfo.Controls.Add(this.label10);
+            this.gbInfo.Controls.Add(this.textBox1);
+            this.gbInfo.Controls.Add(this.button1);
             this.gbInfo.Controls.Add(this.label3);
             this.gbInfo.Controls.Add(this.txtPeso);
-            this.gbInfo.Controls.Add(this.cmbUnidade);
             this.gbInfo.Controls.Add(this.label2);
             this.gbInfo.Controls.Add(this.txtDescricao);
             this.gbInfo.Controls.Add(this.txtNome);
-            this.gbInfo.Controls.Add(this.label58);
             this.gbInfo.Controls.Add(this.label57);
             this.gbInfo.Controls.Add(this.label56);
             this.gbInfo.Controls.Add(this.label55);
@@ -220,24 +223,6 @@
             this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             this.txtPeso.Leave += new System.EventHandler(this.txtPeso_Leave);
             // 
-            // cmbUnidade
-            // 
-            this.cmbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnidade.FormattingEnabled = true;
-            this.cmbUnidade.Items.AddRange(new object[] {
-            "Pacote",
-            "Quilograma",
-            "Litro",
-            "Unidade",
-            "Metro linear",
-            "Metro quadrado",
-            "Metro cúbico",
-            "Par"});
-            this.cmbUnidade.Location = new System.Drawing.Point(87, 118);
-            this.cmbUnidade.Name = "cmbUnidade";
-            this.cmbUnidade.Size = new System.Drawing.Size(130, 24);
-            this.cmbUnidade.TabIndex = 58;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -261,15 +246,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(215, 23);
             this.txtNome.TabIndex = 0;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(9, 121);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(61, 17);
-            this.label58.TabIndex = 26;
-            this.label58.Text = "Unidade";
             // 
             // label57
             // 
@@ -532,41 +508,48 @@
             this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
             this.nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
+            this.nomeDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // descricaoDataGridViewTextBoxColumn1
             // 
             this.descricaoDataGridViewTextBoxColumn1.DataPropertyName = "Descricao";
             this.descricaoDataGridViewTextBoxColumn1.HeaderText = "Descricao";
             this.descricaoDataGridViewTextBoxColumn1.Name = "descricaoDataGridViewTextBoxColumn1";
+            this.descricaoDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // unidadeDataGridViewTextBoxColumn1
             // 
             this.unidadeDataGridViewTextBoxColumn1.DataPropertyName = "Unidade";
             this.unidadeDataGridViewTextBoxColumn1.HeaderText = "Unidade";
             this.unidadeDataGridViewTextBoxColumn1.Name = "unidadeDataGridViewTextBoxColumn1";
+            this.unidadeDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Quantidade
             // 
             this.Quantidade.DataPropertyName = "Quantidade";
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
             // 
             // TotalColuna
             // 
             this.TotalColuna.HeaderText = "Valor Total";
             this.TotalColuna.Name = "TotalColuna";
+            this.TotalColuna.ReadOnly = true;
             // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // bsInsumos
             // 
@@ -625,7 +608,6 @@
             this.nomeDataGridViewTextBoxColumn,
             this.pesoDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn,
-            this.unidadeDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn});
             this.gridPessoas.DataSource = this.bsProduto;
             this.gridPessoas.Location = new System.Drawing.Point(2, 47);
@@ -656,13 +638,6 @@
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // unidadeDataGridViewTextBoxColumn
-            // 
-            this.unidadeDataGridViewTextBoxColumn.DataPropertyName = "Unidade";
-            this.unidadeDataGridViewTextBoxColumn.HeaderText = "Unidade";
-            this.unidadeDataGridViewTextBoxColumn.Name = "unidadeDataGridViewTextBoxColumn";
-            this.unidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -682,10 +657,6 @@
             this.panel1.Size = new System.Drawing.Size(671, 81);
             this.panel1.TabIndex = 38;
             // 
-            // bsPesquisaInsumo
-            // 
-            this.bsPesquisaInsumo.DataSource = typeof(App.Dominio.Insumos);
-            // 
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
@@ -702,6 +673,45 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(98, 23);
             this.txtTotal.TabIndex = 61;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(188, 125);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 17);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 125);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 17);
+            this.label10.TabIndex = 63;
+            this.label10.Text = "Unidade";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(87, 122);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(44, 23);
+            this.textBox1.TabIndex = 61;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Location = new System.Drawing.Point(138, 119);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 28);
+            this.button1.TabIndex = 62;
+            this.button1.TabStop = false;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // CadProduto
             // 
@@ -755,7 +765,6 @@
         private System.Windows.Forms.GroupBox gbInfo;
         private System.Windows.Forms.MaskedTextBox txtDescricao;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label55;
@@ -766,7 +775,6 @@
         private System.Windows.Forms.Button btnPesquisaCusto;
         private System.Windows.Forms.DataGridView gridPessoas;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cmbUnidade;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox txtPeso;
@@ -806,6 +814,9 @@
         private System.Windows.Forms.BindingSource bsPesquisaInsumo;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.MaskedTextBox txtTotal;
-
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
