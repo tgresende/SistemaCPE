@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.InfraEstrutura.Initializers;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,10 +13,7 @@ namespace App.InfraEstrutura.Configuracao
     {
         protected override void Seed(AppContext context)
         {
-            context.Cidades.Add(new Dominio.Cidade() { Nome = "Teste1", Estado = "Minas Gerais", SiglaEstado = "MG", CodigoIgbe = "123456" });
-            context.Cidades.Add(new Dominio.Cidade() { Nome = "Teste2", Estado = "Minas Gerais", SiglaEstado = "MG", CodigoIgbe = "123456" });
-            context.Cidades.Add(new Dominio.Cidade() { Nome = "Teste3", Estado = "Minas Gerais", SiglaEstado = "MG", CodigoIgbe = "123456" });
-            context.Cidades.Add(new Dominio.Cidade() { Nome = "Teste4", Estado = "Minas Gerais", SiglaEstado = "MG", CodigoIgbe = "123456" });
+            new CidadeInitializer(context);
         }
     }
 }

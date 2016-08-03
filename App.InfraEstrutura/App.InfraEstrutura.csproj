@@ -58,6 +58,7 @@
     <Compile Include="Configuracao\AppTransaction.cs" />
     <Compile Include="Configuracao\MySqlConfiguration.cs" />
     <Compile Include="Configuracao\MySqlHistoryContext.cs" />
+    <Compile Include="Initializers\CidadeInitializer.cs" />
     <Compile Include="Mapeamento\CidadeMapeamento.cs" />
     <Compile Include="Mapeamento\ClientesMapeamento.cs" />
     <Compile Include="Mapeamento\ContasMapeamento.cs" />
