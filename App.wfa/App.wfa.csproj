@@ -38,6 +38,9 @@
     <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -96,6 +99,18 @@
     <Compile Include="CadMovimentoCaixa.Designer.cs">
       <DependentUpon>CadMovimentoCaixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadTipoConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadTipoConta.Designer.cs">
+      <DependentUpon>CadTipoConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadUnidades.Designer.cs">
+      <DependentUpon>CadUnidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +143,12 @@
     <EmbeddedResource Include="CadMovimentoCaixa.resx">
       <DependentUpon>CadMovimentoCaixa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadTipoConta.resx">
+      <DependentUpon>CadTipoConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadUnidades.resx">
+      <DependentUpon>CadUnidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadVenda.resx">
       <DependentUpon>CadVenda.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,30 +173,25 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\App.Dominio.BasicClass.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Cidade.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Clientes.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Contas.datasource" />
-    <None Include="Properties\DataSources\App.Dominio.Insumos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Fornecedores.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Funcionarios.datasource" />
     <None Include="Properties\DataSources\App.Dominio.MovimentoCaixa.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.PedidoItem.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Pedidos.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Pessoas.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Produtos.datasource" />
     <None Include="Properties\DataSources\App.Dominio.ProdutosInsumos.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Rotinas.datasource" />
     <None Include="Properties\DataSources\App.Dominio.SaldoCaixa.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.TipoConta.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Unidades.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.UsuarioAcesso.datasource" />
+    <None Include="Properties\DataSources\App.Dominio.Usuarios.datasource" />
     <None Include="Properties\DataSources\App.DTO.ContasPessoas.datasource" />
     <None Include="Properties\DataSources\App.DTO.InsumosProdutos.datasource" />
-    <None Include="Properties\DataSources\App.DTO.MovimentoCaixaContasPessoas.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.ContasController.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.InsumosController.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.MovimentoCaixaController.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.PessoasController.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.ProdutosController.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.ProdutosInsumosController.datasource" />
-    <None Include="Properties\DataSources\App.Service.Controllers.SaldoCaixaController.datasource" />
-    <None Include="Properties\DataSources\App.Servico.BundleConfig.datasource" />
-    <None Include="Properties\DataSources\App.Servico.Controllers.HomeController.datasource" />
-    <None Include="Properties\DataSources\App.Servico.Controllers.ValuesController.datasource" />
-    <None Include="Properties\DataSources\App.Servico.FilterConfig.datasource" />
-    <None Include="Properties\DataSources\App.Servico.RouteConfig.datasource" />
-    <None Include="Properties\DataSources\App.Servico.WebApiApplication.datasource" />
-    <None Include="Properties\DataSources\App.Servico.WebApiConfig.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\App.wfa.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">

@@ -70,7 +70,7 @@ namespace App.Repositorio
         {
             //verificacao de dados
             if (string.IsNullOrWhiteSpace(entity.Nome))
-                return "Favor informar i nome.";
+                return "Favor informar o nome.";
             if (string.IsNullOrWhiteSpace(entity.Sigla))
                 return "Favor informar a sigla.";
             else

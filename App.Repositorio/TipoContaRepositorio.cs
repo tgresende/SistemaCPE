@@ -71,6 +71,8 @@ namespace App.Repositorio
             //verificacao de dados
             if (string.IsNullOrWhiteSpace(entity.Descricao))
                 return "Favor informar a descricao.";
+            else if (entity.PagarReceber == PagarReceber.Nulo)
+                return "Favor informar se o tipo de conta é à pagar ou à receber.";
             else
                 return "";
         }

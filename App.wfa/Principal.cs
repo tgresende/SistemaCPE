@@ -55,14 +55,12 @@ namespace App.wfa
 
         private void btnMovimentoCaixa_Click(object sender, EventArgs e)
         {
-            CadMovimentoCaixa frmMovimentoCaixa = new CadMovimentoCaixa();
-            frmMovimentoCaixa.ShowDialog();
+           
         }
 
         private void btnCadContas_Click(object sender, EventArgs e)
         {
-            CadContas frmCadContas = new CadContas();
-            frmCadContas.ShowDialog();
+           
         }
 
         private void btnCadPessoas_Click(object sender, EventArgs e)
@@ -85,14 +83,48 @@ namespace App.wfa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CadProduto fCadproduto = new CadProduto();
-            fCadproduto.ShowDialog();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            CadMovimentoCaixa frmMovimentoCaixa = new CadMovimentoCaixa();
+            frmMovimentoCaixa.ShowDialog();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            CadContas frmCadContas = new CadContas();
+            frmCadContas.ShowDialog();
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            CadProduto fCadproduto = new CadProduto();
+            fCadproduto.ShowDialog();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
             CadVenda fCadVenda = new CadVenda();
             fCadVenda.ShowDialog();
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            CadUnidades fCadUnidades = new CadUnidades();
+            fCadUnidades.ShowDialog();
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            CadTipoConta fCadTipoConta = new CadTipoConta();
+            fCadTipoConta.ShowDialog();
         }
     }
 }
