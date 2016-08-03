@@ -14,7 +14,7 @@ namespace App.InfraEstrutura.Mapeamento
         public ProdutosMapeamento()
         {
             ToTable("Produtos");
-            HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            //HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(c => c.Nome).HasMaxLength(100).IsRequired();
             Property(c => c.Peso).IsRequired();

@@ -52,11 +52,11 @@ namespace App.wfa
                 CPFCNPJ  = txtCPFCNPJ.Text,
                 Nome     = txtNome.Text,
                 Telefone = txtTelefone.Text,
-                Rua      = txtRua.Text,
-                Complemento = txtComplemento.Text,
-                Numero   = txtNumero.Text,
-                Bairro   = txtBairro.Text,
-                Cep      = txtCep.Text,
+                EnderecoRua = txtRua.Text,
+                EnderecoComplemento = txtComplemento.Text,
+                EnderecoNumero = txtNumero.Text,
+                EnderecoBairro = txtBairro.Text,
+                EnderecoCep = txtCep.Text,
                 //Cidade   = txtCidade.Text,
                 //Estado   = cmbEstado.Text                
             });
@@ -161,13 +161,13 @@ namespace App.wfa
                txtCPFCNPJ.Text = ((Pessoas)bsPessoas.Current).CPFCNPJ;
                txtNome.Text =  ((Pessoas)bsPessoas.Current).Nome; 
                txtTelefone.Text = ((Pessoas)bsPessoas.Current).Telefone; 
-               txtRua.Text = ((Pessoas)bsPessoas.Current).Rua;
-               txtNumero.Text = ((Pessoas)bsPessoas.Current).Numero; 
-               txtBairro.Text = ((Pessoas)bsPessoas.Current).Bairro; 
-               txtCep.Text = ((Pessoas)bsPessoas.Current).Cep;      
+               txtRua.Text = ((Pessoas)bsPessoas.Current).EnderecoRua;
+               txtNumero.Text = ((Pessoas)bsPessoas.Current).EnderecoNumero; 
+               txtBairro.Text = ((Pessoas)bsPessoas.Current).EnderecoBairro; 
+               txtCep.Text = ((Pessoas)bsPessoas.Current).EnderecoCep;      
                //txtCidade.Text = ((Pessoas)bsPessoas.Current).Cidade;  
                //cmbEstado.SelectedIndex = cmbEstado.FindString(((Pessoas)bsPessoas.Current).Estado,0);
-               txtComplemento.Text = ((Pessoas)bsPessoas.Current).Complemento;
+               txtComplemento.Text = ((Pessoas)bsPessoas.Current).EnderecoComplemento;
 
 
                btnCancelar.Enabled = true;

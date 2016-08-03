@@ -14,7 +14,7 @@ namespace App.InfraEstrutura.Mapeamento
         public SaldoCaixaMapeamento()
         {
             ToTable("SaldoCaixa");
-            HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            //HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(c => c.Fechado).HasMaxLength(1).IsRequired();
             Property(c => c.Data).IsRequired();

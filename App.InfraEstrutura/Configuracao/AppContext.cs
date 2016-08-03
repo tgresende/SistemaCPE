@@ -22,7 +22,7 @@ namespace App.InfraEstrutura.Configuracao
             if (Database.Connection is MySqlConnection)
             {
                // Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());  //  descomentar caso queira dropar
-                Database.SetInitializer<AppContext>(new CreateDatabaseIfNotExists<AppContext>());
+                Database.SetInitializer<AppContext>(new AppContextInitializer());
             }
             else
                 Database.SetInitializer<AppContext>(null);
@@ -58,8 +58,10 @@ namespace App.InfraEstrutura.Configuracao
         public DbSet<Produtos> Produtos { get; set; }
         public DbSet<Insumos> Insumos { get; set; }
         public DbSet<ProdutosInsumos> ProdutosInsumos { get; set; }
+        public DbSet<Cidade> Cidades { get; set; }
 
-        
+
+
 
     }
 }

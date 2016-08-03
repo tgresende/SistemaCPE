@@ -95,9 +95,6 @@ namespace App.wfa
             fCadInsumo.ShowDialog();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            XtraMessageBox.Show("Teste", "Sistema", MessageBoxButtons.YesNoCancel);
-        }
+     
     }
 }

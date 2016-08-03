@@ -13,6 +13,7 @@ namespace App.InfraEstrutura.Mapeamento
     {
         public MovimentoCaixaMapeamento()
         {
+           
             ToTable("MovimentoCaixa");
             HasKey(c => c.Id).Property(c => c.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 

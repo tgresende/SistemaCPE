@@ -6,33 +6,33 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
-using System.Web.Http;
 
-namespace App.Service.Controllers
+
+namespace App.Servico.Controllers
 {
-    public class SaldoCaixaController : ApiController
+    public class SaldoCaixaController 
     {
         private string _mensagem = "";
 
-        [HttpGet]
+        
         public IEnumerable<SaldoCaixa> Filtrar(string condicao)
         {
             return new SaldoCaixaRepositorio().Filtrar(condicao).ToList();
         }
 
-        [HttpGet]
+        
         public IEnumerable<SaldoCaixa> SelecionarTodos()
         {
             return new SaldoCaixaRepositorio().SelecionarTodos().ToList();
         }
 
-        [HttpGet]
+        
         public SaldoCaixa Selecionar(int id)
         {
             return new SaldoCaixaRepositorio().Selecionar(id);
         }
 
-        [HttpPost]
+        
         public string Excluir(SaldoCaixa entity)
         {
             AppContext contexto = new AppContext();
@@ -48,7 +48,7 @@ namespace App.Service.Controllers
             return _mensagem;
         }
 
-        [HttpPost]
+        
         public string Salvar(SaldoCaixa entity)
         {
             AppContext contexto = new AppContext();

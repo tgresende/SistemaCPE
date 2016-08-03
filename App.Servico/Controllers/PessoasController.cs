@@ -6,39 +6,39 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
-using System.Web.Http;
 
-namespace App.Service.Controllers
+
+namespace App.Servico.Controllers
 {
-    public class PessoasController : ApiController
+    public class PessoasController 
     {
         private string _mensagem = "";
 
-        [HttpGet]
+        
         public IEnumerable<Pessoas> Filtrar(string condicao)
         {
             return new PessoasRepositorio().Filtrar(condicao).ToList();
         }
 
-        [HttpGet]
+        
         public IEnumerable<Pessoas> SelecionarTodos()
         {
             return new PessoasRepositorio().SelecionarTodos().ToList();
         }
 
-        [HttpGet]
+        
         public Pessoas Selecionar(int id)
         {
             return new PessoasRepositorio().Selecionar(id);
         }
 
-        [HttpGet]
+        
         public IEnumerable<Pessoas> SelecionarPessoa(string filtro)
         {
             return new PessoasRepositorio().SelecionarPessoa(filtro).ToList();
         }
 
-        [HttpPost]
+        
         public string Excluir(Pessoas entity)
         {
             AppContext contexto = new AppContext();
@@ -54,7 +54,7 @@ namespace App.Service.Controllers
             return _mensagem;
         }
 
-        [HttpPost]
+        
         public string Salvar(Pessoas entity)
         {
             AppContext contexto = new AppContext();

@@ -75,14 +75,11 @@ namespace App.Repositorio
         {
             if (string.IsNullOrWhiteSpace(entity.Nome))
                 return "Favor informar o nome da pessoa.";
-            else if (((entity.CPFCNPJ).Length != 11) & ((entity.CPFCNPJ).Length != 14))
-                return "Favor informar um CNPJ/CPF válido.";
-            if (entity.Nome == "")
-                return "Favor informar o nome da pessoa.";
-            else if (string.IsNullOrWhiteSpace(entity.Telefone))
-                return "Favor informar um telefone para contato.";
-            else
-                return "";
+            else if (!Library.Rotinas.ValidaCpfCnpj(entity.CPFCNPJ))
+            {
+                return string.Format("Favor informar um {0} válido.", entity.TipoDocumento == TipoDocumentoPessoa.Cpf ? "CPF " : "CNPJ");
+            }
+            return "";
         }
 
         public string ValidarExclusao(Pessoas entity)
