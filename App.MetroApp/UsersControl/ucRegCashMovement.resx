@@ -117,20 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="dateTimeChartRangeControlClient1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="bsCashMov.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>262, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="navButton4.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="simpleButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAACRJREFUOE9jGAXDDSgDcQaRWBGIMYACEKcQieWAeBQMF8DAAAA2Vwh7zI1ERQAA
-        AABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACxMAAAsTAQCanBgAAADRSURBVEhL7dXBCQIxFATQgCAW
+        JAj2IGJDYgUeRDtQC7IK9aYN6Mwh8Pn8SbJhDx4ceJcwO4E97KZfyQxO8IYXHGAKo+UIH2cPg7OBB/ix
+        bA4Ld2Y9YQ0ypXHi+NKdedyQiR7oIROVe8hE5ZpbcCbjizVnmMDOnJGMLdXkcWb0C0rjJOOL0futjZOM
+        LW2BQ1dz1jJOMrbEAYaDF2gdJxlftJe0jpNMVM6XMC3jJBOVicOt4yQTlXvIROUeMvyeRw8McQcZ/ixq
+        /4QSjq/gn9ak9AWWniaBXZHZFwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="navButton1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAI5JREFUOE/Nkm0KgzAQRHMSqYjiV+9/DKsncp5hIZaNNb/sg8ENZCabjeGvaKQu
-        lpf0Uh3LM5g3aTxWPrPEHg5zwZwLwbxKdHCJF3LbbKQhk1RkNizkIxWbgZMxL1JxQNr2IBHC9xbewDDT
-        zc+Qt8S9vZaZCcHp65zAlDMbNtj2WH3xkrJ/WALmKpbPE8IOK7QXPQ63iBUAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACxMAAAsTAQCanBgAAAEiSURBVEhLzZKxagJBEIavUgPi
+        I1jYhhAVfT+LFGnSqEELn8XChxCRFCGQZzAhkOT/hltYj5NZTw/84OOY5WZmmZ3sFpnk39r4k7U2ocFV
+        mwzkUu7ltwwNLm5yJ1cyLli0cgOKbyRFDvJFDmUzP7uoOISbf8h7DiJOFe/kXxdmHm5eLA5lxXvyXT5Y
+        5MCD0oCxpPIsyXm1yIFt4WdmnspIkrOzyCGsIg+aSkuSQ67Lj+TnhkVpsHXkfFnkEEbEY6cyluRsLXJY
+        SH5+siiNqSRnZpHDo3yTXYuOKVvRvmT2vzJpTaGdf2Mozi1jKP4pOZ9zUJVQHHlQZs5Ywsat5Tlbd0Rc
+        vChj4eaVi0OxAavItvCgyTP3iJvURtkjXx2a3BJZ9g//1lpt6DoPvAAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

@@ -9,7 +9,8 @@ namespace App.MetroApp
     //colocar o nameSpace do user control
     public enum UserControlType
     {
-        MovimentoCaixa,
-        CadastroCliente
+        ucMovimentoCaixa,
+        ucCadCliente, 
+        ucRegCashMovement
     }
 }

@@ -220,9 +220,17 @@
       <Project>{6fe0d366-f965-4d68-acd7-8eb8b31a0766}</Project>
       <Name>App.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.InfraEstrutura\App.InfraEstrutura.csproj">
+      <Project>{2895982a-6d42-45e1-ac85-5c550f50e496}</Project>
+      <Name>App.InfraEstrutura</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.Library\App.Library.csproj">
       <Project>{d9ccc198-2edf-4752-9593-0a5664b76607}</Project>
       <Name>App.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Repositorio\App.Repositorio.csproj">
+      <Project>{926a5017-764b-40b4-96c9-304c3bea1975}</Project>
+      <Name>App.Repositorio</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.Servico\App.Servico.csproj">
       <Project>{d5e2c6ef-e495-4a40-b026-047a053d69dc}</Project>

@@ -19,9 +19,12 @@ namespace App.MetroApp
         {
             InitializeComponent();
 
-            tileBarMovimentoCaixa.Tag = UserControlType.MovimentoCaixa;
-            tileBarCadastroCliente.Tag = UserControlType.CadastroCliente;
+            tileBarMovimentoCaixa.Tag = UserControlType.ucMovimentoCaixa;
+            tileBarCadastroCliente.Tag = UserControlType.ucCadCliente;
             UserControlController.UserControl.UserControlParent = ucContainer;
+
+
+            
         }
 
         private void tileBarItem1_ItemClick(object sender, TileItemEventArgs e)
@@ -32,6 +35,7 @@ namespace App.MetroApp
             XtraUserControl uc = UserControlController.UserControl.GetUserControl((UserControlType)(sender as TileItem).Tag);
 
             transacao.EndTransition();
+    
         }
 
         private void navButton4_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
@@ -43,5 +47,8 @@ namespace App.MetroApp
         {
             this.Close();
         }
+
+
+      
     }
 }
