@@ -61,6 +61,23 @@ namespace App.Repositorio
             return _Repositorio.GetAll();
         }
 
+        public IQueryable<ClientsInfo> SelecionarClientes()
+        {
+            return (from p in _db.Clientes
+                    join g in _db.Pessoas on p.PessoaId equals g.Id
+                    join h in _db.Cidades on g.CidadeId equals h.Id
+                    select new ClientsInfo
+                    {
+                        ClienteId = p.Id,
+                        CidadeEstado = h.Nome + " - " + h.SiglaEstado,
+                        CPFCNPJ = g.CPFCNPJ,
+                        Nome = g.Nome,
+                        PessoaId = g.Id,
+                        Telefone = g.Telefone,
+                        TipoDocumento = g.TipoDocumento
+                    });
+        }
+
         public IQueryable<Clientes> Filtrar(string condicao)
         {
             return _Repositorio.Filter(condicao);

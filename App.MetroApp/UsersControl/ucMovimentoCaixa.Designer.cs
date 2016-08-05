@@ -263,6 +263,7 @@
             this.tileBarItem4.Id = 4;
             this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem4.Name = "tileBarItem4";
+            this.tileBarItem4.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem4_ItemClick);
             // 
             // ucMovimentoCaixa
             // 

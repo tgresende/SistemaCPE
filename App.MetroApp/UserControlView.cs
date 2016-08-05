@@ -72,7 +72,7 @@ namespace App.MetroApp
 
             return _usercontrols.Where(p => p.Key == type).FirstOrDefault().Value;
         }
-
+		
         public XtraUserControl GetUserControl(UserControlType type)
         {
             ClearUserControlParent();
