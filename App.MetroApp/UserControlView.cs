@@ -1,4 +1,5 @@
-﻿using App.MetroApp.UsersControl;
+﻿using App.Dominio;
+using App.MetroApp.UsersControl;
 using DevExpress.Utils;
 using DevExpress.Utils.Animation;
 using DevExpress.XtraEditors;
@@ -54,32 +55,31 @@ namespace App.MetroApp
             }
         }
 
+        //chamada de uc para edição e novo, remove se existir e cria um novo
+        public XtraUserControl GetUserControl(UserControlType type, object[] args)
+        {
+            ClearUserControlParent();
+
+            if (_usercontrols.Where(p => p.Key == type).Count() > 0)
+            {
+                _usercontrols.Remove(type);
+            }
+
+            _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString()), args));
+
+            _usercontrols.Where(p => p.Key == type).FirstOrDefault().Value.Parent = _usercontrolparent;
+            _usercontrols.Where(p => p.Key == type).FirstOrDefault().Value.Dock = DockStyle.Fill;
+
+            return _usercontrols.Where(p => p.Key == type).FirstOrDefault().Value;
+        }
+
         public XtraUserControl GetUserControl(UserControlType type)
         {
             ClearUserControlParent();
 
             if (_usercontrols.Where(p => p.Key == type).Count() == 0)
             {
-
-
-
-                if (type == UserControlType.ucRegCashMovement)
-                {
-                    //         ucRegCashMovement cntrl = new ucRegCashMovement(1);
-                    //         _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType("cntrl")));
-
-
-                    var parameterList = new int[] { 1 };
-                    // esse funciona com int id no construtor              _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString()), 1));
-                    _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString()), 1));
-                 
-                }
-                else
-                {
-                    _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString())));
-                }
-
-
+                _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString())));
             }
 
             _usercontrols.Where(p => p.Key == type).FirstOrDefault().Value.Parent = _usercontrolparent;

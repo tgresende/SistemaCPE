@@ -14,6 +14,7 @@ namespace App.Dominio
         public string Descricao { get; set; }
         public CreditoDebito CreditoDebito { get; set; }
         public DateTime Data { get; set; }
+
     }
 
 

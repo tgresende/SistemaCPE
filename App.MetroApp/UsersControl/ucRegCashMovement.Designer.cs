@@ -44,7 +44,6 @@
             this.calcBaseValue = new DevExpress.XtraEditors.CalcEdit();
             this.calcDiscount = new DevExpress.XtraEditors.CalcEdit();
             this.calcAddition = new DevExpress.XtraEditors.CalcEdit();
-            this.cmbDebitCredit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateData = new DevExpress.XtraEditors.DateEdit();
             this.dateTimeChartRangeControlClient1 = new DevExpress.XtraEditors.DateTimeChartRangeControlClient();
             this.txtDescription = new DevExpress.XtraEditors.TextEdit();
@@ -53,17 +52,19 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbDebitCredit = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.TESTE = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcBaseValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcAddition.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDebitCredit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateData.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateData.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCashMov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcTotalValue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDebitCredit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -77,6 +78,7 @@
             // 
             // txtId
             // 
+            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCashMov, "Id", true));
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(99, 20);
             this.txtId.Name = "txtId";
@@ -142,6 +144,7 @@
             // 
             // calcBaseValue
             // 
+            this.calcBaseValue.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCashMov, "Valor", true));
             this.calcBaseValue.Location = new System.Drawing.Point(99, 154);
             this.calcBaseValue.Name = "calcBaseValue";
             this.calcBaseValue.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -153,6 +156,7 @@
             // 
             // calcDiscount
             // 
+            this.calcDiscount.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCashMov, "Desconto", true));
             this.calcDiscount.Location = new System.Drawing.Point(99, 187);
             this.calcDiscount.Name = "calcDiscount";
             this.calcDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -164,6 +168,7 @@
             // 
             // calcAddition
             // 
+            this.calcAddition.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCashMov, "Acrescimo", true));
             this.calcAddition.Location = new System.Drawing.Point(99, 220);
             this.calcAddition.Name = "calcAddition";
             this.calcAddition.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -173,23 +178,9 @@
             this.calcAddition.Size = new System.Drawing.Size(100, 22);
             this.calcAddition.TabIndex = 18;
             // 
-            // cmbDebitCredit
-            // 
-            this.cmbDebitCredit.Location = new System.Drawing.Point(99, 121);
-            this.cmbDebitCredit.Name = "cmbDebitCredit";
-            this.cmbDebitCredit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cmbDebitCredit.Properties.Appearance.Options.UseFont = true;
-            this.cmbDebitCredit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbDebitCredit.Properties.Items.AddRange(new object[] {
-            "Crédito",
-            "Débito"});
-            this.cmbDebitCredit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbDebitCredit.Size = new System.Drawing.Size(100, 22);
-            this.cmbDebitCredit.TabIndex = 41;
-            // 
             // dateData
             // 
+            this.dateData.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCashMov, "Data", true));
             this.dateData.EditValue = null;
             this.dateData.Location = new System.Drawing.Point(99, 55);
             this.dateData.Name = "dateData";
@@ -202,6 +193,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCashMov, "Descricao", true));
             this.txtDescription.Location = new System.Drawing.Point(99, 86);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -239,7 +231,7 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
             this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(326, 294);
+            this.simpleButton2.Location = new System.Drawing.Point(178, 298);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(68, 44);
             this.simpleButton2.TabIndex = 46;
@@ -252,23 +244,51 @@
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(252, 294);
+            this.btnCancel.Location = new System.Drawing.Point(104, 298);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(68, 44);
             this.btnCancel.TabIndex = 47;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cmbDebitCredit
+            // 
+            this.cmbDebitCredit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCashMov, "CreditoDebito", true));
+            this.cmbDebitCredit.Location = new System.Drawing.Point(99, 121);
+            this.cmbDebitCredit.Name = "cmbDebitCredit";
+            this.cmbDebitCredit.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmbDebitCredit.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbDebitCredit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbDebitCredit.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageComboBoxItem[] {
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("", "0", -1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Crédito", "1", -1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Débito", "2", -1)});
+            this.cmbDebitCredit.Size = new System.Drawing.Size(100, 20);
+            this.cmbDebitCredit.TabIndex = 48;
+            this.cmbDebitCredit.EditValueChanged += new System.EventHandler(this.cmbDebitCredit_EditValueChanged);
+            // 
+            // TESTE
+            // 
+            this.TESTE.AutoSize = true;
+            this.TESTE.Location = new System.Drawing.Point(465, 120);
+            this.TESTE.Name = "TESTE";
+            this.TESTE.Size = new System.Drawing.Size(34, 13);
+            this.TESTE.TabIndex = 49;
+            this.TESTE.Text = "TEste";
+            this.TESTE.Click += new System.EventHandler(this.label1_Click);
+            // 
             // ucRegCashMovement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TESTE);
+            this.Controls.Add(this.cmbDebitCredit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.calcTotalValue);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.dateData);
-            this.Controls.Add(this.cmbDebitCredit);
             this.Controls.Add(this.calcAddition);
             this.Controls.Add(this.calcDiscount);
             this.Controls.Add(this.calcBaseValue);
@@ -287,13 +307,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.calcBaseValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcAddition.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDebitCredit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateData.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateData.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCashMov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcTotalValue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDebitCredit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +331,6 @@
         private DevExpress.XtraEditors.CalcEdit calcBaseValue;
         private DevExpress.XtraEditors.CalcEdit calcDiscount;
         private DevExpress.XtraEditors.CalcEdit calcAddition;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbDebitCredit;
         private DevExpress.XtraEditors.DateEdit dateData;
         private DevExpress.XtraEditors.DateTimeChartRangeControlClient dateTimeChartRangeControlClient1;
         private DevExpress.XtraEditors.TextEdit txtDescription;
@@ -320,5 +339,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cmbDebitCredit;
+        private System.Windows.Forms.Label TESTE;
     }
 }

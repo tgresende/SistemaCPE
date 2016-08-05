@@ -23,7 +23,6 @@ namespace App.InfraEstrutura.Mapeamento
             Property(c => c.Valor).IsRequired();
             Property(c => c.Data).IsRequired();
             Property(c => c.Descricao).HasMaxLength(100).IsRequired();
-
         }
     }
 }

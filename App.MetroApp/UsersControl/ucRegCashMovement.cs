@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using App.Comunicacao;
 using App.Dominio;
 using DevExpress.Utils.Animation;
+using App.Library;
 
 namespace App.MetroApp.UsersControl
 {
@@ -18,31 +19,25 @@ namespace App.MetroApp.UsersControl
         public int Id;
 
 
-        public ucRegCashMovement(int Id)
+        public ucRegCashMovement(MovimentoCaixa MovCaixa)
         {
             InitializeComponent();
 
-            bsCashMov.Add(Servicos.MovimentoCaixaServico.Selecionar(Id));
-            
-            txtId.Text = Id.ToString();
-            txtDescription.Text = ((MovimentoCaixa)bsCashMov.Current).Descricao;
-            dateData.DateTime = ((MovimentoCaixa)bsCashMov.Current).Data;
-            calcBaseValue.Value = Convert.ToDecimal(((MovimentoCaixa)bsCashMov.Current).Valor);
-            calcDiscount.Value = Convert.ToDecimal(((MovimentoCaixa)bsCashMov.Current).Desconto);
-            calcAddition.Value = Convert.ToDecimal(((MovimentoCaixa)bsCashMov.Current).Acrescimo);
-            calcTotalValue.Value = calcBaseValue.Value - calcDiscount.Value + calcAddition.Value;
+            if (MovCaixa.Id != 0)
+            {
+                bsCashMov.Add(MovCaixa);
 
-            if (((MovimentoCaixa)bsCashMov.Current).CreditoDebito == CreditoDebito.Debito)
-                cmbDebitCredit.SelectedItem = "Débito"; //
+                /*if (((MovimentoCaixa)bsCashMov.Current).CreditoDebito == CreditoDebito.Debito)
+                    cmbDebitCredit.SelectedItem = "Débito"; //
+                else
+                    cmbDebitCredit.SelectedItem = "Crédito"; // credito*/
+            }
             else
-                cmbDebitCredit.SelectedItem = "Crédito"; // credito
-
-    
-
-
-
-
-
+            {
+                MovCaixa.Data = DateTime.Now;
+                MovCaixa.CreditoDebito = CreditoDebito.Nulo;
+                bsCashMov.Add(MovCaixa);
+            }
 
         }
 
@@ -79,13 +74,14 @@ namespace App.MetroApp.UsersControl
                 Descricao = txtDescription.Text,
                 CreditoDebito = debcred
             });
-
-
+            
             if (!string.IsNullOrWhiteSpace(retorno))
-                MessageBox.Show(retorno);
+                AppMessage.Show(retorno);
             else
             {
-                MessageBox.Show("Registro salvo com sucesso!");
+
+
+                AppMessage.Show("Registro salvo com sucesso!");
                 btnCancel_Click(null, null);
             }
         }
@@ -98,6 +94,16 @@ namespace App.MetroApp.UsersControl
             XtraUserControl uc = UserControlController.UserControl.GetUserControl(UserControlType.ucMovimentoCaixa);
 
             transacao.EndTransition();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDebitCredit_EditValueChanged(object sender, EventArgs e)
+        {
+         cmbDebitCredit.SelectedIndex = Convert.ToInt32(cmbDebitCredit.EditValue);
         }
     }
 }

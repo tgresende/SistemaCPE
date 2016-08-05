@@ -7,6 +7,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Data;
 using DevExpress.Utils.Animation;
+using App.Dominio;
 
 namespace App.MetroApp.UsersControl
 {
@@ -18,8 +19,8 @@ namespace App.MetroApp.UsersControl
         {
             bsMovimentoCaixa.Clear();
             foreach (var MovCaixa in Servicos.MovimentoCaixaServico.SelecionarTodos())
-                bsMovimentoCaixa.Add(MovCaixa);              
-       
+                bsMovimentoCaixa.Add(MovCaixa);
+
         }
 
         public ucMovimentoCaixa()
@@ -31,7 +32,7 @@ namespace App.MetroApp.UsersControl
 
         private void gridControl1_Load(object sender, EventArgs e)
         {
-            
+
             gridView1.BestFitColumns();
         }
 
@@ -44,14 +45,14 @@ namespace App.MetroApp.UsersControl
             // Initialization 
             if (e.SummaryProcess == CustomSummaryProcess.Start)
                 customSum = 0;
-            
+
             // Calculation 
             if (e.SummaryProcess == CustomSummaryProcess.Calculate)
             {
-                string DebCred = (View.GetRowCellValue(e.RowHandle, "CreditoDebito")).ToString(); 
+                string DebCred = (View.GetRowCellValue(e.RowHandle, "CreditoDebito")).ToString();
                 switch (DebCred)
                 {
-                    case "Debito": 
+                    case "Debito":
                         customSum -= Convert.ToDecimal(e.FieldValue);
                         break;
                     case "Credito":
@@ -62,7 +63,7 @@ namespace App.MetroApp.UsersControl
             // Finalization 
             if (e.SummaryProcess == CustomSummaryProcess.Finalize)
                 e.TotalValue = customSum;
-            
+
 
 
         }
@@ -92,24 +93,24 @@ namespace App.MetroApp.UsersControl
             TransitionManager transacao = UserControlController.UserControl.CreateTransition(new SlideTransition());
             transacao.StartTransition(this.Parent);
 
-            XtraUserControl uc = UserControlController.UserControl.GetUserControl(UserControlType.ucRegCashMovement);
+            XtraUserControl uc = UserControlController.UserControl.GetUserControl(UserControlType.ucRegCashMovement, new object[] { bsMovimentoCaixa.Current });
 
             transacao.EndTransition();
         }
 
         private void ucMovimentoCaixa_Enter(object sender, EventArgs e)
         {
- 
+
         }
 
         private void ucMovimentoCaixa_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void ucMovimentoCaixa_Validated(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ucMovimentoCaixa_VisibleChanged(object sender, EventArgs e)
@@ -124,9 +125,10 @@ namespace App.MetroApp.UsersControl
             TransitionManager transacao = UserControlController.UserControl.CreateTransition(new SlideTransition());
             transacao.StartTransition(this.Parent);
 
-            XtraUserControl uc = UserControlController.UserControl.GetUserControl(UserControlType.ucRegCashMovement);
+            XtraUserControl uc = UserControlController.UserControl.GetUserControl(UserControlType.ucRegCashMovement, new object[] { new MovimentoCaixa()});
 
             transacao.EndTransition();
+            
         }
     }
 }
