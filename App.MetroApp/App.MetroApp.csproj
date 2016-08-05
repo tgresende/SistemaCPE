@@ -117,6 +117,12 @@
     <Compile Include="UsersControl\ucRegCashMovement.Designer.cs">
       <DependentUpon>ucRegCashMovement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersControl\ucRegClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsersControl\ucRegClient.Designer.cs">
+      <DependentUpon>ucRegClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersControl\XtraUserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <EmbeddedResource Include="UsersControl\ucRegCashMovement.resx">
       <DependentUpon>ucRegCashMovement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UsersControl\ucRegClient.resx">
+      <DependentUpon>ucRegClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersControl\XtraUserControl1.resx">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +198,9 @@
     <None Include="Properties\DataSources\App.Dominio.Unidades.datasource" />
     <None Include="Properties\DataSources\App.Dominio.UsuarioAcesso.datasource" />
     <None Include="Properties\DataSources\App.Dominio.Usuarios.datasource" />
+    <None Include="Properties\DataSources\App.DTO.ClientsInfo.datasource" />
+    <None Include="Properties\DataSources\App.DTO.ContasPessoas.datasource" />
+    <None Include="Properties\DataSources\App.DTO.InsumosProdutos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -207,6 +219,10 @@
     <ProjectReference Include="..\App.Dominio\App.Dominio.csproj">
       <Project>{4329496c-b736-4463-bfdf-450b4deb5e81}</Project>
       <Name>App.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.DTO\App.DTO.csproj">
+      <Project>{6fe0d366-f965-4d68-acd7-8eb8b31a0766}</Project>
+      <Name>App.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.InfraEstrutura\App.InfraEstrutura.csproj">
       <Project>{2895982a-6d42-45e1-ac85-5c550f50e496}</Project>

@@ -128,5 +128,15 @@ namespace App.MetroApp.UsersControl
 
             transacao.EndTransition();
         }
+
+        private void tileBarItem4_ItemClick(object sender, TileItemEventArgs e)
+        {
+            TransitionManager transacao = UserControlController.UserControl.CreateTransition(new SlideTransition());
+            transacao.StartTransition(this.Parent);
+
+            XtraUserControl uc = UserControlController.UserControl.GetUserControl(UserControlType.ucLockCashMovement);
+
+            transacao.EndTransition();
+        }
     }
 }

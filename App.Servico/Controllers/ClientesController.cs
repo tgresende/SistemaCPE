@@ -27,6 +27,11 @@ namespace App.Servico.Controllers
             return new ClientesRepositorio().SelecionarTodos().ToList();
         }
 
+        public IEnumerable<ClientsInfo> SelecionarClientes()
+        {
+            return new ClientesRepositorio().SelecionarClientes().ToList();
+        }
+
         public Clientes Selecionar(int id)
         {
             return new ClientesRepositorio().Selecionar(id);

@@ -29,18 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             this.ucContainer = new DevExpress.XtraEditors.XtraUserControl();
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
@@ -50,16 +43,8 @@
             this.tileBarMovimentoCaixa = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarCadastroCliente = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem4 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem5 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.tileBarItem2 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem3 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem6 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem7 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem8 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem9 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem10 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.SuspendLayout();
             // 
             // ucContainer
@@ -68,7 +53,7 @@
             this.ucContainer.Location = new System.Drawing.Point(0, 263);
             this.ucContainer.Margin = new System.Windows.Forms.Padding(2);
             this.ucContainer.Name = "ucContainer";
-            this.ucContainer.Size = new System.Drawing.Size(893, 79);
+            this.ucContainer.Size = new System.Drawing.Size(893, 149);
             this.ucContainer.TabIndex = 0;
             // 
             // tileNavPane1
@@ -120,12 +105,11 @@
             this.tileBar1.Groups.Add(this.tileBarGroup2);
             this.tileBar1.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileBar1.ItemPadding = new System.Windows.Forms.Padding(12, 0, 12, 10);
-            this.tileBar1.ItemSize = 200;
+            this.tileBar1.ItemSize = 100;
             this.tileBar1.Location = new System.Drawing.Point(0, 32);
-            this.tileBar1.MaxId = 19;
+            this.tileBar1.MaxId = 22;
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.Padding = new System.Windows.Forms.Padding(0);
-            this.tileBar1.Position = 8;
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.tileBar1.Size = new System.Drawing.Size(893, 231);
             this.tileBar1.TabIndex = 4;
@@ -136,15 +120,8 @@
             this.tileBarGroup2.Items.Add(this.tileBarMovimentoCaixa);
             this.tileBarGroup2.Items.Add(this.tileBarCadastroCliente);
             this.tileBarGroup2.Items.Add(this.tileBarItem4);
-            this.tileBarGroup2.Items.Add(this.tileBarItem5);
             this.tileBarGroup2.Items.Add(this.tileBarItem1);
             this.tileBarGroup2.Items.Add(this.tileBarItem2);
-            this.tileBarGroup2.Items.Add(this.tileBarItem3);
-            this.tileBarGroup2.Items.Add(this.tileBarItem6);
-            this.tileBarGroup2.Items.Add(this.tileBarItem7);
-            this.tileBarGroup2.Items.Add(this.tileBarItem8);
-            this.tileBarGroup2.Items.Add(this.tileBarItem9);
-            this.tileBarGroup2.Items.Add(this.tileBarItem10);
             this.tileBarGroup2.Name = "tileBarGroup2";
             // 
             // tileBarMovimentoCaixa
@@ -153,15 +130,16 @@
             this.tileBarMovimentoCaixa.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarMovimentoCaixa.DropDownOptions.AutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.tileBarMovimentoCaixa.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement1.Appearance.Normal.Options.UseFont = true;
-            tileItemElement1.ImageToTextIndent = 1;
-            tileItemElement1.Text = "Movimento de Caixa";
-            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarMovimentoCaixa.Elements.Add(tileItemElement1);
+            tileItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement6.Appearance.Normal.Options.UseFont = true;
+            tileItemElement6.ImageToTextIndent = 1;
+            tileItemElement6.Text = "Movimento de Caixa";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarMovimentoCaixa.Elements.Add(tileItemElement6);
             this.tileBarMovimentoCaixa.Id = 8;
-            this.tileBarMovimentoCaixa.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
+            this.tileBarMovimentoCaixa.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarMovimentoCaixa.Name = "tileBarMovimentoCaixa";
+            this.tileBarMovimentoCaixa.ShowDropDownButton = DevExpress.Utils.DefaultBoolean.True;
             this.tileBarMovimentoCaixa.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem1_ItemClick);
             // 
             // tileBarCadastroCliente
@@ -170,13 +148,13 @@
             this.tileBarCadastroCliente.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarCadastroCliente.DropDownOptions.AutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.tileBarCadastroCliente.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement2.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement2.Appearance.Normal.Options.UseFont = true;
-            tileItemElement2.Text = "Cadastro de Clientes";
-            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarCadastroCliente.Elements.Add(tileItemElement2);
+            tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement7.Appearance.Normal.Options.UseFont = true;
+            tileItemElement7.Text = "Cadastro";
+            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarCadastroCliente.Elements.Add(tileItemElement7);
             this.tileBarCadastroCliente.Id = 7;
-            this.tileBarCadastroCliente.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
+            this.tileBarCadastroCliente.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarCadastroCliente.Name = "tileBarCadastroCliente";
             this.tileBarCadastroCliente.ShowDropDownButton = DevExpress.Utils.DefaultBoolean.True;
             this.tileBarCadastroCliente.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem1_ItemClick);
@@ -186,134 +164,43 @@
             this.tileBarItem4.DropDownOptions.AutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.tileBarItem4.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             this.tileBarItem4.DropDownOptions.Height = 5;
-            tileItemElement3.AnchorIndent = 0;
-            tileItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 20F);
-            tileItemElement3.Appearance.Normal.Options.UseFont = true;
-            tileItemElement3.ImageToTextIndent = 0;
-            tileItemElement3.Text = "Cadastro de  contas a Pagar";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement3.UseImageInTransition = false;
-            tileItemElement3.UseTextInTransition = false;
-            tileItemElement3.Width = 40;
-            this.tileBarItem4.Elements.Add(tileItemElement3);
+            tileItemElement8.AnchorIndent = 0;
+            tileItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 20F);
+            tileItemElement8.Appearance.Normal.Options.UseFont = true;
+            tileItemElement8.ImageToTextIndent = 0;
+            tileItemElement8.Text = "Financeiro";
+            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement8.UseImageInTransition = false;
+            tileItemElement8.UseTextInTransition = false;
+            this.tileBarItem4.Elements.Add(tileItemElement8);
             this.tileBarItem4.Id = 9;
             this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.tileBarItem4.Name = "tileBarItem4";
+            this.tileBarItem4.ShowDropDownButton = DevExpress.Utils.DefaultBoolean.True;
             this.tileBarItem4.ShowItemShadow = DevExpress.Utils.DefaultBoolean.False;
             this.tileBarItem4.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem1_ItemClick);
-            // 
-            // tileBarItem5
-            // 
-            this.tileBarItem5.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement4.Appearance.Normal.Options.UseFont = true;
-            tileItemElement4.Text = "cadastro de Contas a receber";
-            this.tileBarItem5.Elements.Add(tileItemElement4);
-            this.tileBarItem5.Id = 10;
-            this.tileBarItem5.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem5.Name = "tileBarItem5";
-            this.tileBarItem5.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem1_ItemClick);
             // 
             // tileBarItem1
             // 
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement5.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement5.Appearance.Normal.Options.UseFont = true;
-            tileItemElement5.MaxWidth = 0;
-            tileItemElement5.Text = "Cadastro de Fornecedores";
-            this.tileBarItem1.Elements.Add(tileItemElement5);
-            this.tileBarItem1.Id = 11;
+            tileItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
+            tileItemElement9.Appearance.Normal.Options.UseFont = true;
+            tileItemElement9.Text = "Comercial";
+            this.tileBarItem1.Elements.Add(tileItemElement9);
+            this.tileBarItem1.Id = 20;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
-            // 
-            // windowsUIButtonPanel1
-            // 
-            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Button", null, -1, DevExpress.XtraBars.Docking2010.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, null, true, false, true, null, null, -1, false, true),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Button", null, -1, DevExpress.XtraBars.Docking2010.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, null, true, false, true, null, null, -1, false, true)});
-            this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 342);
-            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(893, 70);
-            this.windowsUIButtonPanel1.TabIndex = 5;
-            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             // 
             // tileBarItem2
             // 
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement6.Appearance.Normal.Options.UseFont = true;
-            tileItemElement6.Text = "Cadastro de Funcionários";
-            this.tileBarItem2.Elements.Add(tileItemElement6);
-            this.tileBarItem2.Id = 12;
-            this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem2.Name = "tileBarItem2";
-            // 
-            // tileBarItem3
-            // 
-            this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement7.Appearance.Normal.Options.UseFont = true;
-            tileItemElement7.Text = "Cadastro de Vendas";
-            this.tileBarItem3.Elements.Add(tileItemElement7);
-            this.tileBarItem3.Id = 13;
-            this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem3.Name = "tileBarItem3";
-            // 
-            // tileBarItem6
-            // 
-            this.tileBarItem6.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement8.Appearance.Normal.Options.UseFont = true;
-            tileItemElement8.Text = "Cadastro de Compras";
-            this.tileBarItem6.Elements.Add(tileItemElement8);
-            this.tileBarItem6.Id = 14;
-            this.tileBarItem6.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem6.Name = "tileBarItem6";
-            // 
-            // tileBarItem7
-            // 
-            this.tileBarItem7.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement9.Appearance.Normal.Options.UseFont = true;
-            tileItemElement9.Text = "Cadastro de Produtos";
-            this.tileBarItem7.Elements.Add(tileItemElement9);
-            this.tileBarItem7.Id = 15;
-            this.tileBarItem7.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem7.Name = "tileBarItem7";
-            // 
-            // tileBarItem8
-            // 
-            this.tileBarItem8.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             tileItemElement10.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
             tileItemElement10.Appearance.Normal.Options.UseFont = true;
-            tileItemElement10.Text = "Cadastro de tipos de Conta";
-            this.tileBarItem8.Elements.Add(tileItemElement10);
-            this.tileBarItem8.Id = 16;
-            this.tileBarItem8.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem8.Name = "tileBarItem8";
-            // 
-            // tileBarItem9
-            // 
-            this.tileBarItem9.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement11.Appearance.Normal.Options.UseFont = true;
-            tileItemElement11.Text = "cadastro de unidades";
-            this.tileBarItem9.Elements.Add(tileItemElement11);
-            this.tileBarItem9.Id = 17;
-            this.tileBarItem9.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem9.Name = "tileBarItem9";
-            // 
-            // tileBarItem10
-            // 
-            this.tileBarItem10.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement12.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16F);
-            tileItemElement12.Appearance.Normal.Options.UseFont = true;
-            tileItemElement12.Text = "cadastro de Usuarios";
-            this.tileBarItem10.Elements.Add(tileItemElement12);
-            this.tileBarItem10.Id = 18;
-            this.tileBarItem10.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
-            this.tileBarItem10.Name = "tileBarItem10";
+            tileItemElement10.Text = "Relatórios";
+            this.tileBarItem2.Elements.Add(tileItemElement10);
+            this.tileBarItem2.Id = 21;
+            this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem2.Name = "tileBarItem2";
             // 
             // Form1
             // 
@@ -321,7 +208,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 412);
             this.Controls.Add(this.ucContainer);
-            this.Controls.Add(this.windowsUIButtonPanel1);
             this.Controls.Add(this.tileBar1);
             this.Controls.Add(this.tileNavPane1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -336,22 +222,14 @@
         private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane1;
         private DevExpress.XtraBars.Navigation.NavButton navButton4;
         private DevExpress.XtraBars.Navigation.TileBar tileBar1;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private DevExpress.XtraBars.Navigation.NavButton navButton1;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup2;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarCadastroCliente;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarMovimentoCaixa;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem1;
         public DevExpress.XtraEditors.XtraUserControl ucContainer;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem1;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem2;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem3;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem6;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem7;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem8;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem9;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem10;
     }
 }
 

@@ -34,11 +34,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             this.dateData = new DevExpress.XtraEditors.DateEdit();
             this.calcOpenValue = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -58,14 +53,6 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.tileBarGroup3 = new DevExpress.XtraBars.Navigation.TileBarGroup();
-            this.tileBar2 = new DevExpress.XtraBars.Navigation.TileBar();
-            this.tileBarGroup4 = new DevExpress.XtraBars.Navigation.TileBarGroup();
-            this.tileBarItem3 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem7 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem8 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarGroup6 = new DevExpress.XtraBars.Navigation.TileBarGroup();
-            this.tileBarItem9 = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItem10 = new DevExpress.XtraBars.Navigation.TileBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.dateData.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateData.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcOpenValue.Properties)).BeginInit();
@@ -269,87 +256,10 @@
             // 
             this.tileBarGroup3.Name = "tileBarGroup3";
             // 
-            // tileBar2
-            // 
-            this.tileBar2.AllowDrag = false;
-            this.tileBar2.AppearanceText.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.tileBar2.AppearanceText.Options.UseFont = true;
-            this.tileBar2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            this.tileBar2.Groups.Add(this.tileBarGroup4);
-            this.tileBar2.Groups.Add(this.tileBarGroup6);
-            this.tileBar2.Location = new System.Drawing.Point(121, 239);
-            this.tileBar2.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.tileBar2.MaxId = 12;
-            this.tileBar2.Name = "tileBar2";
-            this.tileBar2.Position = 139;
-            this.tileBar2.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar2.Size = new System.Drawing.Size(568, 170);
-            this.tileBar2.TabIndex = 56;
-            this.tileBar2.Text = "tileBar2";
-            // 
-            // tileBarGroup4
-            // 
-            this.tileBarGroup4.Items.Add(this.tileBarItem3);
-            this.tileBarGroup4.Items.Add(this.tileBarItem7);
-            this.tileBarGroup4.Items.Add(this.tileBarItem8);
-            this.tileBarGroup4.Name = "tileBarGroup4";
-            // 
-            // tileBarItem3
-            // 
-            this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement6.Text = "tileBarItem3";
-            this.tileBarItem3.Elements.Add(tileItemElement6);
-            this.tileBarItem3.Id = 6;
-            this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
-            this.tileBarItem3.Name = "tileBarItem3";
-            // 
-            // tileBarItem7
-            // 
-            this.tileBarItem7.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement7.Text = "tileBarItem7";
-            this.tileBarItem7.Elements.Add(tileItemElement7);
-            this.tileBarItem7.Id = 7;
-            this.tileBarItem7.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
-            this.tileBarItem7.Name = "tileBarItem7";
-            // 
-            // tileBarItem8
-            // 
-            this.tileBarItem8.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement8.Text = "tileBarItem8";
-            this.tileBarItem8.Elements.Add(tileItemElement8);
-            this.tileBarItem8.Id = 8;
-            this.tileBarItem8.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
-            this.tileBarItem8.Name = "tileBarItem8";
-            // 
-            // tileBarGroup6
-            // 
-            this.tileBarGroup6.Items.Add(this.tileBarItem9);
-            this.tileBarGroup6.Items.Add(this.tileBarItem10);
-            this.tileBarGroup6.Name = "tileBarGroup6";
-            // 
-            // tileBarItem9
-            // 
-            this.tileBarItem9.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.Text = "tileBarItem9";
-            this.tileBarItem9.Elements.Add(tileItemElement9);
-            this.tileBarItem9.Id = 10;
-            this.tileBarItem9.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
-            this.tileBarItem9.Name = "tileBarItem9";
-            // 
-            // tileBarItem10
-            // 
-            this.tileBarItem10.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement10.Text = "tileBarItem10";
-            this.tileBarItem10.Elements.Add(tileItemElement10);
-            this.tileBarItem10.Id = 11;
-            this.tileBarItem10.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
-            this.tileBarItem10.Name = "tileBarItem10";
-            // 
             // ucLockCashMovement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tileBar2);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.calcEndValue);
             this.Controls.Add(this.labelControl4);
@@ -395,13 +305,5 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup3;
-        private DevExpress.XtraBars.Navigation.TileBar tileBar2;
-        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup4;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem3;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem7;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem8;
-        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup6;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem9;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem10;
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraBars.Navigation;
 
 namespace App.MetroApp
 {
@@ -24,7 +25,26 @@ namespace App.MetroApp
             UserControlController.UserControl.UserControlParent = ucContainer;
 
 
-            
+            // montando o container 
+
+            TileBarItem itemA1 = new TileBarItem() { Text = "cadastro de clientes" };
+            TileBarItem itemA2 = new TileBarItem() { Text = "cadastro de fornecedores" };
+
+
+            TileBarDropDownContainer ddContainer = new TileBarDropDownContainer();
+            ddContainer.Size = new System.Drawing.Size(595, 185);
+
+            TileBar innerBar = new TileBar() { Parent = ddContainer, Dock = DockStyle.Fill };
+            innerBar.Groups.Add(new TileGroup());
+            innerBar.Groups[0].Items.Add(itemA1);
+            innerBar.Groups[0].Items.Add(itemA2);
+
+            ddContainer.Controls.Add(innerBar);
+            tileBarCadastroCliente.DropDownControl = ddContainer;
+
+
+
+
         }
 
         private void tileBarItem1_ItemClick(object sender, TileItemEventArgs e)

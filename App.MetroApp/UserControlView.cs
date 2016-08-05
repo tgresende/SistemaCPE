@@ -65,13 +65,13 @@ namespace App.MetroApp
 
                 if (type == UserControlType.ucRegCashMovement)
                 {
-                    //         ucRegCashMovement cntrl = new ucRegCashMovement(1);
-                    //         _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType("cntrl")));
+                    ucRegCashMovement cntrl = new ucRegCashMovement(1);
+                    _usercontrols.Add(type, (XtraUserControl)cntrl);
 
 
                     var parameterList = new int[] { 1 };
                     // esse funciona com int id no construtor              _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString()), 1));
-                    _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString()), 1));
+                 //   _usercontrols.Add(type, (XtraUserControl)Activator.CreateInstance(Type.GetType(_ns + "." + type.ToString()), 1));
                  
                 }
                 else

@@ -11,6 +11,7 @@ namespace App.MetroApp
     {
         ucMovimentoCaixa,
         ucCadCliente, 
-        ucRegCashMovement
+        ucRegCashMovement,
+        ucLockCashMovement
     }
 }

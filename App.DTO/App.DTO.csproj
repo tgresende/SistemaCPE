@@ -41,8 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContasPessoas.cs" />
+    <Compile Include="ClientsInfo.cs" />
     <Compile Include="InsumosProdutos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Dominio\App.Dominio.csproj">
+      <Project>{4329496C-B736-4463-BFDF-450B4DEB5E81}</Project>
+      <Name>App.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
